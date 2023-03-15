@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
+    <script src="./functionality/app.js" async></script>
+    <title>F1-GridLock</title>
+    <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
+</head>
+<body>
+    <!--top header, inc. logo on left and responsive menu on right-->
+    <header class="header">
+        <!--logo container and logo nested-->
+        <figure class="logo-cont">
+            <img src="./images/common/F1 (1).png" alt="F1-GridLock logo">
+        </figure>
+        <!--menu button - common across all pages-->
+        <button class="btn menu-btn">
+            Menu +
+        </button>
+
+        <!--hidden nav-screen. Background image to be yas marina circuit-->
+        <nav class="nav-screen">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#">Race</a></li>
+                <li class="nav-item"><a href="./standings.html">Standings</a></li>
+                <li class="nav-item"><a href="./champ-predictions.html">Predictions</a></li>
+                <li class="nav-item"><a href="./points-system.html">Points System</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--end of header-->
+
+    <!--main pages-->
+    <main>
+        <!--black banner at top defining visiting page-->
+        <div class="top-banner">
+            <h1>Race</h1>
+        </div>
+        <!--rest-of-page segement with red to blue gradient. common across all pages-->
+        <section class="background-gradient">
+            <div class="race">
+                <h2>bahrain</h2>
+                <figure class="flag-cont">
+                    <img src="./images/flags/Flag_of_Bahrain.png" alt="Bahrain Flag">
+                </figure>
+            </div>
+            <!--predictions box-->
+            <section class="transparent-white-box race-predictions">
+                <h3>predictions</h3>
+                <!--list of people involved, name clicked = their prediction shown.-->
+                <ul class="prediction-selection-names">
+                    <li class="name-item ali-btn">Ali</li>
+                    <li class="name-item ed-btn">Ed</li>
+                    <li class="name-item jack-btn">Jack</li>
+                    <li class="name-item toby-btn">Toby</li>
+                    <li class="name-item tom-btn">Tom</li>
+                    <li class="name-item owen-btn">Owen</li>
+                </ul>
+                <!--everyone's individual predictions, to be shown when corresponding name clicked-->
+                <div class="individual-prediction ali-pred">
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Gasly</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction ed-pred">
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Piastri</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction jack-pred">
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Gasly</li>
+                        <li class="pred-item">Ocon</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction toby-pred">
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Magnussen</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction tom-pred">
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Gasly</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction owen-pred">
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Gasly</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Norris</li>
+                    </ol>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

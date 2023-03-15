@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
+    <script src="./functionality/app.js" async></script>
+    <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
+    <title>F1-GridLock</title>
+</head>
+<body>
+    <!--top header, inc. logo on left and responsive menu on right-->
+    <header class="header">
+        <!--logo container and logo nested-->
+        <figure class="logo-cont">
+            <a href="./index.html">
+                <img src="./images/common/F1 (1).png" alt="F1-GridLock logo">
+            </a>
+        </figure>
+        <!--menu button - common across all pages-->
+        <button class="btn menu-btn">
+            Menu +
+        </button>
+
+        <!--hidden nav-screen. Background image to be yas marina circuit-->
+        <nav class="nav-screen">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./index.html">Race</a></li>
+                <li class="nav-item"><a href="./standings.html">Standings</a></li>
+                <li class="nav-item"><a href="./champ-predictions.html">Predictions</a></li>
+                <li class="nav-item visiting"><a href="#">Points System</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--end of header-->
+
+
+     <!--main pages-->
+     <main>
+        <!--black banner at top defining visiting page-->
+        <div class="top-banner">
+            <h1>Points System</h1>
+        </div>
+        <!--rest-of-page segement with red to blue gradient. common across all pages-->
+        <section class="background-gradient points-system">
+            <div class="transparent-white-box">
+                <!--tables with points systems for respective section. Title above tables-->
+                <h3>Race predictions points</h3>
+                <table class="points-table">
+                    <thead>
+                        <th>
+                            <td></td>
+                            <td class="text-right">Points</td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Correct Driver in Top 10</td>
+                            <td></td>
+                            <td class="text-right">1</td>
+                        </tr>
+                        <tr>
+                            <td>Correct Placement of Driver</td>
+                            <td></td>
+                            <td class="text-right">3</td>
+                        </tr>
+                        <tr>
+                            <td>All Drivers in Correct Place</td>
+                            <td></td>
+                            <td class="text-right">10</td>
+                        </tr>
+                        <tr class="bold-row">
+                            <td>Maximum Points Available:</td>
+                            <td></td>
+                            <td class="text-right">40</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>constructor's championship points</h3>
+                <table class="points-table">
+                    <thead>
+                        <th>
+                            <td></td>
+                            <td class="text-right">Points</td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Correct Team Position</td>
+                            <td></td>
+                            <td class="text-right">5</td>
+                        </tr>
+                        <tr>
+                            <td>All Positions Correct</td>
+                            <td></td>
+                            <td class="text-right">50</td>
+                        </tr>
+                        <tr class="bold-row">
+                            <td>Maximum Points Available:</td>
+                            <td></td>
+                            <td class="text-right">100</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>driver's championship points</h3>
+                <table class="points-table">
+                    <thead>
+                        <th>
+                            <td></td>
+                            <td class="text-right">Points</td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Correct Driver Position</td>
+                            <td></td>
+                            <td class="text-right">5</td>
+                        </tr>
+                        <tr>
+                            <td>All Positions Correct</td>
+                            <td></td>
+                            <td class="text-right">100</td>
+                        </tr>
+                        <tr class="bold-row">
+                            <td>Maximum Points Available:</td>
+                            <td></td>
+                            <td class="text-right">200</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>rewards</h3>
+                <table class="rewards-table">
+                    <tbody>
+                        <tr>
+                            <td>1st</td>
+                            <td>£84</td>
+                        </tr>
+                        <tr>
+                            <td>2nd</td>
+                            <td>£24</td>
+                        </tr>
+                        <tr>
+                            <td>3rd</td>
+                            <td>£12</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
+    <script src="./functionality/app.js" async></script>
+    <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
+    <title>F1-GridLock</title>
+</head>
+<body>
+    <!--top header, inc. logo on left and responsive menu on right-->
+    <header class="header">
+        <!--logo container and logo nested-->
+        <figure class="logo-cont">
+            <a href="./index.html">
+                <img src="./images/common/F1 (1).png" alt="F1-GridLock logo">
+            </a>
+        </figure>
+        <!--menu button - common across all pages-->
+        <button class="btn menu-btn">
+            Menu +
+        </button>
+
+        <!--hidden nav-screen. Background image to be yas marina circuit-->
+        <nav class="nav-screen">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./index.html">Race</a></li>
+                <li class="nav-item"><a href="./standings.html">Standings</a></li>
+                <li class="nav-item visiting"><a href="#">Predictions</a></li>
+                <li class="nav-item"><a href="./points-system.html">Points System</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--end of header-->
+
+
+     <!--main pages-->
+     <main>
+        <!--black banner at top defining visiting page-->
+        <div class="top-banner">
+            <h1>Championship Predictions</h1>
+        </div>
+        <!--rest-of-page segement with red to blue gradient. common across all pages-->
+        <section class="background-gradient champ-predictions">
+            <div class="constructor-standings">
+                <h3>Constructor's:</h3>
+                <ul class="constructors-list">
+                    <li class="team-logo">
+                        <img src="./images/teams/red-bull.png" alt="Red Bull">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/aston.png" alt="Aston Martin">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/mercedes.png" alt="Mercedes">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/ferrari.png" alt="Ferrari">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/alfa-romeo.png" alt="Alfa Romeo">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/alpine.png" alt="Alpine">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/williams.png" alt="Williams">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/alpha-tauri.png" alt="Alpha Tauri">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/haas.png" alt="Haas">
+                    </li>
+                    <li class="team-logo">
+                        <img src="./images/teams/mclaren.png" alt="McLaren">
+                    </li>
+                </ul>
+            </div>
+            <div class="drivers-standings">
+                <h3>Driver's:</h3>
+                <ol class="drivers-list">
+                    <li class="driver-name">Verstappen</li>
+                    <li class="driver-name">Perez</li>
+                    <li class="driver-name">Alonso</li>
+                    <li class="driver-name">Sainz</li>
+                    <li class="driver-name">Hamilton</li>
+                    <li class="driver-name">Stroll</li>
+                    <li class="driver-name">Russell</li>
+                    <li class="driver-name">Bottas</li>
+                    <li class="driver-name">Gasly</li>
+                    <li class="driver-name">Albon</li>
+                    <li class="driver-name">Tsunoda</li>
+                    <li class="driver-name">Sargeant</li>
+                    <li class="driver-name">Magnussen</li>
+                    <li class="driver-name">De Vries</li>
+                    <li class="driver-name">Hulkenberg</li>
+                    <li class="driver-name">Zhou</li>
+                    <li class="driver-name">Norris</li>
+                    <li class="driver-name">Leclerc</li>
+                    <li class="driver-name">Ocon</li>
+                    <li class="driver-name">Piastri</li>
+                </ol>
+            </div>
+            <!--predictions box-->
+            <section class="transparent-white-box players-champ-predictions">
+                <h3>predictions</h3>
+                <!--list of people involved, name clicked = their prediction shown.-->
+                <ul class="prediction-selection-names">
+                    <li class="name-item ali-btn">Ali</li>
+                    <li class="name-item ed-btn">Ed</li>
+                    <li class="name-item jack-btn">Jack</li>
+                    <li class="name-item toby-btn">Toby</li>
+                    <li class="name-item tom-btn">Tom</li>
+                    <li class="name-item owen-btn">Owen</li>
+                </ul>
+                <!--everyone's individual predictions, to be shown when corresponding name clicked-->
+                <div class="individual-prediction ali-pred">
+                    <ul class="constructors-list">
+                        <li class="team-logo">
+                            <img src="./images/teams/red-bull.png" alt="Red Bull">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/ferrari.png" alt="Ferrari">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mercedes.png" alt="Mercedes">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/aston.png" alt="Aston Martin">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpine.png" alt="Alpine">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mclaren.png" alt="McLaren">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpha-tauri.png" alt="Alpha Tauri">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alfa-romeo.png" alt="Alfa Romeo">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/williams.png" alt="Williams">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/haas.png" alt="Haas">
+                        </li>
+                    </ul>
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Gasly</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Bottas</li>
+                        <li class="pred-item">Piastri</li>
+                        <li class="pred-item">Albon</li>
+                        <li class="pred-item">De Vries</li>
+                        <li class="pred-item">Tsunoda</li>
+                        <li class="pred-item">Zhou</li>
+                        <li class="pred-item">Magnussen</li>
+                        <li class="pred-item">Hulkenberg</li>
+                        <li class="pred-item">Sargeant</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction ed-pred">
+                    <ul class="constructors-list">
+                        <li class="team-logo">
+                            <img src="./images/teams/red-bull.png" alt="Red Bull">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/ferrari.png" alt="Ferrari">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mercedes.png" alt="Mercedes">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpine.png" alt="Alpine">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mclaren.png" alt="McLaren">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/aston.png" alt="Aston Martin">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpha-tauri.png" alt="Alpha Tauri">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alfa-romeo.png" alt="Alfa Romeo">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/haas.png" alt="Haas">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/williams.png" alt="Williams">
+                        </li>
+                    </ul>
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Piastri</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Gasly</li>
+                        <li class="pred-item">Tsunoda</li>
+                        <li class="pred-item">Bottas</li>
+                        <li class="pred-item">De Vries</li>
+                        <li class="pred-item">Magnussen</li>
+                        <li class="pred-item">Hulkenberg</li>
+                        <li class="pred-item">Zhou</li>
+                        <li class="pred-item">Sargeant</li>
+                        <li class="pred-item">Albon</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction jack-pred">
+                    <ul class="constructors-list">
+                        <li class="team-logo">
+                            <img src="./images/teams/red-bull.png" alt="Red Bull">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/ferrari.png" alt="Ferrari">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mercedes.png" alt="Mercedes">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/aston.png" alt="Aston Martin">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mclaren.png" alt="McLaren">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpine.png" alt="Alpine">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alfa-romeo.png" alt="Alfa Romeo">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpha-tauri.png" alt="Alpha Tauri">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/williams.png" alt="Williams">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/haas.png" alt="Haas">
+                        </li>
+                    </ul>
+                    <ol class="prediction-list">
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Gasly</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Bottas</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Magnussen</li>
+                        <li class="pred-item">Piastri</li>
+                        <li class="pred-item">Tsunoda</li>
+                        <li class="pred-item">Zhou</li>
+                        <li class="pred-item">Albon</li>
+                        <li class="pred-item">Hulkenberg</li>
+                        <li class="pred-item">De Vries</li>
+                        <li class="pred-item">Sargeant</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction toby-pred">
+                    <ul class="constructors-list">
+                        <li class="team-logo">
+                            <img src="./images/teams/red-bull.png" alt="Red Bull">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/ferrari.png" alt="Ferrari">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mercedes.png" alt="Mercedes">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/aston.png" alt="Aston Martin">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpine.png" alt="Alpine">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mclaren.png" alt="McLaren">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpha-tauri.png" alt="Alpha Tauri">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alfa-romeo.png" alt="Alfa Romeo">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/williams.png" alt="Williams">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/haas.png" alt="Haas">
+                        </li>
+                    </ul>
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Gasly</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Bottas</li>
+                        <li class="pred-item">Tsunoda</li>
+                        <li class="pred-item">Piastri</li>
+                        <li class="pred-item">Zhou</li>
+                        <li class="pred-item">Magnussen</li>
+                        <li class="pred-item">De Vries</li>
+                        <li class="pred-item">Albon</li>
+                        <li class="pred-item">Hulkenberg</li>
+                        <li class="pred-item">Sargeant</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction tom-pred">
+                    <ul class="constructors-list">
+                        <li class="team-logo">
+                            <img src="./images/teams/red-bull.png" alt="Red Bull">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/ferrari.png" alt="Ferrari">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mercedes.png" alt="Mercedes">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/aston.png" alt="Aston Martin">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpine.png" alt="Alpine">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mclaren.png" alt="McLaren">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpha-tauri.png" alt="Alpha Tauri">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alfa-romeo.png" alt="Alfa Romeo">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/williams.png" alt="Williams">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/haas.png" alt="Haas">
+                        </li>
+                    </ul>
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Gasly</li>
+                        <li class="pred-item">Piastri</li>
+                        <li class="pred-item">Tsunoda</li>
+                        <li class="pred-item">Bottas</li>
+                        <li class="pred-item">Zhou</li>
+                        <li class="pred-item">De Vries</li>
+                        <li class="pred-item">Magnussen</li>
+                        <li class="pred-item">Albon</li>
+                        <li class="pred-item">Sargeant</li>
+                        <li class="pred-item">Hulkenberg</li>
+                    </ol>
+                </div>
+                <div class="individual-prediction owen-pred">
+                    <ul class="constructors-list">
+                        <li class="team-logo">
+                            <img src="./images/teams/red-bull.png" alt="Red Bull">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/ferrari.png" alt="Ferrari">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mercedes.png" alt="Mercedes">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/aston.png" alt="Aston Martin">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpine.png" alt="Alpine">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/mclaren.png" alt="McLaren">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alfa-romeo.png" alt="Alfa Romeo">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/alpha-tauri.png" alt="Alpha Tauri">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/haas.png" alt="Haas">
+                        </li>
+                        <li class="team-logo">
+                            <img src="./images/teams/williams.png" alt="Williams">
+                        </li>
+                    </ul>
+                    <ol class="prediction-list">
+                        <li class="pred-item">Verstappen</li>
+                        <li class="pred-item">Leclerc</li>
+                        <li class="pred-item">Perez</li>
+                        <li class="pred-item">Russell</li>
+                        <li class="pred-item">Sainz</li>
+                        <li class="pred-item">Hamilton</li>
+                        <li class="pred-item">Alonso</li>
+                        <li class="pred-item">Gasly</li>
+                        <li class="pred-item">Norris</li>
+                        <li class="pred-item">Stroll</li>
+                        <li class="pred-item">Ocon</li>
+                        <li class="pred-item">Bottas</li>
+                        <li class="pred-item">Piastri</li>
+                        <li class="pred-item">Magnussen</li>
+                        <li class="pred-item">Zhou</li>
+                        <li class="pred-item">Tsunoda</li>
+                        <li class="pred-item">Hulkenberg</li>
+                        <li class="pred-item">Albon</li>
+                        <li class="pred-item">De Vries</li>
+                        <li class="pred-item">Sargeant</li>
+                    </ol>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
