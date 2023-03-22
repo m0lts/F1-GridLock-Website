@@ -23,133 +23,33 @@ const jackPred = document.querySelector('.jack-pred');
 const tobyPred = document.querySelector('.toby-pred');
 const tomPred = document.querySelector('.tom-pred');
 const owenPred = document.querySelector('.owen-pred');
-// //button background functionality
-// //ali's button
-// const aliBckgrd = () => {
-//     aliBtn.classList.add('active');
-//     edBtn.classList.remove('active');
-//     jackBtn.classList.remove('active');
-//     tobyBtn.classList.remove('active');
-//     tomBtn.classList.remove('active');
-//     owenBtn.classList.remove('active');
-// }
-// aliBtn.addEventListener('click', aliBckgrd);
-// //ed's button
-// const edBckgrd = () => {
-//     edBtn.classList.add('active');
-//     aliBtn.classList.remove('active');
-//     jackBtn.classList.remove('active');
-//     tobyBtn.classList.remove('active');
-//     tomBtn.classList.remove('active');
-//     owenBtn.classList.remove('active');
-// }
-// edBtn.addEventListener('click', edBckgrd);
-// //jack's button
-// const jackBckgrd = () => {
-//     jackBtn.classList.add('active');
-//     aliBtn.classList.remove('active');
-//     edBtn.classList.remove('active');
-//     tobyBtn.classList.remove('active');
-//     tomBtn.classList.remove('active');
-//     owenBtn.classList.remove('active');
-// }
-// jackBtn.addEventListener('click', jackBckgrd);
-// //toby's button
-// const tobyBckgrd = () => {
-//     tobyBtn.classList.add('active');
-//     aliBtn.classList.remove('active');
-//     edBtn.classList.remove('active');
-//     jackBtn.classList.remove('active');
-//     tomBtn.classList.remove('active');
-//     owenBtn.classList.remove('active');
-// }
-// tobyBtn.addEventListener('click', tobyBckgrd);
-// //tom's button
-// const tomBckgrd = () => {
-//     tomBtn.classList.add('active');
-//     aliBtn.classList.remove('active');
-//     edBtn.classList.remove('active');
-//     jackBtn.classList.remove('active');
-//     tobyBtn.classList.remove('active');
-//     owenBtn.classList.remove('active');
-// }
-// tomBtn.addEventListener('click', tomBckgrd);
-// //owen's button
-// const owenBckgrd = () => {
-//     owenBtn.classList.add('active');
-//     aliBtn.classList.remove('active');
-//     edBtn.classList.remove('active');
-//     jackBtn.classList.remove('active');
-//     tobyBtn.classList.remove('active');
-//     tomBtn.classList.remove('active');
-// }
-// owenBtn.addEventListener('click', owenBckgrd);
-
-
-
 
 
 //SHOW PREDICTION FUNCTIONALITY
-//ali's prediction
-const showAliPred = () => {
-    aliPred.classList.add('show');
-    edPred.classList.remove('show');
-    jackPred.classList.remove('show');
-    tobyPred.classList.remove('show');
-    tomPred.classList.remove('show');
-    owenPred.classList.remove('show');
-}
-aliBtn.addEventListener('click', showAliPred);
-//ed's prediction
-const showEdPred = () => {
-    edPred.classList.add('show');
-    aliPred.classList.remove('show');
-    jackPred.classList.remove('show');
-    tobyPred.classList.remove('show');
-    tomPred.classList.remove('show');
-    owenPred.classList.remove('show');
-}
-edBtn.addEventListener('click', showEdPred);
-//jack's prediction
-const showJackPred = () => {
-    jackPred.classList.add('show');
-    aliPred.classList.remove('show');
-    edPred.classList.remove('show');
-    tobyPred.classList.remove('show');
-    tomPred.classList.remove('show');
-    owenPred.classList.remove('show');
-}
-jackBtn.addEventListener('click', showJackPred);
-//toby's prediction
-const showTobyPred = () => {
-    tobyPred.classList.add('show');
-    aliPred.classList.remove('show');
-    edPred.classList.remove('show');
-    jackPred.classList.remove('show');
-    tomPred.classList.remove('show');
-    owenPred.classList.remove('show');
-}
-tobyBtn.addEventListener('click', showTobyPred);
-//tom's prediction
-const showTomPred = () => {
-    tomPred.classList.add('show');
-    aliPred.classList.remove('show');
-    edPred.classList.remove('show');
-    jackPred.classList.remove('show');
-    tobyPred.classList.remove('show');
-    owenPred.classList.remove('show');
-}
-tomBtn.addEventListener('click', showTomPred);
-//owen's prediction
-const showOwenPred = () => {
-    owenPred.classList.add('show');
-    aliPred.classList.remove('show');
-    edPred.classList.remove('show');
-    jackPred.classList.remove('show');
-    tobyPred.classList.remove('show');
-    tomPred.classList.remove('show');
-}
-owenBtn.addEventListener('click', showOwenPred);
+const togglePred = (btn, pred) => {
+    const btns = [aliBtn, edBtn, jackBtn, tobyBtn, tomBtn, owenBtn];
+    btns.forEach(b => {
+        if (b == btn) {
+            btn.classList.add('active');
+        } else {
+            b.classList.remove('active');
+        }
+    });
+    const preds = [aliPred, edPred, jackPred, tobyPred, tomPred, owenPred];
+    preds.forEach(p => {
+        if (p == pred) {
+            pred.classList.add('show');
+        } else {
+            p.classList.remove('show');
+        }
+    })
+    };
+aliBtn.addEventListener('click', () => togglePred(aliBtn, aliPred));
+edBtn.addEventListener('click', () => togglePred(edBtn, edPred));
+jackBtn.addEventListener('click', () => togglePred(jackBtn, jackPred));
+tobyBtn.addEventListener('click', () => togglePred(tobyBtn, tobyPred));
+tomBtn.addEventListener('click', () => togglePred(tomBtn, tomPred))
+owenBtn.addEventListener('click', () => togglePred(owenBtn, owenPred));
 
 
 //ARROW ROTATION AND SHOW BUTTON SELECTED
@@ -217,3 +117,26 @@ let countdown = setInterval(function() {
         countdownClock.style.color = 'red';
     };
 }, 1000);
+
+// SHOW DRIVERS/CONSTRUCTORS TAB
+const driversTab = document.querySelector('.drivers');
+const constructorsTab = document.querySelector('.constructors');
+const driversList = document.querySelector('.drivers-list');
+const constructorsList = document.querySelector('.constructors-list');
+
+const showConstructorsTab = () => {
+    driversList.classList.add('hide');
+    constructorsList.classList.add('show');
+}
+const showDriversTab = () => {
+    driversList.classList.remove('hide');
+    constructorsList.classList.remove('show');
+}
+
+driversTab.addEventListener('click', function() {
+    console.log('hello');
+})
+
+
+driversTab.addEventListener('click', showDriversTab);
+constructorsTab.addEventListener('click', showConstructorsTab);

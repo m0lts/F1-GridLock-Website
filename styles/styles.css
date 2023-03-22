@@ -9,7 +9,7 @@
     padding: 0;
 }
 :root {
-    --red:#ff0000ab;
+    --red:#ff0000;
     --blue:#0036faa6;
     --black:#141414;
     --grey:#a9a9a9;
@@ -25,6 +25,10 @@ html {
     font-family: 'Titillium Web', sans-serif;
     font-size: 16px;
 }
+body {
+    padding-bottom: 50px;
+}
+
 
 /*COMMON STYLING*/
 .page-alignment {
@@ -56,7 +60,7 @@ img {
 }
 .h3-title {
     text-transform: capitalize;
-    padding:5px;
+    padding:5px 0;
     width:fit-content;
     font-weight: 400;
     font-size: 1rem;
@@ -128,7 +132,7 @@ img {
 
 /*HOMEPAGE (index.html)*/
 /* top banner */
-.race-weekend {
+.race-weekend-hero {
     height:200px;
     background-color: var(--black);
     color:var(--white);
@@ -181,7 +185,7 @@ img {
     font-size: 1.5rem;
 }
 /* stats and predictions box */
-.s-p-container {
+.grey-container {
     background-color: var(--light-grey);
     margin:25px 10%;
 }
@@ -195,6 +199,7 @@ img {
     width:50%;
     padding:10px;
     text-align: center;
+    cursor: pointer;
 }
 .tab:hover, .tab:focus {
     font-weight: 600;
@@ -208,6 +213,10 @@ img {
 }
 .stats.hide {
     background: var(--white);
+    font-weight: 500;
+}
+.stats.hide:hover {
+    font-weight: 600;
 }
 .predictions.show {
     background: none;
@@ -215,6 +224,7 @@ img {
 }
 .stats {
     background: none;
+    font-weight: 600;
 }
 
 
@@ -240,8 +250,17 @@ img {
     padding-bottom:10px;
     cursor: pointer;
 }
-.stats-h3:hover {
-    text-decoration: underline;
+.stats-h3::after {
+    content: '';
+    display: block;
+    width:0%;
+    height:2px;
+    background: var(--green);
+    transition: width 200ms linear;
+}
+.stats-h3:hover::after {
+    width:100%;
+    transition: width 200ms linear;
 }
 .circuit {
     margin: 0 auto;
@@ -254,6 +273,9 @@ img {
 .right-arrow.rotate {
     transform: rotate(-45deg);
     transition: all 200ms linear;
+}
+.previous-results {
+    padding: 0 25px;
 }
 
 
@@ -273,7 +295,7 @@ img {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     overflow: scroll;
 }
 .name {
@@ -290,7 +312,7 @@ img {
 .toby-pred,
 .tom-pred,
 .owen-pred {
-    padding-top: 10px;
+    padding: 10px 0;
     display:none;
 }
 .ali-pred.show,
@@ -301,8 +323,109 @@ img {
 .owen-pred.show {
     display:block;
 }
+.name.active {
+    font-weight: 600;
+}
 
 
+
+/* STANDINGS PAGE */
+.standings-hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 25px 10%;
+}
+.flags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:10px;
+}
+.flag {
+    width:50px;
+    height: auto;
+    list-style: none;
+}
+/* standings page boxes */
+.player-standings-box, .champ-standings-box {
+    padding:10px 0;
+}
+/* player-standings-box */
+.standings-title {
+    margin:10px 5%;
+}
+.player-standings-item {
+    width:90%;
+    margin:10px auto;
+    border:1px solid var(--grey);
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:25px;
+    cursor: pointer;
+    transition: all 200ms linear;
+}
+.player-standings-item:hover {
+    background: var(--grey-hover);
+    border-color: var(--black);
+    transition: all 200ms linear;
+}
+.points-list {
+    width:75%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:25px;
+}
+.prev-points, .points-total {
+    list-style: none;
+}
+.prev-points {
+    color: var(--grey);
+}
+.points-total {
+    font-weight: 600;
+    color: var(--red);
+}
+
+
+
+.drivers-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    padding:10px 0;
+}
+
+.constructors-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.team-logo {
+    list-style: none;
+    width:150px;
+    height:auto;
+    padding:25px;
+}
+
+/* show/hide each tab and tab styling */
+.constructors-list {
+    display: none;
+}
+.drivers-list {
+    display: block;
+}
+.constructors-list.show {
+    display:block;
+}
+.drivers-list.hide {
+    display:none;
+}
 
 
 @media screen and (max-width:768px) {
@@ -313,164 +436,7 @@ img {
 }
 
 
-/* .race {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding:25px 0;
-}
-.race h2 {
-    color:var(--white);
-    text-transform: uppercase;
-}
-.flag-cont {
-    width:25%;
-    height: auto;
-    overflow: hidden;
-}
-.race-predictions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-}
-.race-predictions h3 {
-    text-transform: capitalize;
-    padding:10px;
-}
-.prediction-selection-names {
-    width:100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.name-item {
-    width:100%;
-    text-align: center;
-    padding:5px 0px;
-    list-style: none;
-    cursor: pointer;
-}
-.name-item:hover {
-    background-color: var(--transparent-white);
-    border-radius: 5px 5px 0 0;
-}
-.individual-prediction {
-    background-color: var(--transparent-white);
-    border-radius: 0 0 5px 5px;
-    width:100%;
-}
-.prediction-list {
-    padding:25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color:var(--black);
-}
-.ali-pred,
-.ed-pred,
-.jack-pred,
-.toby-pred,
-.tom-pred,
-.owen-pred {
-    display: none;
-}
-.ali-pred.show-pred,
-.ed-pred.show-pred,
-.jack-pred.show-pred,
-.toby-pred.show-pred,
-.tom-pred.show-pred,
-.owen-pred.show-pred {
-    display: block;
-}
-.name-item.active {
-    background-color: var(--transparent-white);
-    color:var(--black);
-    border-radius: 5px 5px 0 0;
-} */
 
-/*STANDINGS PAGE (standings.html)*/
-.standings {
-    color:var(--white);
-    padding:10px 10%;
-}
-@media screen and (max-width:768px) {
-    .standings {
-        padding:10px;
-    }
-}
-.flags {
-    display:flex;
-    margin-bottom: 50px;
-}
-.flag {
-    padding:5px;
-    list-style-type: none;
-    width:50px;
-    height:auto;
-    overflow: hidden;
-}
-.flag:first-child {
-    padding-left: 0;
-}
-.standings-box {
-    width:100%;
-}
-.standings-table {
-    width:100%;
-    padding:10px;
-}
-.table-header {
-    text-decoration: underline;
-    text-align: center;
-}
-.table-numbers {
-    text-align: center;
-}
-.overall-points {
-    font-weight: bold;
-}
-
-/*CHAMPIONSHIP PREDICTIONS (champ-predictions.html)*/
-.champ-predictions {
-    color:var(--white);
-    padding:10px 0;
-}
-@media screen and (max-width:768px) {
-    .champ-predictions {
-        padding:10px;
-    }
-}
-.constructors-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:10px;
-    padding:10px 0;
-}
-.team-logo {
-    width:50px;
-    height:50px;
-    overflow: hidden;
-}
-.drivers-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:10px;
-    padding:10px 0;
-}
-.players-champ-predictions {
-    margin:20px auto;
-}
-.players-champ-predictions h3 {
-    text-transform: capitalize;
-    text-align: center;
-    padding:10px;
-}
 
 /*POINTS SYSTEM (points-system.html)*/
 .points-system {
@@ -514,11 +480,8 @@ img {
     margin: 5px auto;
 }
 .driver-img {
-    position: relative;
-    z-index: 1;
     width:25%;
     height:100px;
-    opacity: 1;
 }
 
 .driver-details {
