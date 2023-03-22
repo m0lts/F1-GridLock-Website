@@ -11,10 +11,13 @@
 :root {
     --red:#ff0000ab;
     --blue:#0036faa6;
-    --black:#3d3d3d;
+    --black:#141414;
+    --grey:#a9a9a9;
+    --light-grey:#ededed;
     --white:#ffffff;
     --transparent-white:#f8f8f883;
     --grey-hover:#e2e2e2;
+    --green:#209500;
 }
 
 /*typography*/
@@ -22,29 +25,13 @@ html {
     font-family: 'Titillium Web', sans-serif;
     font-size: 16px;
 }
-h1 {
-    font-size:2rem;
-}
-h2 {
-    font-size: 5rem;
-}
-@media screen and (max-width:768px) {
-    h2 {
-        font-size: 3rem;
-    }
-}
-h3 {
-    font-size: 1.5rem;
-}
-h4 {
-    font-size: 1.25rem;
-}
 
 /*COMMON STYLING*/
-main {
+.page-alignment {
     position: relative;
     top:75px;
     z-index:1;
+    margin-bottom: 50px;
 }
 img {
     width:100%;
@@ -67,30 +54,14 @@ img {
     border:1px solid var(--grey-hover);
     background: none;
 }
-.top-banner {
-    width:100%;
-    background-color: var(--black);
-    color:var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.h3-title {
+    text-transform: capitalize;
     padding:5px;
+    width:fit-content;
+    font-weight: 400;
+    font-size: 1rem;
 }
-.background-gradient {
-    width:100%;
-    min-height: 100vh;
-    min-height: 100svh;
-    animation-name: background-animation;
-    animation-duration: 25s;
-    animation-iteration-count: infinite;
-    padding-bottom: 50px;
-}
-/*background animation*/
-@keyframes background-animation {
-    0% { background-color: #ff0000ab; }
-    50% { background-color: #0036faa6; }
-    100% { background-color: #ff0000ab; }
-}
+
 /*transparent white box, common across pages*/
 .transparent-white-box {
     background-color: var(--transparent-white);
@@ -156,7 +127,193 @@ img {
 }
 
 /*HOMEPAGE (index.html)*/
-.race {
+/* top banner */
+.race-weekend {
+    height:200px;
+    background-color: var(--black);
+    color:var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:50px 10%;
+}
+#race-country {
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+@media screen and (max-width:768px) {
+    .race-weekend {
+        height:150px;
+    }
+    #race-country {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width:500px) {
+    .race-weekend {
+        flex-direction: column;
+        gap:10px;
+        height: auto;
+        padding:25px 10%;
+    }
+    .flag-cont {
+        width:100px;
+        height:50px;
+    }
+}
+.flag-cont {
+    max-width:200px;
+    max-height:100px;
+    overflow: hidden;
+}
+
+.time-banner {
+    height:50px;
+    padding:0 10%;
+    background-color: var(--green);
+    color:var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+}
+.timer, .timer-text {
+    font-size: 1.5rem;
+}
+/* stats and predictions box */
+.s-p-container {
+    background-color: var(--light-grey);
+    margin:25px 10%;
+}
+.tabs-list {
+    width:100%;
+    display:flex;
+    align-items: center;
+}
+.tab {
+    list-style: none;
+    width:50%;
+    padding:10px;
+    text-align: center;
+}
+.tab:hover, .tab:focus {
+    font-weight: 600;
+}
+.stats-box, .predictions-box {
+    padding:10px 0;
+    overflow: hidden;
+}
+.predictions {
+    background: var(--white);
+}
+.stats.hide {
+    background: var(--white);
+}
+.predictions.show {
+    background: none;
+    font-weight: 600;
+}
+.stats {
+    background: none;
+}
+
+
+
+/* show/hide each tab and tab styling */
+.predictions-box {
+    display: none;
+}
+.predictions-box.show {
+    display: block;
+}
+.stats-box {
+    display: block;
+}
+.stats-box.hide {
+    display:none;
+}
+
+
+
+/* stats selection */
+.stats-h3 {
+    padding-bottom:10px;
+    cursor: pointer;
+}
+.stats-h3:hover {
+    text-decoration: underline;
+}
+.circuit {
+    margin: 0 auto;
+    width:90%;
+}
+.right-arrow {
+    transform: rotate(45deg);
+    transition: all 200ms linear;
+}
+.right-arrow.rotate {
+    transform: rotate(-45deg);
+    transition: all 200ms linear;
+}
+
+
+/* hide + show drop-down previous results */
+.previous-year-result, .previous-race-result {
+    display:none;
+}
+.previous-year-result.show, .previous-race-result.show {
+    display:block;
+}
+
+
+/* predictions selection */
+/* name selection */
+.names-list {
+    width:90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: scroll;
+}
+.name {
+    list-style: none;
+    padding:10px 25px;
+    cursor: pointer;
+}
+.name:hover, .name:focus {
+    font-weight: 600;
+}
+.ali-pred,
+.ed-pred,
+.jack-pred,
+.toby-pred,
+.tom-pred,
+.owen-pred {
+    padding-top: 10px;
+    display:none;
+}
+.ali-pred.show,
+.ed-pred.show,
+.jack-pred.show,
+.toby-pred.show,
+.tom-pred.show,
+.owen-pred.show {
+    display:block;
+}
+
+
+
+
+@media screen and (max-width:768px) {
+    
+}
+@media screen and (max-width:500px) {
+
+}
+
+
+/* .race {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -231,7 +388,7 @@ img {
     background-color: var(--transparent-white);
     color:var(--black);
     border-radius: 5px 5px 0 0;
-}
+} */
 
 /*STANDINGS PAGE (standings.html)*/
 .standings {
@@ -303,6 +460,7 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap:10px;
     padding:10px 0;
 }
 .players-champ-predictions {
@@ -338,5 +496,56 @@ img {
 .text-right {
     text-align: right;
 }
+
+
+
+/*DRIVER FORMATTING*/
+.driver-container {
+    border: 1px solid var(--grey-hover);
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:300px;
+    height:50px;
+    margin: 5px auto;
+}
+.driver-img {
+    position: relative;
+    z-index: 1;
+    width:25%;
+    height:100px;
+    opacity: 1;
+}
+
+.driver-details {
+    margin-left: 10px;
+    display: flex;
+    gap:15px;
+    align-items: center;
+}
+.driver-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-style: italic;
+}
+.driver-name {
+    display: flex;
+    flex-direction: column;
+}
+.firstname {
+    text-transform: capitalize;
+    font-size: 0.5rem;
+}
+.surname {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 1rem;
+}
+
 
 

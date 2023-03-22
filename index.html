@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
+    <script src="https://kit.fontawesome.com/d7b281748b.js" crossorigin="anonymous"></script>
     <script src="./functionality/app.js" async></script>
     <title>F1-GridLock</title>
     <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
@@ -35,115 +36,2310 @@
     <!--end of header-->
 
     <!--main pages-->
-    <main>
-        <!--black banner at top defining visiting page-->
-        <div class="top-banner">
-            <h1>Next Race</h1>
-        </div>
-        <!--rest-of-page segement with red to blue gradient. common across all pages-->
-        <section class="background-gradient">
-            <div class="race">
-                <h2>Australia</h2>
+    <main class="page-alignment">
+            <!-- race weekend top-banner -->
+            <div class="race-weekend">
+                <h1 id="race-country">Australia</h1>
                 <figure class="flag-cont">
                     <img src="./images/flags/Flag-Australia.webp" alt="Australian Flag">
                 </figure>
             </div>
-            <!--predictions box-->
-            <section class="transparent-white-box race-predictions">
-                <h3>predictions</h3>
-                <!--list of people involved, name clicked = their prediction shown.-->
-                <ul class="prediction-selection-names">
-                    <li class="name-item ali-btn">Ali</li>
-                    <li class="name-item ed-btn">Ed</li>
-                    <li class="name-item jack-btn">Jack</li>
-                    <li class="name-item toby-btn">Toby</li>
-                    <li class="name-item tom-btn">Tom</li>
-                    <li class="name-item owen-btn">Owen</li>
+            <!-- timer to prediction cutoff -->
+            <div class="time-banner">
+                <h2 class="timer-text">Qualifying:</h2>
+                <h2 class="timer"></h2>
+                <!-- INSERT TIMER FUNCTION HERE -->
+            </div>
+            <section class="s-p-container">
+                <!-- selection tabs -->
+                <ul class="tabs-list">
+                    <li class="tab stats">Stats</li>
+                    <li class="tab predictions">Predictions</li>
                 </ul>
-                <!--everyone's individual predictions, to be shown when corresponding name clicked-->
-                <div class="individual-prediction ali-pred">
-                    <ol class="prediction-list">
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                    </ol>
+
+
+                <!-- stats box, to show when 'stats' tab selected -->
+                <div class="stats-box">
+                    <figure class="circuit">
+                        <img src="./images/tracks/australia-track.png" alt="Melbourne Circuit, Australian GP">
+                    </figure>
+                    <div>
+                        <!-- last year's result at track -->
+                        <h3 class="h3-title stats-h3">previous year result <i class="right-arrow fa-solid fa-arrow-right"></i></h3>
+                        <ul class="previous-year-result">
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">max</p>
+                                        <p class="surname">verstappen</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/red-bull.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>11</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">sergio</p>
+                                        <p class="surname">perez</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/red-bull.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>14</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">fernando</p>
+                                        <p class="surname">alonso</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/aston.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>55</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">carlos</p>
+                                        <p class="surname">sainz</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/ferrari.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>44</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">lewis</p>
+                                        <p class="surname">hamilton</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/mercedes.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>63</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">george</p>
+                                        <p class="surname">russell</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/mercedes.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>18</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">lance</p>
+                                        <p class="surname">stroll</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/aston.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>16</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">charles</p>
+                                        <p class="surname">leclerc</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/ferrari.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>77</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">valterri</p>
+                                        <p class="surname">bottas</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alfa-romeo.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>31</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">esteban</p>
+                                        <p class="surname">ocon</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alpine.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>10</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">pierre</p>
+                                        <p class="surname">gasly</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alpine.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>20</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">kevin</p>
+                                        <p class="surname">magnussen</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/haas.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>23</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">alexander</p>
+                                        <p class="surname">albon</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/williams.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>22</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">yuki</p>
+                                        <p class="surname">tsunoda</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alpha-tauri.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>27</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">niko</p>
+                                        <p class="surname">hulkenberg</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/haas.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>2</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">logan</p>
+                                        <p class="surname">sargeant</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/williams.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>24</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">guanyu</p>
+                                        <p class="surname">zhou</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alfa-romeo.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>21</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">nyck</p>
+                                        <p class="surname">de vries</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alpha-tauri.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>81</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">oscar</p>
+                                        <p class="surname">piastri</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/mclaren.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>4</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">lando</p>
+                                        <p class="surname">norris</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/mclaren.png" alt="">
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <!-- previous race result -->
+                        <h3 class="h3-title stats-h3">previous race result <i class="right-arrow fa-solid fa-arrow-right"></i></h3>
+                        <ul class="previous-race-result">
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">max</p>
+                                        <p class="surname">verstappen</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/red-bull.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>11</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">sergio</p>
+                                        <p class="surname">perez</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/red-bull.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>14</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">fernando</p>
+                                        <p class="surname">alonso</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/aston.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>55</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">carlos</p>
+                                        <p class="surname">sainz</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/ferrari.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>44</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">lewis</p>
+                                        <p class="surname">hamilton</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/mercedes.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>63</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">george</p>
+                                        <p class="surname">russell</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/mercedes.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>18</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">lance</p>
+                                        <p class="surname">stroll</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/aston.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>16</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">charles</p>
+                                        <p class="surname">leclerc</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/ferrari.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>77</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">valterri</p>
+                                        <p class="surname">bottas</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alfa-romeo.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>31</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">esteban</p>
+                                        <p class="surname">ocon</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alpine.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>10</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">pierre</p>
+                                        <p class="surname">gasly</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alpine.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>20</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">kevin</p>
+                                        <p class="surname">magnussen</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/haas.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>23</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">alexander</p>
+                                        <p class="surname">albon</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/williams.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>22</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">yuki</p>
+                                        <p class="surname">tsunoda</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alpha-tauri.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>27</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">niko</p>
+                                        <p class="surname">hulkenberg</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/haas.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>2</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">logan</p>
+                                        <p class="surname">sargeant</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/williams.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>24</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">guanyu</p>
+                                        <p class="surname">zhou</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alfa-romeo.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>21</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">nyck</p>
+                                        <p class="surname">de vries</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/alpha-tauri.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>81</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">oscar</p>
+                                        <p class="surname">piastri</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/mclaren.png" alt="">
+                                </figure>
+                            </li>
+                            <li class="driver-container">
+                                <div class="driver-details">
+                                    <div class="driver-number">
+                                        <p>4</p>
+                                    </div>
+                                    <div class="driver-name">
+                                        <p class="firstname">lando</p>
+                                        <p class="surname">norris</p>
+                                    </div>
+                                </div>
+                                <figure class="driver-img">
+                                    <img src="./images/teams/mclaren.png" alt="">
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="individual-prediction ed-pred">
-                    <ol class="prediction-list">
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                    </ol>
-                </div>
-                <div class="individual-prediction jack-pred">
-                    <ol class="prediction-list">
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                    </ol>
-                </div>
-                <div class="individual-prediction toby-pred">
-                    <ol class="prediction-list">
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                    </ol>
-                </div>
-                <div class="individual-prediction tom-pred">
-                    <ol class="prediction-list">
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                    </ol>
-                </div>
-                <div class="individual-prediction owen-pred">
-                    <ol class="prediction-list">
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                        <li class="pred-item">-</li>
-                    </ol>
+
+
+                <!-- predictions box, to show when 'predictions' tab selected -->
+                <div class="predictions-box">
+                    <ul class="names-list">
+                        <li class="name ali">Ali</li>
+                        <li class="name ed">Ed</li>
+                        <li class="name jack">Jack</li>
+                        <li class="name toby">Toby</li>
+                        <li class="name tom">Tom</li>
+                        <li class="name owen">Owen</li>
+                    </ul>
+                    <ul class="ali-pred">
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>1</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">max</p>
+                                    <p class="surname">verstappen</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/red-bull.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>11</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">sergio</p>
+                                    <p class="surname">perez</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/red-bull.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>14</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">fernando</p>
+                                    <p class="surname">alonso</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/aston.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>55</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">carlos</p>
+                                    <p class="surname">sainz</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/ferrari.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>44</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">lewis</p>
+                                    <p class="surname">hamilton</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/mercedes.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>63</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">george</p>
+                                    <p class="surname">russell</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/mercedes.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>18</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">lance</p>
+                                    <p class="surname">stroll</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/aston.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>16</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">charles</p>
+                                    <p class="surname">leclerc</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/ferrari.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>77</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">valterri</p>
+                                    <p class="surname">bottas</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/alfa-romeo.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>31</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">esteban</p>
+                                    <p class="surname">ocon</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/alpine.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>10</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">pierre</p>
+                                    <p class="surname">gasly</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/alpine.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>20</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">kevin</p>
+                                    <p class="surname">magnussen</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/haas.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>23</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">alexander</p>
+                                    <p class="surname">albon</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/williams.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>22</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">yuki</p>
+                                    <p class="surname">tsunoda</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/alpha-tauri.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>27</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">niko</p>
+                                    <p class="surname">hulkenberg</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/haas.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>2</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">logan</p>
+                                    <p class="surname">sargeant</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/williams.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>24</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">guanyu</p>
+                                    <p class="surname">zhou</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/alfa-romeo.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>21</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">nyck</p>
+                                    <p class="surname">de vries</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/alpha-tauri.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>81</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">oscar</p>
+                                    <p class="surname">piastri</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/mclaren.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="driver-container">
+                            <div class="driver-details">
+                                <div class="driver-number">
+                                    <p>4</p>
+                                </div>
+                                <div class="driver-name">
+                                    <p class="firstname">lando</p>
+                                    <p class="surname">norris</p>
+                                </div>
+                            </div>
+                            <figure class="driver-img">
+                                <img src="./images/teams/mclaren.png" alt="">
+                            </figure>
+                        </li>
+                    </ul>
+                    <ul class="ed-pred">
+                        <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>1</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">max</p>
+                                <p class="surname">verstappen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>11</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">sergio</p>
+                                <p class="surname">perez</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>14</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">fernando</p>
+                                <p class="surname">alonso</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>55</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">carlos</p>
+                                <p class="surname">sainz</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>44</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lewis</p>
+                                <p class="surname">hamilton</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>63</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">george</p>
+                                <p class="surname">russell</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>18</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lance</p>
+                                <p class="surname">stroll</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>16</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">charles</p>
+                                <p class="surname">leclerc</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>77</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">valterri</p>
+                                <p class="surname">bottas</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>31</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">esteban</p>
+                                <p class="surname">ocon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>10</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">pierre</p>
+                                <p class="surname">gasly</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>20</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">kevin</p>
+                                <p class="surname">magnussen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>23</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">alexander</p>
+                                <p class="surname">albon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>22</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">yuki</p>
+                                <p class="surname">tsunoda</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>27</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">niko</p>
+                                <p class="surname">hulkenberg</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>2</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">logan</p>
+                                <p class="surname">sargeant</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>24</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">guanyu</p>
+                                <p class="surname">zhou</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>21</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">nyck</p>
+                                <p class="surname">de vries</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>81</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">oscar</p>
+                                <p class="surname">piastri</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>4</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lando</p>
+                                <p class="surname">norris</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    </ul>
+                    <ul class="jack-pred">
+                        <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>1</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">max</p>
+                                <p class="surname">verstappen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>11</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">sergio</p>
+                                <p class="surname">perez</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>14</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">fernando</p>
+                                <p class="surname">alonso</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>55</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">carlos</p>
+                                <p class="surname">sainz</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>44</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lewis</p>
+                                <p class="surname">hamilton</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>63</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">george</p>
+                                <p class="surname">russell</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>18</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lance</p>
+                                <p class="surname">stroll</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>16</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">charles</p>
+                                <p class="surname">leclerc</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>77</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">valterri</p>
+                                <p class="surname">bottas</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>31</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">esteban</p>
+                                <p class="surname">ocon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>10</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">pierre</p>
+                                <p class="surname">gasly</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>20</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">kevin</p>
+                                <p class="surname">magnussen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>23</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">alexander</p>
+                                <p class="surname">albon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>22</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">yuki</p>
+                                <p class="surname">tsunoda</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>27</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">niko</p>
+                                <p class="surname">hulkenberg</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>2</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">logan</p>
+                                <p class="surname">sargeant</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>24</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">guanyu</p>
+                                <p class="surname">zhou</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>21</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">nyck</p>
+                                <p class="surname">de vries</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>81</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">oscar</p>
+                                <p class="surname">piastri</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>4</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lando</p>
+                                <p class="surname">norris</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    </ul>
+                    <ul class="toby-pred">
+                        <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>1</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">max</p>
+                                <p class="surname">verstappen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>11</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">sergio</p>
+                                <p class="surname">perez</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>14</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">fernando</p>
+                                <p class="surname">alonso</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>55</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">carlos</p>
+                                <p class="surname">sainz</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>44</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lewis</p>
+                                <p class="surname">hamilton</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>63</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">george</p>
+                                <p class="surname">russell</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>18</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lance</p>
+                                <p class="surname">stroll</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>16</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">charles</p>
+                                <p class="surname">leclerc</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>77</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">valterri</p>
+                                <p class="surname">bottas</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>31</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">esteban</p>
+                                <p class="surname">ocon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>10</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">pierre</p>
+                                <p class="surname">gasly</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>20</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">kevin</p>
+                                <p class="surname">magnussen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>23</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">alexander</p>
+                                <p class="surname">albon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>22</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">yuki</p>
+                                <p class="surname">tsunoda</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>27</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">niko</p>
+                                <p class="surname">hulkenberg</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>2</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">logan</p>
+                                <p class="surname">sargeant</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>24</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">guanyu</p>
+                                <p class="surname">zhou</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>21</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">nyck</p>
+                                <p class="surname">de vries</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>81</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">oscar</p>
+                                <p class="surname">piastri</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>4</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lando</p>
+                                <p class="surname">norris</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    </ul>
+                    <ul class="tom-pred">
+                        <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>1</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">max</p>
+                                <p class="surname">verstappen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>11</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">sergio</p>
+                                <p class="surname">perez</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>14</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">fernando</p>
+                                <p class="surname">alonso</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>55</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">carlos</p>
+                                <p class="surname">sainz</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>44</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lewis</p>
+                                <p class="surname">hamilton</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>63</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">george</p>
+                                <p class="surname">russell</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>18</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lance</p>
+                                <p class="surname">stroll</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>16</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">charles</p>
+                                <p class="surname">leclerc</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>77</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">valterri</p>
+                                <p class="surname">bottas</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>31</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">esteban</p>
+                                <p class="surname">ocon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>10</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">pierre</p>
+                                <p class="surname">gasly</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>20</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">kevin</p>
+                                <p class="surname">magnussen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>23</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">alexander</p>
+                                <p class="surname">albon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>22</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">yuki</p>
+                                <p class="surname">tsunoda</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>27</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">niko</p>
+                                <p class="surname">hulkenberg</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>2</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">logan</p>
+                                <p class="surname">sargeant</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>24</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">guanyu</p>
+                                <p class="surname">zhou</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>21</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">nyck</p>
+                                <p class="surname">de vries</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>81</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">oscar</p>
+                                <p class="surname">piastri</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>4</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lando</p>
+                                <p class="surname">norris</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    </ul>
+                    <ul class="owen-pred">
+                        <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>1</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">max</p>
+                                <p class="surname">verstappen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>11</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">sergio</p>
+                                <p class="surname">perez</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/red-bull.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>14</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">fernando</p>
+                                <p class="surname">alonso</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>55</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">carlos</p>
+                                <p class="surname">sainz</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>44</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lewis</p>
+                                <p class="surname">hamilton</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>63</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">george</p>
+                                <p class="surname">russell</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mercedes.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>18</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lance</p>
+                                <p class="surname">stroll</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/aston.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>16</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">charles</p>
+                                <p class="surname">leclerc</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/ferrari.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>77</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">valterri</p>
+                                <p class="surname">bottas</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>31</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">esteban</p>
+                                <p class="surname">ocon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>10</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">pierre</p>
+                                <p class="surname">gasly</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpine.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>20</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">kevin</p>
+                                <p class="surname">magnussen</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>23</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">alexander</p>
+                                <p class="surname">albon</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>22</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">yuki</p>
+                                <p class="surname">tsunoda</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>27</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">niko</p>
+                                <p class="surname">hulkenberg</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/haas.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>2</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">logan</p>
+                                <p class="surname">sargeant</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/williams.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>24</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">guanyu</p>
+                                <p class="surname">zhou</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alfa-romeo.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>21</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">nyck</p>
+                                <p class="surname">de vries</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/alpha-tauri.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>81</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">oscar</p>
+                                <p class="surname">piastri</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    <li class="driver-container">
+                        <div class="driver-details">
+                            <div class="driver-number">
+                                <p>4</p>
+                            </div>
+                            <div class="driver-name">
+                                <p class="firstname">lando</p>
+                                <p class="surname">norris</p>
+                            </div>
+                        </div>
+                        <figure class="driver-img">
+                            <img src="./images/teams/mclaren.png" alt="">
+                        </figure>
+                    </li>
+                    </ul>
                 </div>
             </section>
         </section>
