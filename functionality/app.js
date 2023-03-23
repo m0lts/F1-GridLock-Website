@@ -118,25 +118,5 @@ let countdown = setInterval(function() {
     };
 }, 1000);
 
-// SHOW DRIVERS/CONSTRUCTORS TAB
-const driversTab = document.querySelector('.drivers');
-const constructorsTab = document.querySelector('.constructors');
-const driversList = document.querySelector('.drivers-list');
-const constructorsList = document.querySelector('.constructors-list');
-
-const showConstructorsTab = () => {
-    driversList.classList.add('hide');
-    constructorsList.classList.add('show');
-}
-const showDriversTab = () => {
-    driversList.classList.remove('hide');
-    constructorsList.classList.remove('show');
-}
-
-driversTab.addEventListener('click', function() {
-    console.log('hello');
-})
 
 
-driversTab.addEventListener('click', showDriversTab);
-constructorsTab.addEventListener('click', showConstructorsTab);

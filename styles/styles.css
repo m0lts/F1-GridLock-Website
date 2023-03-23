@@ -28,6 +28,9 @@ html {
 body {
     padding-bottom: 50px;
 }
+ul, ol {
+    list-style: none;
+}
 
 
 /*COMMON STYLING*/
@@ -128,6 +131,9 @@ img {
 }
 .nav-item a:hover {
     font-weight: 700;
+}
+.menu-btn {
+    font-size: 1.1rem;
 }
 
 /*HOMEPAGE (index.html)*/
@@ -354,19 +360,25 @@ img {
 .standings-title {
     margin:10px 5%;
 }
-.player-standings-item {
+.points-list-container {
+    list-style: none;
     width:90%;
     margin:10px auto;
     border:1px solid var(--grey);
     background: var(--white);
+}
+.player-standings-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding:25px;
     cursor: pointer;
+}
+.points-list-container {
+    cursor: pointer;
     transition: all 200ms linear;
 }
-.player-standings-item:hover {
+.points-list-container:hover {
     background: var(--grey-hover);
     border-color: var(--black);
     transition: all 200ms linear;
@@ -389,6 +401,36 @@ img {
     color: var(--red);
 }
 
+/* previous player predictions to show when list item clicked */
+.previous-player-predictions {
+    height: 0px;
+    overflow: hidden;
+    transition: all 200ms linear;
+}
+.previous-player-predictions.clicked {
+    padding-bottom: 10px;
+    height:fit-content;
+    transition: all 200ms linear;
+}
+.previous-prediction-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.previous-prediction-ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:50px;
+    overflow: scroll;
+    padding:0 10px;
+}
+.previous-prediction-item h5 {
+    font-size: 1rem;
+    color:var(--blue);
+}
+
 
 
 .drivers-list {
@@ -401,7 +443,7 @@ img {
 }
 
 .constructors-list {
-    display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -421,7 +463,7 @@ img {
     display: block;
 }
 .constructors-list.show {
-    display:block;
+    display: flex;
 }
 .drivers-list.hide {
     display:none;
