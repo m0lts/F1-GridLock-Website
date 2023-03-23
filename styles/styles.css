@@ -124,7 +124,7 @@ img {
     padding:50px 0;
 }
 .nav-item a {
-    color:var(--white);
+    color: var(--red);
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 600;
@@ -303,6 +303,11 @@ img {
     align-items: center;
     justify-content: center;
     overflow: scroll;
+}
+@media screen and (max-width:768px) {
+    .names-list {
+        justify-content: flex-start;
+    }
 }
 .name {
     list-style: none;
@@ -483,6 +488,7 @@ img {
 /*POINTS SYSTEM (points-system.html)*/
 .points-system {
     padding: 10px 0;
+    color: var(--black);
 }
 .points-system h3 {
     text-align: center;
