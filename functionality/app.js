@@ -1,4 +1,5 @@
-//nav bar
+// ***********
+//NAV BAR
 const menuBtn = document.querySelector('.menu-btn');
 const navScreen = document.querySelector('.nav-screen');
 //functionality
@@ -6,17 +7,46 @@ const showNavBar = () => {
     navScreen.classList.toggle('active');
 }
 menuBtn.addEventListener('click', showNavBar);
+// **********
 
 
-// //predictions (try using queryselectorall if can?? not sure)
-// //get btns
-const aliBtn = document.querySelector('.ali');
-const edBtn = document.querySelector('.ed');
-const jackBtn = document.querySelector('.jack');
-const tobyBtn = document.querySelector('.toby');
-const tomBtn = document.querySelector('.tom');
-const owenBtn = document.querySelector('.owen');
-//get prediction boxes
+
+
+
+
+
+
+// ***********
+// TAKE PRE-PROGRAMMED OBJECTS FROM DRIVERS.JS TO FILL RELEVANT BOXES
+import { verstappenCard,
+    perezCard,
+    hamiltonCard,
+    russellCard,
+    leclercCard,
+    sainzCard,
+    alonsoCard,
+    strollCard,
+    norrisCard,
+    piastriCard,
+    oconCard,
+    gaslyCard,
+    albonCard,
+    sargeantCard,
+    bottasCard,
+    zhouCard,
+    deVriesCard,
+    tsunodaCard,
+    magnussenCard,
+    hulkenbergCard,
+    ricciardoMclarenCard,
+    gaslyAlphaTauriCard,
+    schumacherCard,
+    alonsoAlpineCard,
+    vettelCard,
+    latifiCard } from './drivers.js';
+
+
+// fill predictions
 const aliPred = document.querySelector('.ali-pred');
 const edPred = document.querySelector('.ed-pred');
 const jackPred = document.querySelector('.jack-pred');
@@ -24,13 +54,59 @@ const tobyPred = document.querySelector('.toby-pred');
 const tomPred = document.querySelector('.tom-pred');
 const owenPred = document.querySelector('.owen-pred');
 
+aliPred.innerHTML = verstappenCard + perezCard + alonsoCard + leclercCard + strollCard + hamiltonCard + sainzCard + russellCard + oconCard + albonCard;
+edPred.innerHTML = verstappenCard + perezCard + leclercCard + russellCard + hamiltonCard + sainzCard + alonsoCard + norrisCard + oconCard + piastriCard;
+jackPred.innerHTML = leclercCard + verstappenCard + perezCard + sainzCard + russellCard + hamiltonCard + norrisCard + alonsoCard + strollCard + bottasCard;
+tobyPred.innerHTML = verstappenCard + perezCard + alonsoCard + hamiltonCard + leclercCard + russellCard + sainzCard + strollCard + oconCard + norrisCard;
+tomPred.innerHTML = verstappenCard + perezCard + leclercCard + alonsoCard + hamiltonCard + russellCard + sainzCard + strollCard + oconCard + norrisCard;
+owenPred.innerHTML = verstappenCard + leclercCard + perezCard + alonsoCard + sainzCard + russellCard + hamiltonCard + strollCard + gaslyCard + oconCard;
 
+// BACKUP PREDICTIONS
+// aliPred.innerHTML = verstappenCard + leclercCard + perezCard + alonsoCard + sainzCard + hamiltonCard + strollCard + russellCard + norrisCard + gaslyCard;
+// edPred.innerHTML = verstappenCard + perezCard + leclercCard + russellCard + hamiltonCard + sainzCard + alonsoCard + norrisCard + oconCard + piastriCard;
+// jackPred.innerHTML = leclercCard + verstappenCard + perezCard + sainzCard + russellCard + hamiltonCard + norrisCard + alonsoCard + strollCard + bottasCard;
+// tobyPred.innerHTML = verstappenCard + leclercCard + perezCard + sainzCard + hamiltonCard + russellCard + oconCard + gaslyCard + alonsoCard + norrisCard;
+// tomPred.innerHTML = verstappenCard + perezCard + alonsoCard + leclercCard + sainzCard + hamiltonCard + strollCard + russellCard + norrisCard + oconCard;
+// owenPred.innerHTML = verstappenCard + leclercCard + alonsoCard + perezCard + hamiltonCard + russellCard + gaslyCard + strollCard + oconCard + norrisCard;
+
+// fill previous year result
+const prevYearResult = document.querySelector(".previous-year-result");
+prevYearResult.innerHTML = leclercCard + perezCard + russellCard + hamiltonCard + norrisCard + ricciardoMclarenCard + oconCard + bottasCard + gaslyAlphaTauriCard + albonCard + zhouCard + strollCard + schumacherCard + magnussenCard + tsunodaCard + latifiCard + alonsoAlpineCard + verstappenCard + vettelCard + sainzCard;
+
+// fill previous race result
+const prevRaceResult = document.querySelector(".previous-race-result");
+prevRaceResult.innerHTML = perezCard + verstappenCard + alonsoCard + russellCard + hamiltonCard + sainzCard + leclercCard + oconCard + gaslyCard + magnussenCard + tsunodaCard + hulkenbergCard + zhouCard + deVriesCard + piastriCard + sargeantCard + norrisCard + bottasCard + albonCard + strollCard;
+
+// fill standings boxes
+// ali prev predictions
+
+// ****************
+
+
+
+
+
+
+
+
+
+
+
+// ****************
 //SHOW PREDICTION FUNCTIONALITY
+//get btns
+const aliBtn = document.querySelector('.ali');
+const edBtn = document.querySelector('.ed');
+const jackBtn = document.querySelector('.jack');
+const tobyBtn = document.querySelector('.toby');
+const tomBtn = document.querySelector('.tom');
+const owenBtn = document.querySelector('.owen');
+// logic
 const togglePred = (btn, pred) => {
     const btns = [aliBtn, edBtn, jackBtn, tobyBtn, tomBtn, owenBtn];
     btns.forEach(b => {
         if (b == btn) {
-            btn.classList.add('active');
+            b.classList.add('active');
         } else {
             b.classList.remove('active');
         }
@@ -38,7 +114,7 @@ const togglePred = (btn, pred) => {
     const preds = [aliPred, edPred, jackPred, tobyPred, tomPred, owenPred];
     preds.forEach(p => {
         if (p == pred) {
-            pred.classList.add('show');
+            p.classList.add('show');
         } else {
             p.classList.remove('show');
         }
@@ -50,8 +126,19 @@ jackBtn.addEventListener('click', () => togglePred(jackBtn, jackPred));
 tobyBtn.addEventListener('click', () => togglePred(tobyBtn, tobyPred));
 tomBtn.addEventListener('click', () => togglePred(tomBtn, tomPred))
 owenBtn.addEventListener('click', () => togglePred(owenBtn, owenPred));
+// ****************
 
 
+
+
+
+
+
+
+
+
+
+// ***************
 //ARROW ROTATION AND SHOW BUTTON SELECTED
 const h3Titles = document.querySelectorAll('.stats-h3');
 
@@ -65,7 +152,6 @@ h3Titles.forEach(title => {
         nextSibling.classList.toggle('show');
     })
 })
-
 //SHOW PREDICTIONS / STATS BOX
 const statsTab = document.querySelector('.stats');
 const predictionsTab = document.querySelector('.predictions');
@@ -89,7 +175,18 @@ const showPredictionsTab = () => {
 
 statsTab.addEventListener('click', showStatsTab);
 predictionsTab.addEventListener('click', showPredictionsTab);
+// ********************
 
+
+
+
+
+
+
+
+
+
+// ******************
 //TIMER COUNTDOWN
 const countdownClock = document.querySelector('.timer');
 
@@ -117,6 +214,7 @@ let countdown = setInterval(function() {
         countdownClock.style.color = 'red';
     };
 }, 1000);
+// ***********************
 
 
 
