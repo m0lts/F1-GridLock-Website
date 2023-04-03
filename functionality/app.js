@@ -54,12 +54,12 @@ const tobyPred = document.querySelector('.toby-pred');
 const tomPred = document.querySelector('.tom-pred');
 const owenPred = document.querySelector('.owen-pred');
 
-aliPred.innerHTML = verstappenCard + perezCard + alonsoCard + leclercCard + strollCard + hamiltonCard + sainzCard + russellCard + oconCard + albonCard;
-edPred.innerHTML = verstappenCard + perezCard + leclercCard + russellCard + hamiltonCard + sainzCard + alonsoCard + norrisCard + oconCard + piastriCard;
-jackPred.innerHTML = leclercCard + verstappenCard + perezCard + sainzCard + russellCard + hamiltonCard + norrisCard + alonsoCard + strollCard + bottasCard;
-tobyPred.innerHTML = verstappenCard + perezCard + alonsoCard + hamiltonCard + leclercCard + russellCard + sainzCard + strollCard + oconCard + norrisCard;
-tomPred.innerHTML = verstappenCard + perezCard + leclercCard + alonsoCard + hamiltonCard + russellCard + sainzCard + strollCard + oconCard + norrisCard;
-owenPred.innerHTML = verstappenCard + leclercCard + perezCard + alonsoCard + sainzCard + russellCard + hamiltonCard + strollCard + gaslyCard + oconCard;
+aliPred.innerHTML = '' ;
+edPred.innerHTML =  '' ;
+jackPred.innerHTML = '' ;
+tobyPred.innerHTML = '' ;
+tomPred.innerHTML = '' ;
+owenPred.innerHTML = '' ;
 
 // BACKUP PREDICTIONS
 // aliPred.innerHTML = verstappenCard + leclercCard + perezCard + alonsoCard + sainzCard + hamiltonCard + strollCard + russellCard + norrisCard + gaslyCard;
@@ -71,11 +71,11 @@ owenPred.innerHTML = verstappenCard + leclercCard + perezCard + alonsoCard + sai
 
 // fill previous year result
 const prevYearResult = document.querySelector(".previous-year-result");
-prevYearResult.innerHTML = leclercCard + perezCard + russellCard + hamiltonCard + norrisCard + ricciardoMclarenCard + oconCard + bottasCard + gaslyAlphaTauriCard + albonCard + zhouCard + strollCard + schumacherCard + magnussenCard + tsunodaCard + latifiCard + alonsoAlpineCard + verstappenCard + vettelCard + sainzCard;
+prevYearResult.innerHTML = verstappenCard + perezCard + russellCard + hamiltonCard + gaslyAlphaTauriCard + vettelCard + alonsoAlpineCard + ricciardoMclarenCard + norrisCard + oconCard + bottasCard + albonCard + tsunodaCard + schumacherCard + latifiCard + strollCard + magnussenCard + zhouCard + leclercCard + sainzCard;
 
 // fill previous race result
 const prevRaceResult = document.querySelector(".previous-race-result");
-prevRaceResult.innerHTML = perezCard + verstappenCard + alonsoCard + russellCard + hamiltonCard + sainzCard + leclercCard + oconCard + gaslyCard + magnussenCard + tsunodaCard + hulkenbergCard + zhouCard + deVriesCard + piastriCard + sargeantCard + norrisCard + bottasCard + albonCard + strollCard;
+prevRaceResult.innerHTML = verstappenCard + hamiltonCard + alonsoCard + strollCard + perezCard + norrisCard + hulkenbergCard + piastriCard + zhouCard + tsunodaCard + bottasCard + sainzCard + gaslyCard + oconCard + deVriesCard + sargeantCard + magnussenCard + russellCard + albonCard + leclercCard;
 
 // fill standings boxes
 // ali prev predictions
@@ -190,7 +190,7 @@ predictionsTab.addEventListener('click', showPredictionsTab);
 //TIMER COUNTDOWN
 const countdownClock = document.querySelector('.timer');
 
-let countdownDate = new Date("Apr 1, 2023 06:00:00");
+let countdownDate = new Date("Apr 28, 2023 14:00:00");
 
 let countdown = setInterval(function() {
     let now = new Date().getTime();

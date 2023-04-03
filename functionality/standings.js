@@ -65,35 +65,47 @@ import { verstappenCard,
     // ali prev predictions
 const aliBahrainPred = document.querySelector(".ali-bahrain-pred");
 const aliSaudiPred = document.querySelector(".ali-saudi-pred");
+const aliAusPred = document.querySelector(".ali-aus-pred");
 aliBahrainPred.innerHTML = verstappenCard + perezCard + alonsoCard + leclercCard + sainzCard + hamiltonCard + russellCard + norrisCard + strollCard + gaslyCard;
 aliSaudiPred.innerHTML = verstappenCard + perezCard + alonsoCard + sainzCard + strollCard + russellCard + hamiltonCard + oconCard + gaslyCard + albonCard;
+aliAusPred.innerHTML = verstappenCard + perezCard + alonsoCard + leclercCard + strollCard + hamiltonCard + sainzCard + russellCard + oconCard + albonCard;
 
 // jack prev predictions
 const jackBahrainPred = document.querySelector(".jack-bahrain-pred");
 const jackSaudiPred = document.querySelector(".jack-saudi-pred");
+const jackAusPred = document.querySelector(".jack-aus-pred");
 jackBahrainPred.innerHTML = verstappenCard + leclercCard + russellCard + perezCard + sainzCard + norrisCard + hamiltonCard + strollCard + gaslyCard + oconCard;
 jackSaudiPred.innerHTML = leclercCard + verstappenCard + perezCard + russellCard + hamiltonCard + alonsoCard + sainzCard + norrisCard + strollCard + gaslyCard;
+jackAusPred.innerHTML = leclercCard + verstappenCard + perezCard + sainzCard + russellCard + hamiltonCard + norrisCard + alonsoCard + strollCard + bottasCard;
 
 // tom prev predictions
 const tomBahrainPred = document.querySelector(".tom-bahrain-pred");
 const tomSaudiPred = document.querySelector(".tom-saudi-pred");
+const tomAusPred = document.querySelector(".tom-aus-pred");
 tomBahrainPred.innerHTML = verstappenCard + alonsoCard + perezCard + leclercCard + sainzCard + hamiltonCard + russellCard + norrisCard + oconCard + gaslyCard;
 tomSaudiPred.innerHTML = verstappenCard + alonsoCard + perezCard + strollCard + hamiltonCard + leclercCard + russellCard + sainzCard + gaslyCard + albonCard;
+tomAusPred.innerHTML = verstappenCard + perezCard + leclercCard + alonsoCard + hamiltonCard + russellCard + sainzCard + strollCard + oconCard + norrisCard;
 
 // owen prev predictions
 const owenBahrainPred = document.querySelector(".owen-bahrain-pred");
 const owenSaudiPred = document.querySelector(".owen-saudi-pred");
+const owenAusPred = document.querySelector(".owen-aus-pred");
 owenBahrainPred.innerHTML = verstappenCard + leclercCard + alonsoCard + perezCard + russellCard + hamiltonCard + gaslyCard + strollCard + oconCard + norrisCard;
 owenSaudiPred.innerHTML = verstappenCard + alonsoCard + perezCard + leclercCard + hamiltonCard + russellCard + sainzCard + strollCard + gaslyCard + norrisCard;
+owenAusPred.innerHTML = verstappenCard + leclercCard + perezCard + alonsoCard + sainzCard + russellCard + hamiltonCard + strollCard + gaslyCard + oconCard;
 
 // ed prev predictions
 const edBahrainPred = document.querySelector(".ed-bahrain-pred");
 const edSaudiPred = document.querySelector(".ed-saudi-pred");
+const edAusPred = document.querySelector(".ed-aus-pred");
 edBahrainPred.innerHTML = verstappenCard + perezCard + leclercCard + russellCard + hamiltonCard + sainzCard + alonsoCard + norrisCard + oconCard + piastriCard;
 edSaudiPred.innerHTML = verstappenCard + leclercCard + perezCard + sainzCard + hamiltonCard + alonsoCard + russellCard + gaslyCard + bottasCard + albonCard;
+edAusPred.innerHTML = verstappenCard + perezCard + leclercCard + russellCard + hamiltonCard + sainzCard + alonsoCard + norrisCard + oconCard + piastriCard;
 
 // toby prev predictions
 const tobyBahrainPred = document.querySelector(".toby-bahrain-pred");
 const tobySaudiPred = document.querySelector(".toby-saudi-pred");
+const tobyAusPred = document.querySelector(".toby-aus-pred");
 tobyBahrainPred.innerHTML = verstappenCard + leclercCard + perezCard + russellCard + hamiltonCard + sainzCard + alonsoCard + oconCard + strollCard + magnussenCard;
 tobySaudiPred.innerHTML = verstappenCard + leclercCard + perezCard + sainzCard + hamiltonCard + russellCard + oconCard + gaslyCard + alonsoCard + norrisCard;
+tobyAusPred.innerHTML = verstappenCard + perezCard + alonsoCard + hamiltonCard + leclercCard + russellCard + sainzCard + strollCard + oconCard + norrisCard;
