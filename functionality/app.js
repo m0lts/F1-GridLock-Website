@@ -217,4 +217,24 @@ let countdown = setInterval(function() {
 // ***********************
 
 
+// RETRIEVE ERGAST DEVELOPER API
+let second;
+let third;
+
+fetch('http://ergast.com/api/f1/current/last/results.json')
+.then(res => res.json())
+.then(data => {
+    first = data.MRData.RaceTable.Races[0].Results[0];
+    second = data.MRData.RaceTable.Races[0].Results[1];
+    third = data.MRData.RaceTable.Races[0].Results[2];
+})
+.catch(err => console.log('Error retrieving data'))
+
+console.log(first);
+
+
+
+
+
+
 
