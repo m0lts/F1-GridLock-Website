@@ -74,8 +74,8 @@ const prevYearResult = document.querySelector(".previous-year-result");
 prevYearResult.innerHTML = verstappenCard + perezCard + russellCard + hamiltonCard + gaslyAlphaTauriCard + vettelCard + alonsoAlpineCard + ricciardoMclarenCard + norrisCard + oconCard + bottasCard + albonCard + tsunodaCard + schumacherCard + latifiCard + strollCard + magnussenCard + zhouCard + leclercCard + sainzCard;
 
 // fill previous race result
-const prevRaceResult = document.querySelector(".previous-race-result");
-prevRaceResult.innerHTML = verstappenCard + hamiltonCard + alonsoCard + strollCard + perezCard + norrisCard + hulkenbergCard + piastriCard + zhouCard + tsunodaCard + bottasCard + sainzCard + gaslyCard + oconCard + deVriesCard + sargeantCard + magnussenCard + russellCard + albonCard + leclercCard;
+// const prevRaceResult = document.querySelector(".previous-race-result");
+// prevRaceResult.innerHTML = verstappenCard + hamiltonCard + alonsoCard + strollCard + perezCard + norrisCard + hulkenbergCard + piastriCard + zhouCard + tsunodaCard + bottasCard + sainzCard + gaslyCard + oconCard + deVriesCard + sargeantCard + magnussenCard + russellCard + albonCard + leclercCard;
 
 // fill standings boxes
 // ali prev predictions
@@ -218,19 +218,12 @@ let countdown = setInterval(function() {
 
 
 // RETRIEVE ERGAST DEVELOPER API
-let second;
-let third;
 
-fetch('http://ergast.com/api/f1/current/last/results.json')
-.then(res => res.json())
-.then(data => {
-    first = data.MRData.RaceTable.Races[0].Results[0];
-    second = data.MRData.RaceTable.Races[0].Results[1];
-    third = data.MRData.RaceTable.Races[0].Results[2];
-})
-.catch(err => console.log('Error retrieving data'))
+import { fetchLastResult } from "./ergast-retrieval.js";
 
-console.log(first);
+const lastRaceResultLink = 'http://ergast.com/api/f1/current/last/results.json';
+
+fetchLastResult(lastRaceResultLink);
 
 
 
