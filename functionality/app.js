@@ -70,8 +70,8 @@ owenPred.innerHTML = '' ;
 // owenPred.innerHTML = verstappenCard + leclercCard + alonsoCard + perezCard + hamiltonCard + russellCard + gaslyCard + strollCard + oconCard + norrisCard;
 
 // fill previous year result
-const prevYearResult = document.querySelector(".previous-year-result");
-prevYearResult.innerHTML = verstappenCard + perezCard + russellCard + hamiltonCard + gaslyAlphaTauriCard + vettelCard + alonsoAlpineCard + ricciardoMclarenCard + norrisCard + oconCard + bottasCard + albonCard + tsunodaCard + schumacherCard + latifiCard + strollCard + magnussenCard + zhouCard + leclercCard + sainzCard;
+// const prevYearResult = document.querySelector(".previous-year-result");
+// prevYearResult.innerHTML = verstappenCard + perezCard + russellCard + hamiltonCard + gaslyAlphaTauriCard + vettelCard + alonsoAlpineCard + ricciardoMclarenCard + norrisCard + oconCard + bottasCard + albonCard + tsunodaCard + schumacherCard + latifiCard + strollCard + magnussenCard + zhouCard + leclercCard + sainzCard;
 
 // fill previous race result
 // const prevRaceResult = document.querySelector(".previous-race-result");
@@ -222,8 +222,18 @@ let countdown = setInterval(function() {
 import { fetchLastResult } from "./ergast-retrieval.js";
 
 const lastRaceResultLink = 'http://ergast.com/api/f1/current/last/results.json';
+fetchLastResult(lastRaceResultLink, ".previous-race-result");
 
-fetchLastResult(lastRaceResultLink);
+const lastYearResultLink = 'http://ergast.com/api/f1/2022/8/results.json'
+fetchLastResult(lastYearResultLink, ".previous-year-result");
+
+
+// retrieve next race details
+
+import { fetchNextRace } from "./ergast-retrieval.js";
+
+const nextRaceLink = 'http://ergast.com/api/f1/current/next.json';
+fetchNextRace(nextRaceLink);
 
 
 
