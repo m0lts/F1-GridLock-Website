@@ -98,6 +98,32 @@ const circuitNames = {
   "Abu Dhabi Grand Prix": "Abu Dhabi"
 };
 
+const circuitTracks = {
+  "Bahrain Grand Prix": "./images/tracks/bahrain_track.png",
+  "Saudi Arabian Grand Prix": "./images/tracks/saudi_track.png",
+  "Australian Grand Prix": "./images/tracks/australia_track.png",
+  "Azerbaijan Grand Prix": "./images/tracks/baku_track.png",
+  "Miami Grand Prix": "./images/tracks/miami_track.png",
+  "Emilia Romagna Grand Prix": "./images/tracks/imola_track.png",
+  "Monaco Grand Prix": "./images/tracks/monaco_track.png",
+  "Spanish Grand Prix": "./images/tracks/spain_track.png",
+  "Canadian Grand Prix": "./images/tracks/canada_track.png",
+  "Austrian Grand Prix": "./images/tracks/austria_track.png",
+  "British Grand Prix": "./images/tracks/uk_track.png",
+  "Hungarian Grand Prix": "./images/tracks/hungary_track.png",
+  "Belgian Grand Prix": "./images/tracks/belgium_track.png",
+  "Italian Grand Prix": "./images/tracks/monza_track.png",
+  "Dutch Grand Prix": "./images/tracks/dutch_track.png",
+  "Singapore Grand Prix": "./images/tracks/singapore_track.png",
+  "Japanese Grand Prix": "./images/tracks/japan_track.png",
+  "Qatar Grand Prix": "./images/tracks/qatar_track.png",
+  "Mexico City Grand Prix": "./images/tracks/mexico_track.png",
+  "São Paulo Grand Prix": "./images/tracks/brazil_track.png",
+  "United States Grand Prix": "./images/tracks/usa_track.png",
+  "Las Vegas Grand Prix": "./images/tracks/lasvegas_track.png",
+  "Abu Dhabi Grand Prix": "./images/tracks/abudhabi_track.png"
+};
+
 export const fetchNextRace = async (link) => {
   try {
     const response = await fetch(link);
@@ -113,12 +139,15 @@ export const fetchNextRace = async (link) => {
     const countryFlag = circuitFlags[circuitCountry];
     const flagFill = document.querySelector('.flag-fill');
     flagFill.src = `${countryFlag}`;
+    flagFill.alt = raceName;
     // fill quali time
     const qualiTime = data.MRData.RaceTable.Races[0].Qualifying.time;
-
+    console.log(qualiTime);
     // fill circuit map
-
-    
+    const circuitTrack = circuitTracks[raceName];
+    const circuitFill = document.querySelector('.circuit-fill');
+    circuitFill.src = `${circuitTrack}`;
+    circuitFill.alt = raceName;
   } catch (error) {
     console.error(error);
   }

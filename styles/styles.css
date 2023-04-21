@@ -173,7 +173,7 @@ img {
 }
 .flag-cont {
     max-width:200px;
-    max-height:100px;
+    max-height:auto;
     overflow: hidden;
 }
 
