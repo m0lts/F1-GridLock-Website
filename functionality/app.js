@@ -186,36 +186,6 @@ predictionsTab.addEventListener('click', showPredictionsTab);
 
 
 
-// ******************
-//TIMER COUNTDOWN
-const countdownClock = document.querySelector('.timer');
-
-let countdownDate = new Date("Apr 28, 2023 14:00:00");
-
-let countdown = setInterval(function() {
-    let now = new Date().getTime();
-    let distance = countdownDate - now;
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    const addZero = (num) => {
-        if (num < 10) {
-            num = "0" + num;
-            return num;
-        } else {
-            return num;
-        }
-    }
-    countdownClock.innerHTML = addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds);
-    if (distance < 0) {
-        clearInterval(countdown);
-        countdownClock.innerHTML = "LIVE";
-        countdownClock.style.color = 'red';
-    };
-}, 1000);
-// ***********************
-
 
 // RETRIEVE ERGAST DEVELOPER API
 
