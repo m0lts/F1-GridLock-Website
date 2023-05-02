@@ -54,12 +54,24 @@ const tobyPred = document.querySelector('.toby-pred');
 const tomPred = document.querySelector('.tom-pred');
 const owenPred = document.querySelector('.owen-pred');
 
-aliPred.innerHTML = '' ;
-edPred.innerHTML =  '' ;
-jackPred.innerHTML = '' ;
-tobyPred.innerHTML = '' ;
-tomPred.innerHTML = '' ;
-owenPred.innerHTML = '' ;
+if(aliPred) {
+    aliPred.innerHTML = '' ;
+};
+if(edPred) {
+    edPred.innerHTML =  '' ;
+};
+if(jackPred) {
+    jackPred.innerHTML = '' ;
+};
+if(tobyPred) {
+    tobyPred.innerHTML = '' ;
+};
+if(tomPred) {
+    tomPred.innerHTML = '' ;
+};
+if(owenPred) {
+    owenPred.innerHTML = '' ;
+}
 
 // BACKUP PREDICTIONS
 // aliPred.innerHTML = verstappenCard + leclercCard + perezCard + alonsoCard + sainzCard + hamiltonCard + strollCard + russellCard + norrisCard + gaslyCard;
@@ -120,12 +132,24 @@ const togglePred = (btn, pred) => {
         }
     })
     };
-aliBtn.addEventListener('click', () => togglePred(aliBtn, aliPred));
-edBtn.addEventListener('click', () => togglePred(edBtn, edPred));
-jackBtn.addEventListener('click', () => togglePred(jackBtn, jackPred));
-tobyBtn.addEventListener('click', () => togglePred(tobyBtn, tobyPred));
-tomBtn.addEventListener('click', () => togglePred(tomBtn, tomPred))
-owenBtn.addEventListener('click', () => togglePred(owenBtn, owenPred));
+if(aliBtn) {
+    aliBtn.addEventListener('click', () => togglePred(aliBtn, aliPred));
+};
+if(edBtn) {
+    edBtn.addEventListener('click', () => togglePred(edBtn, edPred));
+};
+if(jackBtn) {
+    jackBtn.addEventListener('click', () => togglePred(jackBtn, jackPred));
+};
+if(tobyBtn) {
+    tobyBtn.addEventListener('click', () => togglePred(tobyBtn, tobyPred));
+};
+if(tomBtn) {
+    tomBtn.addEventListener('click', () => togglePred(tomBtn, tomPred))
+};
+if(owenBtn) {
+    owenBtn.addEventListener('click', () => togglePred(owenBtn, owenPred));
+};
 // ****************
 
 
@@ -173,8 +197,13 @@ const showPredictionsTab = () => {
     predictionsTab.classList.add('show');
 }
 
-statsTab.addEventListener('click', showStatsTab);
-predictionsTab.addEventListener('click', showPredictionsTab);
+if(statsTab) {
+    statsTab.addEventListener('click', showStatsTab);
+};
+if(predictionsBox) {
+    predictionsTab.addEventListener('click', showPredictionsTab);
+};
+
 // ********************
 
 
@@ -204,6 +233,202 @@ import { fetchNextRace } from "./ergast-retrieval.js";
 
 const nextRaceLink = 'http://ergast.com/api/f1/current/next.json';
 fetchNextRace(nextRaceLink);
+
+
+
+
+
+// PREDICTIONS ENTRY LOGIC
+// retrieve form from doc
+const aliMiamiPred = document.querySelector(".ali-miami-pred");
+
+aliMiamiPred.addEventListener("submit", event => {
+
+    const formData = new FormData(aliMiamiPred);
+    const data = Object.fromEntries(formData);
+    const dataJson = JSON.stringify(data);
+
+    localStorage.setItem("Ali Miami", dataJson);
+
+    console.log(dataJson);
+});
+
+const getData = (dataName) => {
+    const dataJson = localStorage.getItem(dataName);
+    const data = JSON.parse(dataJson);
+    const p1 = data.p1;
+    const p2 = data.p2;
+    const p3 = data.p3;
+    const p4 = data.p4;
+    const p5 = data.p5;
+    const p6 = data.p6;
+    const p7 = data.p7;
+    const p8 = data.p8;
+    const p9 = data.p9;
+    const p10 = data.p10;
+
+    const test = document.querySelector(".test");
+
+    const drivers = {
+        verstappen: {
+            number: 1,
+            firstName: 'max',
+            secondName: 'verstappen',
+            team: './images/teams/red-bull.png'
+        },
+        perez: {
+            number: 11,
+            firstName: 'sergio',
+            secondName: 'perez',
+            team: './images/teams/red-bull.png'
+        },
+        hamilton: {
+            number: 44,
+            firstName: 'lewis',
+            secondName: 'hamilton',
+            team: './images/teams/mercedes.png'
+        },
+        russell: {
+            number: 63,
+            firstName: 'george',
+            secondName: 'russell',
+            team: './images/teams/mercedes.png'
+        },
+        leclerc: {
+            number: 16,
+            firstName: 'charles',
+            secondName: 'leclerc',
+            team: './images/teams/ferrari.png'
+        },
+        sainz: {
+            number: 55,
+            firstName: 'carlos',
+            secondName: 'sainz',
+            team: './images/teams/ferrari.png'
+        },
+        alonso: {
+            number: 14,
+            firstName: 'fernando',
+            secondName: 'alonso',
+            team: './images/teams/aston.png'
+        },
+        stroll: {
+            number: 18,
+            firstName: 'lance',
+            secondName: 'stroll',
+            team: './images/teams/aston.png'
+        },
+        norris: {
+            number: 4,
+            firstName: 'lando',
+            secondName: 'norris',
+            team: './images/teams/mclaren.png'
+        },
+        piastri: {
+            number: 81,
+            firstName: 'oscar',
+            secondName: 'piastri',
+            team: './images/teams/mclaren.png'
+        },
+        gasly: {
+            number: 10,
+            firstName: 'pierre',
+            secondName: 'gasly',
+            team: './images/teams/alpine.png'
+        },
+        ocon: {
+            number: 31,
+            firstName: 'esteban',
+            secondName: 'ocon',
+            team: './images/teams/alpine.png'
+        },
+        bottas: {
+            number: 77,
+            firstName: 'valterri',
+            secondName: 'bottas',
+            team: './images/teams/alfa-romeo.png'
+        },
+        zhou: {
+            number: 24,
+            firstName: 'guanyu',
+            secondName: 'zhou',
+            team: './images/teams/alfa-romeo.png'
+        },
+        devries: {
+            number: 21,
+            firstName: 'nyck',
+            secondName: 'de vries',
+            team: './images/teams/alpha-tauri.png'
+        },
+        tsunoda: {
+            number: 22,
+            firstName: 'yuki',
+            secondName: 'tsunoda',
+            team: './images/teams/alpha-tauri.png'
+        },
+        magnussen: {
+            number: 20,
+            firstName: 'kevin',
+            secondName: 'magnussen',
+            team: './images/teams/haas.png'
+        },
+        hulkenberg: {
+            number: 27,
+            firstName: 'niko',
+            secondName: 'hulkenberg',
+            team: './images/teams/haas.png'
+        },
+        albon: {
+            number: 23,
+            firstName: 'alexander',
+            secondName: 'albon',
+            team: './images/teams/williams.png'
+        },
+        sargeant: {
+            number: 2,
+            firstName: 'logan',
+            secondName: 'sargeant',
+            team: './images/teams/williams.png'
+        }
+    };
+    
+    const createDriverCard = (driver) => {
+        return `<li class="driver-container">
+                  <div class="driver-details">
+                    <div class="driver-number">
+                      <p>${driver.number}</p>
+                    </div>
+                    <div class="driver-name">
+                      <p class="firstname">${driver.firstName}</p>
+                      <p class="surname">${driver.secondName}</p>
+                    </div>
+                  </div>
+                  <figure class="driver-img">
+                    <img src="${driver.team}" alt="">
+                  </figure>
+                </li>`;
+      };
+
+    const p1sub = createDriverCard(drivers[p1]);
+    const p2sub = createDriverCard(drivers[p2]);
+    const p3sub = createDriverCard(drivers[p3]);
+    const p4sub = createDriverCard(drivers[p4]);
+    const p5sub = createDriverCard(drivers[p5]);
+    const p6sub = createDriverCard(drivers[p6]);
+    const p7sub = createDriverCard(drivers[p7]);
+    const p8sub = createDriverCard(drivers[p8]);
+    const p9sub = createDriverCard(drivers[p9]);
+    const p10sub = createDriverCard(drivers[p10]);
+
+
+    test.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+
+
+
+
+}
+
+getData("Ali Miami");
 
 
 

@@ -41,7 +41,9 @@ export const fetchLastResult = async (link, fill) => {
       `;
     }).join("");
     const areaToFill = document.querySelector(fill);
-    areaToFill.innerHTML = mappedArray;
+    if(areaToFill) {
+      areaToFill.innerHTML = mappedArray;
+    };
   } catch (error) {
     console.error(error);
   }
