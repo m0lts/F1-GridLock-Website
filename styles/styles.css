@@ -338,7 +338,38 @@ img {
     font-weight: 600;
 }
 
-
+/* predictions form styling */
+.prediction-title {
+    margin-left: 25px;
+}
+.prediction-forms {
+    display:flex;
+    flex-direction: column;
+    width:150px;
+    margin:0 auto;
+    text-align: center;
+    padding:10px;
+}
+.prediction-forms select {
+    font-family: 'Titillium Web', sans-serif;
+}
+.prediction-forms .submit-btn {
+    width: 100px;
+    margin: 15px auto;
+    padding:5px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--black);
+    color: var(--light-grey);
+    text-transform: uppercase;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.prediction-forms .submit-btn:active {
+    background-color: var(--green);
+    border: none;
+}
 
 /* STANDINGS PAGE */
 .standings-hero {
