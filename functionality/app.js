@@ -204,10 +204,10 @@ if(predictionsBox) {
 
 import { fetchLastResult } from "./ergast-retrieval.js";
 
-const lastRaceResultLink = 'http://ergast.com/api/f1/current/last/results.json';
+const lastRaceResultLink = 'https://ergast.com/api/f1/current/last/results.json';
 fetchLastResult(lastRaceResultLink, ".previous-race-result");
 
-const lastYearResultLink = 'http://ergast.com/api/f1/2022/8/results.json'
+const lastYearResultLink = 'https://ergast.com/api/f1/2022/8/results.json'
 fetchLastResult(lastYearResultLink, ".previous-year-result");
 
 
@@ -215,7 +215,7 @@ fetchLastResult(lastYearResultLink, ".previous-year-result");
 
 import { fetchNextRace } from "./ergast-retrieval.js";
 
-const nextRaceLink = 'http://ergast.com/api/f1/current/next.json';
+const nextRaceLink = 'https://ergast.com/api/f1/current/next.json';
 fetchNextRace(nextRaceLink);
 
 
