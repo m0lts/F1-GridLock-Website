@@ -252,8 +252,8 @@ const aliData = (dataName) => {
     const p8 = data.p8;
     const p9 = data.p9;
     const p10 = data.p10;
-
-    const predBox = document.querySelector(".ali-pred");
+    
+    const aliPredBox = document.querySelector(".ali-pred");
 
     const drivers = {
         verstappen: {
@@ -377,7 +377,7 @@ const aliData = (dataName) => {
             team: './images/teams/williams.png'
         }
     };
-    
+
     const createDriverCard = (driver) => {
         return `<li class="driver-container">
                   <div class="driver-details">
@@ -406,7 +406,7 @@ const aliData = (dataName) => {
     const p9sub = createDriverCard(drivers[p9]);
     const p10sub = createDriverCard(drivers[p10]);
 
-    predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+    aliPredBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
 }
 
 aliData("Ali Miami");
@@ -440,7 +440,7 @@ const edData = (dataName) => {
     const p9 = data.p9;
     const p10 = data.p10;
 
-    const predBox = document.querySelector(".ed-pred");
+    const edPredBox = document.querySelector(".ed-pred");
 
     const drivers = {
         verstappen: {
@@ -593,7 +593,7 @@ const edData = (dataName) => {
     const p9sub = createDriverCard(drivers[p9]);
     const p10sub = createDriverCard(drivers[p10]);
 
-    predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+    edPredBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
 }
 
 edData("Ed Miami");
