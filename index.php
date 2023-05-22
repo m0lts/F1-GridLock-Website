@@ -116,7 +116,7 @@
                                 $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
-                                $userValue = "Tom";
+                                $userValue = "Ali";
                                 $raceValue = "monaco";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
@@ -133,7 +133,7 @@
                                     <li class="driver-container">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p">0</p>
                                         </div>
                                         <div class="driver-name">
                                         <p class="firstname">firstname</p>

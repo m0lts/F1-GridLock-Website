@@ -222,6 +222,24 @@ fetchNextRace(nextRaceLink);
 
 
 
+
+
+// AUTO FILL DRIVER DETAILS FROM PHP DATABASE RETRIEVAL
+
+const driverNumberElement = document.getElementsByClassName('driver-number-p');
+const driverSurnameRetrieval = document.getElementsByClassName('surname');
+
+// driver surname inner HTML
+let driverSurname = driverSurnameRetrieval.textContent;
+
+if (driverSurname === verstappen) {
+    driverNumberElement.textContent = "1";
+}
+
+
+
+
+
 // PREDICTIONS ENTRY LOGIC
 // retrieve form from doc
 // ali miami
