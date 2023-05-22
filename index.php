@@ -133,141 +133,141 @@
                                     <li class="driver-container <?= $row ['p1'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p class="driver-number-p">0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname">surname</p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
                                         <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p2'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p2']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p3'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p3']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p4'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p4']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p5'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p5']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p6'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p6']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p7'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p7']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p8'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p8']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p9'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p9']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p10'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
-                                        <p>0</p>
+                                        <p class="driver-number-p"></p>
                                         </div>
                                         <div class="driver-name">
-                                        <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p10']?></p>
+                                        <p class="firstname"></p>
+                                        <p class="surname"></p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
                                     
