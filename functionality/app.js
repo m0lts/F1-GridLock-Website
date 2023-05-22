@@ -226,13 +226,13 @@ fetchNextRace(nextRaceLink);
 
 // AUTO FILL DRIVER DETAILS FROM PHP DATABASE RETRIEVAL
 
-const driverNumberElement = document.getElementsByClassName('driver-number-p');
-const driverSurnameRetrieval = document.getElementsByClassName('surname');
+const driverNumberElement = document.querySelectorAll('driver-number-p');
+const driverSurnameRetrieval = document.querySelectorAll('surname');
 
 // driver surname inner HTML
-let driverSurname = driverSurnameRetrieval.textContent;
-
-console.log(driverSurname);
+driverSurnameRetrieval.forEach(surname => {
+    console.log(surname.textContent);
+});
 
 
 
