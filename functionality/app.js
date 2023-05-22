@@ -230,9 +230,13 @@ const driverNumberElement = document.querySelectorAll('driver-number-p');
 const driverSurnameRetrieval = document.querySelectorAll('surname');
 
 // driver surname inner HTML
-driverSurnameRetrieval.forEach(surname => {
-    console.log(surname.textContent);
+window.addEventListener('DOMContentLoaded', function() {
+    driverSurnameRetrieval.forEach(surname => {
+        console.log(surname.textContent);
+    });
 });
+
+
 
 
 
