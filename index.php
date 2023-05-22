@@ -97,6 +97,7 @@
                     </ul>
                     <div class="ali-pred">
                         <h5 class="prediction-title">Ali's Prediction</h5>
+                        <ul>
                         <?php
                             // Database details
                             $host = "localhost";
@@ -112,12 +113,12 @@
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE user = :user_value AND race = :race_value");
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Tom";
                                 $raceValue = "monaco";
-                                $stmt->bindParam(':search_value', $searchValue);
+                                $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
                                 $stmt->execute();
@@ -126,20 +127,32 @@
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
                                 // Output the fetched data as an HTML unordered list
-                                echo "<ul>";
-                                foreach ($rows as $row) {
-                                    echo "<li>" . $row['p1'] . ":" . $row['p2'] . ":" . $row['p3'] . ":" . $row['p4'] . "</li>";
-                                }
-
                                 
-
-
-                                echo "</ul>";
+                                foreach ($rows as $row):
+                                    ?>
+                                    <li class="driver-container">
+                                    <div class="driver-details">
+                                        <div class="driver-number">
+                                        <p>0</p>
+                                        </div>
+                                        <div class="driver-name">
+                                        <p class="firstname">firstname</p>
+                                        <p class="surname"><?= $row['p1']?></p>
+                                        </div>
+                                    </div>
+                                    <figure class="driver-img">
+                                        <img src="" alt="">
+                                    </figure>
+                                    </li>
+                                    
+                                <?php
+                                endforeach;
                             } catch (PDOException $e) {
                                 echo "Query failed: " . $e->getMessage();
                             }
 
                         ?>
+                        </ul>
                     </div>
                     <div class="ed-pred">
                         <h5 class="prediction-title">Ed's Prediction</h5>
