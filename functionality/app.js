@@ -232,7 +232,7 @@ const driverSurnameRetrieval = document.getElementsByClassName('surname');
 // driver surname inner HTML
 let driverSurname = driverSurnameRetrieval.textContent;
 
-if (driverSurname === verstappen) {
+if (driverSurname === ocon) {
     driverNumberElement.textContent = "1";
 }
 
