@@ -232,9 +232,8 @@ const driverSurnameRetrieval = document.getElementsByClassName('surname');
 // driver surname inner HTML
 let driverSurname = driverSurnameRetrieval.textContent;
 
-if (driverSurname === ocon) {
-    driverNumberElement.textContent = "1";
-}
+console.log(driverSurname);
+
 
 
 
