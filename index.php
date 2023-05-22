@@ -112,7 +112,7 @@
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM your_table_name");
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions");
                                 $stmt->execute();
                             
                                 // Fetch all rows as an associative array
