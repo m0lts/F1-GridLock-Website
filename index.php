@@ -112,7 +112,7 @@
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT p1 FROM monaco_predictions WHERE user = :search_value");
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE user = :search_value");
 
                                 //Bind the search value to the prepared statement
                                 $searchValue = "Tom";
