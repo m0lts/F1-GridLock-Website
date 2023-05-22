@@ -25,7 +25,7 @@
         <!--hidden nav-screen. Background image to be yas marina circuit-->
         <nav class="nav-screen">
             <ul class="nav-list">
-                <li class="nav-item"><a href="#">Race</a></li>
+                <li class="nav-item"><a href="./index.html">Race</a></li>
                 <li class="nav-item"><a href="./standings.html">Standings</a></li>
                 <!-- <li class="nav-item"><a href="./champ-predictions.html">Predictions</a></li> -->
                 <li class="nav-item"><a href="./points-system.html">Points System</a></li>
@@ -43,15 +43,7 @@
                     <img class="flag-fill" src="" alt="">
                 </figure>
             </div>
-            <p class="form-submission-thanks">Thank you <?= $user ?> , you submission has been recorded.</p>
-</main>
-</body>
-</html>
-
-
-<?php
-
-
+            <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -91,11 +83,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    // Close statement and database connection
    $stmt->close();
    $conn->close();
-
-
 }
 
 ?>
+            <p class="form-submission-thanks">Thank you <?php echo $user; ?> , your submission has been recorded.</p>
+</main>
+</body>
+</html>
+
+
+
 
 
 
