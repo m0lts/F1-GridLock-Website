@@ -117,15 +117,20 @@
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
+
+                                echo "<ul>";
+
                                 // Output data of each row
                                 while ($row = $result->fetch_assoc()) {
                                     // Access data using column names
                                     $column1Value = $row["column1"];
                                     $column2Value = $row["column2"];
                             
-                                    // Perform desired actions with the retrieved data
-                                    // ...
+                                    // Generate list item for each row
+                                    echo "<li>$column1Value - $column2Value</li>";
                                 }
+
+                                echo "</ul>";
                             } else {
                                 echo "No results found.";
                             }
