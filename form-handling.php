@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $conn->close();
 
    //Redirect to a different page
-   header('Location: champ-predictions.html');
+   header('Location: index.html');
    exit();
 
 }
