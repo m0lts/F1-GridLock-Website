@@ -233,7 +233,7 @@ const driverTeam = document.querySelectorAll('.team-img');
 
 // driver surname inner HTML
 driverSurnameRetrieval.forEach(surname => {
-    if (surname.textContent === ocon) {
+    if (surname.textContent === "ocon") {
         driverNumberElement.forEach(number => {
             number.textContent = 31;
         });
@@ -243,7 +243,7 @@ driverSurnameRetrieval.forEach(surname => {
         driverTeam.forEach(img => {
             img.src = './images/teams/alpine.png';
         });
-    } else if (surname.textContent === gasly) {
+    } else if (surname.textContent === "gasly") {
         driverNumberElement.forEach(number => {
             number.textContent = 10;
         });
