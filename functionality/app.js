@@ -225,1129 +225,1129 @@ fetchNextRace(nextRaceLink);
 // PREDICTIONS ENTRY LOGIC
 // retrieve form from doc
 // ali miami
-const aliMiamiPred = document.querySelector(".ali-miami-pred");
+// const aliMiamiPred = document.querySelector(".ali-miami-pred");
 
-if(aliMiamiPred) {
-    aliMiamiPred.addEventListener("submit", event => {
+// if(aliMiamiPred) {
+//     aliMiamiPred.addEventListener("submit", event => {
 
-    const formData = new FormData(aliMiamiPred);
-    const data = Object.fromEntries(formData);
-    const dataJson = JSON.stringify(data);
+//     const formData = new FormData(aliMiamiPred);
+//     const data = Object.fromEntries(formData);
+//     const dataJson = JSON.stringify(data);
 
-    localStorage.setItem("Ali Miami", dataJson);
+//     localStorage.setItem("Ali Miami", dataJson);
     
-})
-};
+// })
+// };
 
-const aliData = (dataName) => {
-    const dataJson = localStorage.getItem(dataName);
-    const data = JSON.parse(dataJson);
-    const p1 = data.p1;
-    const p2 = data.p2;
-    const p3 = data.p3;
-    const p4 = data.p4;
-    const p5 = data.p5;
-    const p6 = data.p6;
-    const p7 = data.p7;
-    const p8 = data.p8;
-    const p9 = data.p9;
-    const p10 = data.p10;
+// const aliData = (dataName) => {
+//     const dataJson = localStorage.getItem(dataName);
+//     const data = JSON.parse(dataJson);
+//     const p1 = data.p1;
+//     const p2 = data.p2;
+//     const p3 = data.p3;
+//     const p4 = data.p4;
+//     const p5 = data.p5;
+//     const p6 = data.p6;
+//     const p7 = data.p7;
+//     const p8 = data.p8;
+//     const p9 = data.p9;
+//     const p10 = data.p10;
     
-    const aliPredBox = document.querySelector(".ali-pred");
+//     const aliPredBox = document.querySelector(".ali-pred");
 
-    const drivers = {
-        verstappen: {
-            number: 1,
-            firstName: 'max',
-            secondName: 'verstappen',
-            team: './images/teams/red-bull.png'
-        },
-        perez: {
-            number: 11,
-            firstName: 'sergio',
-            secondName: 'perez',
-            team: './images/teams/red-bull.png'
-        },
-        hamilton: {
-            number: 44,
-            firstName: 'lewis',
-            secondName: 'hamilton',
-            team: './images/teams/mercedes.png'
-        },
-        russell: {
-            number: 63,
-            firstName: 'george',
-            secondName: 'russell',
-            team: './images/teams/mercedes.png'
-        },
-        leclerc: {
-            number: 16,
-            firstName: 'charles',
-            secondName: 'leclerc',
-            team: './images/teams/ferrari.png'
-        },
-        sainz: {
-            number: 55,
-            firstName: 'carlos',
-            secondName: 'sainz',
-            team: './images/teams/ferrari.png'
-        },
-        alonso: {
-            number: 14,
-            firstName: 'fernando',
-            secondName: 'alonso',
-            team: './images/teams/aston.png'
-        },
-        stroll: {
-            number: 18,
-            firstName: 'lance',
-            secondName: 'stroll',
-            team: './images/teams/aston.png'
-        },
-        norris: {
-            number: 4,
-            firstName: 'lando',
-            secondName: 'norris',
-            team: './images/teams/mclaren.png'
-        },
-        piastri: {
-            number: 81,
-            firstName: 'oscar',
-            secondName: 'piastri',
-            team: './images/teams/mclaren.png'
-        },
-        gasly: {
-            number: 10,
-            firstName: 'pierre',
-            secondName: 'gasly',
-            team: './images/teams/alpine.png'
-        },
-        ocon: {
-            number: 31,
-            firstName: 'esteban',
-            secondName: 'ocon',
-            team: './images/teams/alpine.png'
-        },
-        bottas: {
-            number: 77,
-            firstName: 'valterri',
-            secondName: 'bottas',
-            team: './images/teams/alfa-romeo.png'
-        },
-        zhou: {
-            number: 24,
-            firstName: 'guanyu',
-            secondName: 'zhou',
-            team: './images/teams/alfa-romeo.png'
-        },
-        devries: {
-            number: 21,
-            firstName: 'nyck',
-            secondName: 'de vries',
-            team: './images/teams/alpha-tauri.png'
-        },
-        tsunoda: {
-            number: 22,
-            firstName: 'yuki',
-            secondName: 'tsunoda',
-            team: './images/teams/alpha-tauri.png'
-        },
-        magnussen: {
-            number: 20,
-            firstName: 'kevin',
-            secondName: 'magnussen',
-            team: './images/teams/haas.png'
-        },
-        hulkenberg: {
-            number: 27,
-            firstName: 'niko',
-            secondName: 'hulkenberg',
-            team: './images/teams/haas.png'
-        },
-        albon: {
-            number: 23,
-            firstName: 'alexander',
-            secondName: 'albon',
-            team: './images/teams/williams.png'
-        },
-        sargeant: {
-            number: 2,
-            firstName: 'logan',
-            secondName: 'sargeant',
-            team: './images/teams/williams.png'
-        }
-    };
+//     const drivers = {
+//         verstappen: {
+//             number: 1,
+//             firstName: 'max',
+//             secondName: 'verstappen',
+//             team: './images/teams/red-bull.png'
+//         },
+//         perez: {
+//             number: 11,
+//             firstName: 'sergio',
+//             secondName: 'perez',
+//             team: './images/teams/red-bull.png'
+//         },
+//         hamilton: {
+//             number: 44,
+//             firstName: 'lewis',
+//             secondName: 'hamilton',
+//             team: './images/teams/mercedes.png'
+//         },
+//         russell: {
+//             number: 63,
+//             firstName: 'george',
+//             secondName: 'russell',
+//             team: './images/teams/mercedes.png'
+//         },
+//         leclerc: {
+//             number: 16,
+//             firstName: 'charles',
+//             secondName: 'leclerc',
+//             team: './images/teams/ferrari.png'
+//         },
+//         sainz: {
+//             number: 55,
+//             firstName: 'carlos',
+//             secondName: 'sainz',
+//             team: './images/teams/ferrari.png'
+//         },
+//         alonso: {
+//             number: 14,
+//             firstName: 'fernando',
+//             secondName: 'alonso',
+//             team: './images/teams/aston.png'
+//         },
+//         stroll: {
+//             number: 18,
+//             firstName: 'lance',
+//             secondName: 'stroll',
+//             team: './images/teams/aston.png'
+//         },
+//         norris: {
+//             number: 4,
+//             firstName: 'lando',
+//             secondName: 'norris',
+//             team: './images/teams/mclaren.png'
+//         },
+//         piastri: {
+//             number: 81,
+//             firstName: 'oscar',
+//             secondName: 'piastri',
+//             team: './images/teams/mclaren.png'
+//         },
+//         gasly: {
+//             number: 10,
+//             firstName: 'pierre',
+//             secondName: 'gasly',
+//             team: './images/teams/alpine.png'
+//         },
+//         ocon: {
+//             number: 31,
+//             firstName: 'esteban',
+//             secondName: 'ocon',
+//             team: './images/teams/alpine.png'
+//         },
+//         bottas: {
+//             number: 77,
+//             firstName: 'valterri',
+//             secondName: 'bottas',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         zhou: {
+//             number: 24,
+//             firstName: 'guanyu',
+//             secondName: 'zhou',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         devries: {
+//             number: 21,
+//             firstName: 'nyck',
+//             secondName: 'de vries',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         tsunoda: {
+//             number: 22,
+//             firstName: 'yuki',
+//             secondName: 'tsunoda',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         magnussen: {
+//             number: 20,
+//             firstName: 'kevin',
+//             secondName: 'magnussen',
+//             team: './images/teams/haas.png'
+//         },
+//         hulkenberg: {
+//             number: 27,
+//             firstName: 'niko',
+//             secondName: 'hulkenberg',
+//             team: './images/teams/haas.png'
+//         },
+//         albon: {
+//             number: 23,
+//             firstName: 'alexander',
+//             secondName: 'albon',
+//             team: './images/teams/williams.png'
+//         },
+//         sargeant: {
+//             number: 2,
+//             firstName: 'logan',
+//             secondName: 'sargeant',
+//             team: './images/teams/williams.png'
+//         }
+//     };
 
-    const createDriverCard = (driver) => {
-        return `<li class="driver-container">
-                  <div class="driver-details">
-                    <div class="driver-number">
-                      <p>${driver.number}</p>
-                    </div>
-                    <div class="driver-name">
-                      <p class="firstname">${driver.firstName}</p>
-                      <p class="surname">${driver.secondName}</p>
-                    </div>
-                  </div>
-                  <figure class="driver-img">
-                    <img src="${driver.team}" alt="">
-                  </figure>
-                </li>`;
-      };
+//     const createDriverCard = (driver) => {
+//         return `<li class="driver-container">
+//                   <div class="driver-details">
+//                     <div class="driver-number">
+//                       <p>${driver.number}</p>
+//                     </div>
+//                     <div class="driver-name">
+//                       <p class="firstname">${driver.firstName}</p>
+//                       <p class="surname">${driver.secondName}</p>
+//                     </div>
+//                   </div>
+//                   <figure class="driver-img">
+//                     <img src="${driver.team}" alt="">
+//                   </figure>
+//                 </li>`;
+//       };
 
-    const p1sub = createDriverCard(drivers[p1]);
-    const p2sub = createDriverCard(drivers[p2]);
-    const p3sub = createDriverCard(drivers[p3]);
-    const p4sub = createDriverCard(drivers[p4]);
-    const p5sub = createDriverCard(drivers[p5]);
-    const p6sub = createDriverCard(drivers[p6]);
-    const p7sub = createDriverCard(drivers[p7]);
-    const p8sub = createDriverCard(drivers[p8]);
-    const p9sub = createDriverCard(drivers[p9]);
-    const p10sub = createDriverCard(drivers[p10]);
+//     const p1sub = createDriverCard(drivers[p1]);
+//     const p2sub = createDriverCard(drivers[p2]);
+//     const p3sub = createDriverCard(drivers[p3]);
+//     const p4sub = createDriverCard(drivers[p4]);
+//     const p5sub = createDriverCard(drivers[p5]);
+//     const p6sub = createDriverCard(drivers[p6]);
+//     const p7sub = createDriverCard(drivers[p7]);
+//     const p8sub = createDriverCard(drivers[p8]);
+//     const p9sub = createDriverCard(drivers[p9]);
+//     const p10sub = createDriverCard(drivers[p10]);
 
-    aliPredBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
-}
+//     aliPredBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+// }
 
-aliData("Ali Miami");
+// aliData("Ali Miami");
 
-// ed miami
-const edMiamiPred = document.querySelector(".ed-miami-pred");
+// // ed miami
+// const edMiamiPred = document.querySelector(".ed-miami-pred");
 
-if(edMiamiPred) {
-    edMiamiPred.addEventListener("submit", event => {
+// if(edMiamiPred) {
+//     edMiamiPred.addEventListener("submit", event => {
 
-    const formData = new FormData(edMiamiPred);
-    const data = Object.fromEntries(formData);
-    const dataJson = JSON.stringify(data);
+//     const formData = new FormData(edMiamiPred);
+//     const data = Object.fromEntries(formData);
+//     const dataJson = JSON.stringify(data);
 
-    localStorage.setItem("Ed Miami", dataJson);
+//     localStorage.setItem("Ed Miami", dataJson);
 
-})
-};
+// })
+// };
 
-const edData = (dataName) => {
-    const dataJson = localStorage.getItem(dataName);
-    const data = JSON.parse(dataJson);
-    const p1 = data.p1;
-    const p2 = data.p2;
-    const p3 = data.p3;
-    const p4 = data.p4;
-    const p5 = data.p5;
-    const p6 = data.p6;
-    const p7 = data.p7;
-    const p8 = data.p8;
-    const p9 = data.p9;
-    const p10 = data.p10;
+// const edData = (dataName) => {
+//     const dataJson = localStorage.getItem(dataName);
+//     const data = JSON.parse(dataJson);
+//     const p1 = data.p1;
+//     const p2 = data.p2;
+//     const p3 = data.p3;
+//     const p4 = data.p4;
+//     const p5 = data.p5;
+//     const p6 = data.p6;
+//     const p7 = data.p7;
+//     const p8 = data.p8;
+//     const p9 = data.p9;
+//     const p10 = data.p10;
 
-    const edPredBox = document.querySelector(".ed-pred");
+//     const edPredBox = document.querySelector(".ed-pred");
 
-    const drivers = {
-        verstappen: {
-            number: 1,
-            firstName: 'max',
-            secondName: 'verstappen',
-            team: './images/teams/red-bull.png'
-        },
-        perez: {
-            number: 11,
-            firstName: 'sergio',
-            secondName: 'perez',
-            team: './images/teams/red-bull.png'
-        },
-        hamilton: {
-            number: 44,
-            firstName: 'lewis',
-            secondName: 'hamilton',
-            team: './images/teams/mercedes.png'
-        },
-        russell: {
-            number: 63,
-            firstName: 'george',
-            secondName: 'russell',
-            team: './images/teams/mercedes.png'
-        },
-        leclerc: {
-            number: 16,
-            firstName: 'charles',
-            secondName: 'leclerc',
-            team: './images/teams/ferrari.png'
-        },
-        sainz: {
-            number: 55,
-            firstName: 'carlos',
-            secondName: 'sainz',
-            team: './images/teams/ferrari.png'
-        },
-        alonso: {
-            number: 14,
-            firstName: 'fernando',
-            secondName: 'alonso',
-            team: './images/teams/aston.png'
-        },
-        stroll: {
-            number: 18,
-            firstName: 'lance',
-            secondName: 'stroll',
-            team: './images/teams/aston.png'
-        },
-        norris: {
-            number: 4,
-            firstName: 'lando',
-            secondName: 'norris',
-            team: './images/teams/mclaren.png'
-        },
-        piastri: {
-            number: 81,
-            firstName: 'oscar',
-            secondName: 'piastri',
-            team: './images/teams/mclaren.png'
-        },
-        gasly: {
-            number: 10,
-            firstName: 'pierre',
-            secondName: 'gasly',
-            team: './images/teams/alpine.png'
-        },
-        ocon: {
-            number: 31,
-            firstName: 'esteban',
-            secondName: 'ocon',
-            team: './images/teams/alpine.png'
-        },
-        bottas: {
-            number: 77,
-            firstName: 'valterri',
-            secondName: 'bottas',
-            team: './images/teams/alfa-romeo.png'
-        },
-        zhou: {
-            number: 24,
-            firstName: 'guanyu',
-            secondName: 'zhou',
-            team: './images/teams/alfa-romeo.png'
-        },
-        devries: {
-            number: 21,
-            firstName: 'nyck',
-            secondName: 'de vries',
-            team: './images/teams/alpha-tauri.png'
-        },
-        tsunoda: {
-            number: 22,
-            firstName: 'yuki',
-            secondName: 'tsunoda',
-            team: './images/teams/alpha-tauri.png'
-        },
-        magnussen: {
-            number: 20,
-            firstName: 'kevin',
-            secondName: 'magnussen',
-            team: './images/teams/haas.png'
-        },
-        hulkenberg: {
-            number: 27,
-            firstName: 'niko',
-            secondName: 'hulkenberg',
-            team: './images/teams/haas.png'
-        },
-        albon: {
-            number: 23,
-            firstName: 'alexander',
-            secondName: 'albon',
-            team: './images/teams/williams.png'
-        },
-        sargeant: {
-            number: 2,
-            firstName: 'logan',
-            secondName: 'sargeant',
-            team: './images/teams/williams.png'
-        }
-    };
+//     const drivers = {
+//         verstappen: {
+//             number: 1,
+//             firstName: 'max',
+//             secondName: 'verstappen',
+//             team: './images/teams/red-bull.png'
+//         },
+//         perez: {
+//             number: 11,
+//             firstName: 'sergio',
+//             secondName: 'perez',
+//             team: './images/teams/red-bull.png'
+//         },
+//         hamilton: {
+//             number: 44,
+//             firstName: 'lewis',
+//             secondName: 'hamilton',
+//             team: './images/teams/mercedes.png'
+//         },
+//         russell: {
+//             number: 63,
+//             firstName: 'george',
+//             secondName: 'russell',
+//             team: './images/teams/mercedes.png'
+//         },
+//         leclerc: {
+//             number: 16,
+//             firstName: 'charles',
+//             secondName: 'leclerc',
+//             team: './images/teams/ferrari.png'
+//         },
+//         sainz: {
+//             number: 55,
+//             firstName: 'carlos',
+//             secondName: 'sainz',
+//             team: './images/teams/ferrari.png'
+//         },
+//         alonso: {
+//             number: 14,
+//             firstName: 'fernando',
+//             secondName: 'alonso',
+//             team: './images/teams/aston.png'
+//         },
+//         stroll: {
+//             number: 18,
+//             firstName: 'lance',
+//             secondName: 'stroll',
+//             team: './images/teams/aston.png'
+//         },
+//         norris: {
+//             number: 4,
+//             firstName: 'lando',
+//             secondName: 'norris',
+//             team: './images/teams/mclaren.png'
+//         },
+//         piastri: {
+//             number: 81,
+//             firstName: 'oscar',
+//             secondName: 'piastri',
+//             team: './images/teams/mclaren.png'
+//         },
+//         gasly: {
+//             number: 10,
+//             firstName: 'pierre',
+//             secondName: 'gasly',
+//             team: './images/teams/alpine.png'
+//         },
+//         ocon: {
+//             number: 31,
+//             firstName: 'esteban',
+//             secondName: 'ocon',
+//             team: './images/teams/alpine.png'
+//         },
+//         bottas: {
+//             number: 77,
+//             firstName: 'valterri',
+//             secondName: 'bottas',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         zhou: {
+//             number: 24,
+//             firstName: 'guanyu',
+//             secondName: 'zhou',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         devries: {
+//             number: 21,
+//             firstName: 'nyck',
+//             secondName: 'de vries',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         tsunoda: {
+//             number: 22,
+//             firstName: 'yuki',
+//             secondName: 'tsunoda',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         magnussen: {
+//             number: 20,
+//             firstName: 'kevin',
+//             secondName: 'magnussen',
+//             team: './images/teams/haas.png'
+//         },
+//         hulkenberg: {
+//             number: 27,
+//             firstName: 'niko',
+//             secondName: 'hulkenberg',
+//             team: './images/teams/haas.png'
+//         },
+//         albon: {
+//             number: 23,
+//             firstName: 'alexander',
+//             secondName: 'albon',
+//             team: './images/teams/williams.png'
+//         },
+//         sargeant: {
+//             number: 2,
+//             firstName: 'logan',
+//             secondName: 'sargeant',
+//             team: './images/teams/williams.png'
+//         }
+//     };
     
-    const createDriverCard = (driver) => {
-        return `<li class="driver-container">
-                  <div class="driver-details">
-                    <div class="driver-number">
-                      <p>${driver.number}</p>
-                    </div>
-                    <div class="driver-name">
-                      <p class="firstname">${driver.firstName}</p>
-                      <p class="surname">${driver.secondName}</p>
-                    </div>
-                  </div>
-                  <figure class="driver-img">
-                    <img src="${driver.team}" alt="">
-                  </figure>
-                </li>`;
-      };
+//     const createDriverCard = (driver) => {
+//         return `<li class="driver-container">
+//                   <div class="driver-details">
+//                     <div class="driver-number">
+//                       <p>${driver.number}</p>
+//                     </div>
+//                     <div class="driver-name">
+//                       <p class="firstname">${driver.firstName}</p>
+//                       <p class="surname">${driver.secondName}</p>
+//                     </div>
+//                   </div>
+//                   <figure class="driver-img">
+//                     <img src="${driver.team}" alt="">
+//                   </figure>
+//                 </li>`;
+//       };
 
-    const p1sub = createDriverCard(drivers[p1]);
-    const p2sub = createDriverCard(drivers[p2]);
-    const p3sub = createDriverCard(drivers[p3]);
-    const p4sub = createDriverCard(drivers[p4]);
-    const p5sub = createDriverCard(drivers[p5]);
-    const p6sub = createDriverCard(drivers[p6]);
-    const p7sub = createDriverCard(drivers[p7]);
-    const p8sub = createDriverCard(drivers[p8]);
-    const p9sub = createDriverCard(drivers[p9]);
-    const p10sub = createDriverCard(drivers[p10]);
+//     const p1sub = createDriverCard(drivers[p1]);
+//     const p2sub = createDriverCard(drivers[p2]);
+//     const p3sub = createDriverCard(drivers[p3]);
+//     const p4sub = createDriverCard(drivers[p4]);
+//     const p5sub = createDriverCard(drivers[p5]);
+//     const p6sub = createDriverCard(drivers[p6]);
+//     const p7sub = createDriverCard(drivers[p7]);
+//     const p8sub = createDriverCard(drivers[p8]);
+//     const p9sub = createDriverCard(drivers[p9]);
+//     const p10sub = createDriverCard(drivers[p10]);
 
-    edPredBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
-}
+//     edPredBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+// }
 
-edData("Ed Miami");
+// edData("Ed Miami");
 
-// jack miami
-const jackMiamiPred = document.querySelector(".jack-miami-pred");
+// // jack miami
+// const jackMiamiPred = document.querySelector(".jack-miami-pred");
 
-if(jackMiamiPred) {
-    jackMiamiPred.addEventListener("submit", event => {
+// if(jackMiamiPred) {
+//     jackMiamiPred.addEventListener("submit", event => {
 
-    const formData = new FormData(jackMiamiPred);
-    const data = Object.fromEntries(formData);
-    const dataJson = JSON.stringify(data);
+//     const formData = new FormData(jackMiamiPred);
+//     const data = Object.fromEntries(formData);
+//     const dataJson = JSON.stringify(data);
 
-    localStorage.setItem("Jack Miami", dataJson);
+//     localStorage.setItem("Jack Miami", dataJson);
 
-})
-};
+// })
+// };
 
-const jackData = (dataName) => {
-    const dataJson = localStorage.getItem(dataName);
-    const data = JSON.parse(dataJson);
-    const p1 = data.p1;
-    const p2 = data.p2;
-    const p3 = data.p3;
-    const p4 = data.p4;
-    const p5 = data.p5;
-    const p6 = data.p6;
-    const p7 = data.p7;
-    const p8 = data.p8;
-    const p9 = data.p9;
-    const p10 = data.p10;
+// const jackData = (dataName) => {
+//     const dataJson = localStorage.getItem(dataName);
+//     const data = JSON.parse(dataJson);
+//     const p1 = data.p1;
+//     const p2 = data.p2;
+//     const p3 = data.p3;
+//     const p4 = data.p4;
+//     const p5 = data.p5;
+//     const p6 = data.p6;
+//     const p7 = data.p7;
+//     const p8 = data.p8;
+//     const p9 = data.p9;
+//     const p10 = data.p10;
 
-    const predBox = document.querySelector(".jack-pred");
+//     const predBox = document.querySelector(".jack-pred");
 
-    const drivers = {
-        verstappen: {
-            number: 1,
-            firstName: 'max',
-            secondName: 'verstappen',
-            team: './images/teams/red-bull.png'
-        },
-        perez: {
-            number: 11,
-            firstName: 'sergio',
-            secondName: 'perez',
-            team: './images/teams/red-bull.png'
-        },
-        hamilton: {
-            number: 44,
-            firstName: 'lewis',
-            secondName: 'hamilton',
-            team: './images/teams/mercedes.png'
-        },
-        russell: {
-            number: 63,
-            firstName: 'george',
-            secondName: 'russell',
-            team: './images/teams/mercedes.png'
-        },
-        leclerc: {
-            number: 16,
-            firstName: 'charles',
-            secondName: 'leclerc',
-            team: './images/teams/ferrari.png'
-        },
-        sainz: {
-            number: 55,
-            firstName: 'carlos',
-            secondName: 'sainz',
-            team: './images/teams/ferrari.png'
-        },
-        alonso: {
-            number: 14,
-            firstName: 'fernando',
-            secondName: 'alonso',
-            team: './images/teams/aston.png'
-        },
-        stroll: {
-            number: 18,
-            firstName: 'lance',
-            secondName: 'stroll',
-            team: './images/teams/aston.png'
-        },
-        norris: {
-            number: 4,
-            firstName: 'lando',
-            secondName: 'norris',
-            team: './images/teams/mclaren.png'
-        },
-        piastri: {
-            number: 81,
-            firstName: 'oscar',
-            secondName: 'piastri',
-            team: './images/teams/mclaren.png'
-        },
-        gasly: {
-            number: 10,
-            firstName: 'pierre',
-            secondName: 'gasly',
-            team: './images/teams/alpine.png'
-        },
-        ocon: {
-            number: 31,
-            firstName: 'esteban',
-            secondName: 'ocon',
-            team: './images/teams/alpine.png'
-        },
-        bottas: {
-            number: 77,
-            firstName: 'valterri',
-            secondName: 'bottas',
-            team: './images/teams/alfa-romeo.png'
-        },
-        zhou: {
-            number: 24,
-            firstName: 'guanyu',
-            secondName: 'zhou',
-            team: './images/teams/alfa-romeo.png'
-        },
-        devries: {
-            number: 21,
-            firstName: 'nyck',
-            secondName: 'de vries',
-            team: './images/teams/alpha-tauri.png'
-        },
-        tsunoda: {
-            number: 22,
-            firstName: 'yuki',
-            secondName: 'tsunoda',
-            team: './images/teams/alpha-tauri.png'
-        },
-        magnussen: {
-            number: 20,
-            firstName: 'kevin',
-            secondName: 'magnussen',
-            team: './images/teams/haas.png'
-        },
-        hulkenberg: {
-            number: 27,
-            firstName: 'niko',
-            secondName: 'hulkenberg',
-            team: './images/teams/haas.png'
-        },
-        albon: {
-            number: 23,
-            firstName: 'alexander',
-            secondName: 'albon',
-            team: './images/teams/williams.png'
-        },
-        sargeant: {
-            number: 2,
-            firstName: 'logan',
-            secondName: 'sargeant',
-            team: './images/teams/williams.png'
-        }
-    };
+//     const drivers = {
+//         verstappen: {
+//             number: 1,
+//             firstName: 'max',
+//             secondName: 'verstappen',
+//             team: './images/teams/red-bull.png'
+//         },
+//         perez: {
+//             number: 11,
+//             firstName: 'sergio',
+//             secondName: 'perez',
+//             team: './images/teams/red-bull.png'
+//         },
+//         hamilton: {
+//             number: 44,
+//             firstName: 'lewis',
+//             secondName: 'hamilton',
+//             team: './images/teams/mercedes.png'
+//         },
+//         russell: {
+//             number: 63,
+//             firstName: 'george',
+//             secondName: 'russell',
+//             team: './images/teams/mercedes.png'
+//         },
+//         leclerc: {
+//             number: 16,
+//             firstName: 'charles',
+//             secondName: 'leclerc',
+//             team: './images/teams/ferrari.png'
+//         },
+//         sainz: {
+//             number: 55,
+//             firstName: 'carlos',
+//             secondName: 'sainz',
+//             team: './images/teams/ferrari.png'
+//         },
+//         alonso: {
+//             number: 14,
+//             firstName: 'fernando',
+//             secondName: 'alonso',
+//             team: './images/teams/aston.png'
+//         },
+//         stroll: {
+//             number: 18,
+//             firstName: 'lance',
+//             secondName: 'stroll',
+//             team: './images/teams/aston.png'
+//         },
+//         norris: {
+//             number: 4,
+//             firstName: 'lando',
+//             secondName: 'norris',
+//             team: './images/teams/mclaren.png'
+//         },
+//         piastri: {
+//             number: 81,
+//             firstName: 'oscar',
+//             secondName: 'piastri',
+//             team: './images/teams/mclaren.png'
+//         },
+//         gasly: {
+//             number: 10,
+//             firstName: 'pierre',
+//             secondName: 'gasly',
+//             team: './images/teams/alpine.png'
+//         },
+//         ocon: {
+//             number: 31,
+//             firstName: 'esteban',
+//             secondName: 'ocon',
+//             team: './images/teams/alpine.png'
+//         },
+//         bottas: {
+//             number: 77,
+//             firstName: 'valterri',
+//             secondName: 'bottas',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         zhou: {
+//             number: 24,
+//             firstName: 'guanyu',
+//             secondName: 'zhou',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         devries: {
+//             number: 21,
+//             firstName: 'nyck',
+//             secondName: 'de vries',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         tsunoda: {
+//             number: 22,
+//             firstName: 'yuki',
+//             secondName: 'tsunoda',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         magnussen: {
+//             number: 20,
+//             firstName: 'kevin',
+//             secondName: 'magnussen',
+//             team: './images/teams/haas.png'
+//         },
+//         hulkenberg: {
+//             number: 27,
+//             firstName: 'niko',
+//             secondName: 'hulkenberg',
+//             team: './images/teams/haas.png'
+//         },
+//         albon: {
+//             number: 23,
+//             firstName: 'alexander',
+//             secondName: 'albon',
+//             team: './images/teams/williams.png'
+//         },
+//         sargeant: {
+//             number: 2,
+//             firstName: 'logan',
+//             secondName: 'sargeant',
+//             team: './images/teams/williams.png'
+//         }
+//     };
     
-    const createDriverCard = (driver) => {
-        return `<li class="driver-container">
-                  <div class="driver-details">
-                    <div class="driver-number">
-                      <p>${driver.number}</p>
-                    </div>
-                    <div class="driver-name">
-                      <p class="firstname">${driver.firstName}</p>
-                      <p class="surname">${driver.secondName}</p>
-                    </div>
-                  </div>
-                  <figure class="driver-img">
-                    <img src="${driver.team}" alt="">
-                  </figure>
-                </li>`;
-      };
+//     const createDriverCard = (driver) => {
+//         return `<li class="driver-container">
+//                   <div class="driver-details">
+//                     <div class="driver-number">
+//                       <p>${driver.number}</p>
+//                     </div>
+//                     <div class="driver-name">
+//                       <p class="firstname">${driver.firstName}</p>
+//                       <p class="surname">${driver.secondName}</p>
+//                     </div>
+//                   </div>
+//                   <figure class="driver-img">
+//                     <img src="${driver.team}" alt="">
+//                   </figure>
+//                 </li>`;
+//       };
 
-    const p1sub = createDriverCard(drivers[p1]);
-    const p2sub = createDriverCard(drivers[p2]);
-    const p3sub = createDriverCard(drivers[p3]);
-    const p4sub = createDriverCard(drivers[p4]);
-    const p5sub = createDriverCard(drivers[p5]);
-    const p6sub = createDriverCard(drivers[p6]);
-    const p7sub = createDriverCard(drivers[p7]);
-    const p8sub = createDriverCard(drivers[p8]);
-    const p9sub = createDriverCard(drivers[p9]);
-    const p10sub = createDriverCard(drivers[p10]);
+//     const p1sub = createDriverCard(drivers[p1]);
+//     const p2sub = createDriverCard(drivers[p2]);
+//     const p3sub = createDriverCard(drivers[p3]);
+//     const p4sub = createDriverCard(drivers[p4]);
+//     const p5sub = createDriverCard(drivers[p5]);
+//     const p6sub = createDriverCard(drivers[p6]);
+//     const p7sub = createDriverCard(drivers[p7]);
+//     const p8sub = createDriverCard(drivers[p8]);
+//     const p9sub = createDriverCard(drivers[p9]);
+//     const p10sub = createDriverCard(drivers[p10]);
 
-    predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
-}
+//     predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+// }
 
-jackData("Jack Miami");
+// jackData("Jack Miami");
 
 
-// toby miami
-const tobyMiamiPred = document.querySelector(".toby-miami-pred");
+// // toby miami
+// const tobyMiamiPred = document.querySelector(".toby-miami-pred");
 
-if(tobyMiamiPred) {
-    tobyMiamiPred.addEventListener("submit", event => {
+// if(tobyMiamiPred) {
+//     tobyMiamiPred.addEventListener("submit", event => {
 
-    const formData = new FormData(tobyMiamiPred);
-    const data = Object.fromEntries(formData);
-    const dataJson = JSON.stringify(data);
+//     const formData = new FormData(tobyMiamiPred);
+//     const data = Object.fromEntries(formData);
+//     const dataJson = JSON.stringify(data);
 
-    localStorage.setItem("Toby Miami", dataJson);
+//     localStorage.setItem("Toby Miami", dataJson);
 
-})
-};
+// })
+// };
 
-const tobyData = (dataName) => {
-    const dataJson = localStorage.getItem(dataName);
-    const data = JSON.parse(dataJson);
-    const p1 = data.p1;
-    const p2 = data.p2;
-    const p3 = data.p3;
-    const p4 = data.p4;
-    const p5 = data.p5;
-    const p6 = data.p6;
-    const p7 = data.p7;
-    const p8 = data.p8;
-    const p9 = data.p9;
-    const p10 = data.p10;
+// const tobyData = (dataName) => {
+//     const dataJson = localStorage.getItem(dataName);
+//     const data = JSON.parse(dataJson);
+//     const p1 = data.p1;
+//     const p2 = data.p2;
+//     const p3 = data.p3;
+//     const p4 = data.p4;
+//     const p5 = data.p5;
+//     const p6 = data.p6;
+//     const p7 = data.p7;
+//     const p8 = data.p8;
+//     const p9 = data.p9;
+//     const p10 = data.p10;
 
-    const predBox = document.querySelector(".toby-pred");
+//     const predBox = document.querySelector(".toby-pred");
 
-    const drivers = {
-        verstappen: {
-            number: 1,
-            firstName: 'max',
-            secondName: 'verstappen',
-            team: './images/teams/red-bull.png'
-        },
-        perez: {
-            number: 11,
-            firstName: 'sergio',
-            secondName: 'perez',
-            team: './images/teams/red-bull.png'
-        },
-        hamilton: {
-            number: 44,
-            firstName: 'lewis',
-            secondName: 'hamilton',
-            team: './images/teams/mercedes.png'
-        },
-        russell: {
-            number: 63,
-            firstName: 'george',
-            secondName: 'russell',
-            team: './images/teams/mercedes.png'
-        },
-        leclerc: {
-            number: 16,
-            firstName: 'charles',
-            secondName: 'leclerc',
-            team: './images/teams/ferrari.png'
-        },
-        sainz: {
-            number: 55,
-            firstName: 'carlos',
-            secondName: 'sainz',
-            team: './images/teams/ferrari.png'
-        },
-        alonso: {
-            number: 14,
-            firstName: 'fernando',
-            secondName: 'alonso',
-            team: './images/teams/aston.png'
-        },
-        stroll: {
-            number: 18,
-            firstName: 'lance',
-            secondName: 'stroll',
-            team: './images/teams/aston.png'
-        },
-        norris: {
-            number: 4,
-            firstName: 'lando',
-            secondName: 'norris',
-            team: './images/teams/mclaren.png'
-        },
-        piastri: {
-            number: 81,
-            firstName: 'oscar',
-            secondName: 'piastri',
-            team: './images/teams/mclaren.png'
-        },
-        gasly: {
-            number: 10,
-            firstName: 'pierre',
-            secondName: 'gasly',
-            team: './images/teams/alpine.png'
-        },
-        ocon: {
-            number: 31,
-            firstName: 'esteban',
-            secondName: 'ocon',
-            team: './images/teams/alpine.png'
-        },
-        bottas: {
-            number: 77,
-            firstName: 'valterri',
-            secondName: 'bottas',
-            team: './images/teams/alfa-romeo.png'
-        },
-        zhou: {
-            number: 24,
-            firstName: 'guanyu',
-            secondName: 'zhou',
-            team: './images/teams/alfa-romeo.png'
-        },
-        devries: {
-            number: 21,
-            firstName: 'nyck',
-            secondName: 'de vries',
-            team: './images/teams/alpha-tauri.png'
-        },
-        tsunoda: {
-            number: 22,
-            firstName: 'yuki',
-            secondName: 'tsunoda',
-            team: './images/teams/alpha-tauri.png'
-        },
-        magnussen: {
-            number: 20,
-            firstName: 'kevin',
-            secondName: 'magnussen',
-            team: './images/teams/haas.png'
-        },
-        hulkenberg: {
-            number: 27,
-            firstName: 'niko',
-            secondName: 'hulkenberg',
-            team: './images/teams/haas.png'
-        },
-        albon: {
-            number: 23,
-            firstName: 'alexander',
-            secondName: 'albon',
-            team: './images/teams/williams.png'
-        },
-        sargeant: {
-            number: 2,
-            firstName: 'logan',
-            secondName: 'sargeant',
-            team: './images/teams/williams.png'
-        }
-    };
+//     const drivers = {
+//         verstappen: {
+//             number: 1,
+//             firstName: 'max',
+//             secondName: 'verstappen',
+//             team: './images/teams/red-bull.png'
+//         },
+//         perez: {
+//             number: 11,
+//             firstName: 'sergio',
+//             secondName: 'perez',
+//             team: './images/teams/red-bull.png'
+//         },
+//         hamilton: {
+//             number: 44,
+//             firstName: 'lewis',
+//             secondName: 'hamilton',
+//             team: './images/teams/mercedes.png'
+//         },
+//         russell: {
+//             number: 63,
+//             firstName: 'george',
+//             secondName: 'russell',
+//             team: './images/teams/mercedes.png'
+//         },
+//         leclerc: {
+//             number: 16,
+//             firstName: 'charles',
+//             secondName: 'leclerc',
+//             team: './images/teams/ferrari.png'
+//         },
+//         sainz: {
+//             number: 55,
+//             firstName: 'carlos',
+//             secondName: 'sainz',
+//             team: './images/teams/ferrari.png'
+//         },
+//         alonso: {
+//             number: 14,
+//             firstName: 'fernando',
+//             secondName: 'alonso',
+//             team: './images/teams/aston.png'
+//         },
+//         stroll: {
+//             number: 18,
+//             firstName: 'lance',
+//             secondName: 'stroll',
+//             team: './images/teams/aston.png'
+//         },
+//         norris: {
+//             number: 4,
+//             firstName: 'lando',
+//             secondName: 'norris',
+//             team: './images/teams/mclaren.png'
+//         },
+//         piastri: {
+//             number: 81,
+//             firstName: 'oscar',
+//             secondName: 'piastri',
+//             team: './images/teams/mclaren.png'
+//         },
+//         gasly: {
+//             number: 10,
+//             firstName: 'pierre',
+//             secondName: 'gasly',
+//             team: './images/teams/alpine.png'
+//         },
+//         ocon: {
+//             number: 31,
+//             firstName: 'esteban',
+//             secondName: 'ocon',
+//             team: './images/teams/alpine.png'
+//         },
+//         bottas: {
+//             number: 77,
+//             firstName: 'valterri',
+//             secondName: 'bottas',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         zhou: {
+//             number: 24,
+//             firstName: 'guanyu',
+//             secondName: 'zhou',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         devries: {
+//             number: 21,
+//             firstName: 'nyck',
+//             secondName: 'de vries',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         tsunoda: {
+//             number: 22,
+//             firstName: 'yuki',
+//             secondName: 'tsunoda',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         magnussen: {
+//             number: 20,
+//             firstName: 'kevin',
+//             secondName: 'magnussen',
+//             team: './images/teams/haas.png'
+//         },
+//         hulkenberg: {
+//             number: 27,
+//             firstName: 'niko',
+//             secondName: 'hulkenberg',
+//             team: './images/teams/haas.png'
+//         },
+//         albon: {
+//             number: 23,
+//             firstName: 'alexander',
+//             secondName: 'albon',
+//             team: './images/teams/williams.png'
+//         },
+//         sargeant: {
+//             number: 2,
+//             firstName: 'logan',
+//             secondName: 'sargeant',
+//             team: './images/teams/williams.png'
+//         }
+//     };
     
-    const createDriverCard = (driver) => {
-        return `<li class="driver-container">
-                  <div class="driver-details">
-                    <div class="driver-number">
-                      <p>${driver.number}</p>
-                    </div>
-                    <div class="driver-name">
-                      <p class="firstname">${driver.firstName}</p>
-                      <p class="surname">${driver.secondName}</p>
-                    </div>
-                  </div>
-                  <figure class="driver-img">
-                    <img src="${driver.team}" alt="">
-                  </figure>
-                </li>`;
-      };
+//     const createDriverCard = (driver) => {
+//         return `<li class="driver-container">
+//                   <div class="driver-details">
+//                     <div class="driver-number">
+//                       <p>${driver.number}</p>
+//                     </div>
+//                     <div class="driver-name">
+//                       <p class="firstname">${driver.firstName}</p>
+//                       <p class="surname">${driver.secondName}</p>
+//                     </div>
+//                   </div>
+//                   <figure class="driver-img">
+//                     <img src="${driver.team}" alt="">
+//                   </figure>
+//                 </li>`;
+//       };
 
-    const p1sub = createDriverCard(drivers[p1]);
-    const p2sub = createDriverCard(drivers[p2]);
-    const p3sub = createDriverCard(drivers[p3]);
-    const p4sub = createDriverCard(drivers[p4]);
-    const p5sub = createDriverCard(drivers[p5]);
-    const p6sub = createDriverCard(drivers[p6]);
-    const p7sub = createDriverCard(drivers[p7]);
-    const p8sub = createDriverCard(drivers[p8]);
-    const p9sub = createDriverCard(drivers[p9]);
-    const p10sub = createDriverCard(drivers[p10]);
+//     const p1sub = createDriverCard(drivers[p1]);
+//     const p2sub = createDriverCard(drivers[p2]);
+//     const p3sub = createDriverCard(drivers[p3]);
+//     const p4sub = createDriverCard(drivers[p4]);
+//     const p5sub = createDriverCard(drivers[p5]);
+//     const p6sub = createDriverCard(drivers[p6]);
+//     const p7sub = createDriverCard(drivers[p7]);
+//     const p8sub = createDriverCard(drivers[p8]);
+//     const p9sub = createDriverCard(drivers[p9]);
+//     const p10sub = createDriverCard(drivers[p10]);
 
-    predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
-}
+//     predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+// }
 
-tobyData("Toby Miami");
+// tobyData("Toby Miami");
 
 
-// tom miami
-const tomMiamiPred = document.querySelector(".tom-miami-pred");
+// // tom miami
+// const tomMiamiPred = document.querySelector(".tom-miami-pred");
 
-if(tomMiamiPred) {
-    tomMiamiPred.addEventListener("submit", event => {
+// if(tomMiamiPred) {
+//     tomMiamiPred.addEventListener("submit", event => {
 
-    const formData = new FormData(tomMiamiPred);
-    const data = Object.fromEntries(formData);
-    const dataJson = JSON.stringify(data);
+//     const formData = new FormData(tomMiamiPred);
+//     const data = Object.fromEntries(formData);
+//     const dataJson = JSON.stringify(data);
 
-    localStorage.setItem("Tom Miami", dataJson);
+//     localStorage.setItem("Tom Miami", dataJson);
 
-})
-};
+// })
+// };
 
-const tomData = (dataName) => {
-    const dataJson = localStorage.getItem(dataName);
-    const data = JSON.parse(dataJson);
-    const p1 = data.p1;
-    const p2 = data.p2;
-    const p3 = data.p3;
-    const p4 = data.p4;
-    const p5 = data.p5;
-    const p6 = data.p6;
-    const p7 = data.p7;
-    const p8 = data.p8;
-    const p9 = data.p9;
-    const p10 = data.p10;
+// const tomData = (dataName) => {
+//     const dataJson = localStorage.getItem(dataName);
+//     const data = JSON.parse(dataJson);
+//     const p1 = data.p1;
+//     const p2 = data.p2;
+//     const p3 = data.p3;
+//     const p4 = data.p4;
+//     const p5 = data.p5;
+//     const p6 = data.p6;
+//     const p7 = data.p7;
+//     const p8 = data.p8;
+//     const p9 = data.p9;
+//     const p10 = data.p10;
 
-    const predBox = document.querySelector(".tom-pred");
+//     const predBox = document.querySelector(".tom-pred");
 
-    const drivers = {
-        verstappen: {
-            number: 1,
-            firstName: 'max',
-            secondName: 'verstappen',
-            team: './images/teams/red-bull.png'
-        },
-        perez: {
-            number: 11,
-            firstName: 'sergio',
-            secondName: 'perez',
-            team: './images/teams/red-bull.png'
-        },
-        hamilton: {
-            number: 44,
-            firstName: 'lewis',
-            secondName: 'hamilton',
-            team: './images/teams/mercedes.png'
-        },
-        russell: {
-            number: 63,
-            firstName: 'george',
-            secondName: 'russell',
-            team: './images/teams/mercedes.png'
-        },
-        leclerc: {
-            number: 16,
-            firstName: 'charles',
-            secondName: 'leclerc',
-            team: './images/teams/ferrari.png'
-        },
-        sainz: {
-            number: 55,
-            firstName: 'carlos',
-            secondName: 'sainz',
-            team: './images/teams/ferrari.png'
-        },
-        alonso: {
-            number: 14,
-            firstName: 'fernando',
-            secondName: 'alonso',
-            team: './images/teams/aston.png'
-        },
-        stroll: {
-            number: 18,
-            firstName: 'lance',
-            secondName: 'stroll',
-            team: './images/teams/aston.png'
-        },
-        norris: {
-            number: 4,
-            firstName: 'lando',
-            secondName: 'norris',
-            team: './images/teams/mclaren.png'
-        },
-        piastri: {
-            number: 81,
-            firstName: 'oscar',
-            secondName: 'piastri',
-            team: './images/teams/mclaren.png'
-        },
-        gasly: {
-            number: 10,
-            firstName: 'pierre',
-            secondName: 'gasly',
-            team: './images/teams/alpine.png'
-        },
-        ocon: {
-            number: 31,
-            firstName: 'esteban',
-            secondName: 'ocon',
-            team: './images/teams/alpine.png'
-        },
-        bottas: {
-            number: 77,
-            firstName: 'valterri',
-            secondName: 'bottas',
-            team: './images/teams/alfa-romeo.png'
-        },
-        zhou: {
-            number: 24,
-            firstName: 'guanyu',
-            secondName: 'zhou',
-            team: './images/teams/alfa-romeo.png'
-        },
-        devries: {
-            number: 21,
-            firstName: 'nyck',
-            secondName: 'de vries',
-            team: './images/teams/alpha-tauri.png'
-        },
-        tsunoda: {
-            number: 22,
-            firstName: 'yuki',
-            secondName: 'tsunoda',
-            team: './images/teams/alpha-tauri.png'
-        },
-        magnussen: {
-            number: 20,
-            firstName: 'kevin',
-            secondName: 'magnussen',
-            team: './images/teams/haas.png'
-        },
-        hulkenberg: {
-            number: 27,
-            firstName: 'niko',
-            secondName: 'hulkenberg',
-            team: './images/teams/haas.png'
-        },
-        albon: {
-            number: 23,
-            firstName: 'alexander',
-            secondName: 'albon',
-            team: './images/teams/williams.png'
-        },
-        sargeant: {
-            number: 2,
-            firstName: 'logan',
-            secondName: 'sargeant',
-            team: './images/teams/williams.png'
-        }
-    };
+//     const drivers = {
+//         verstappen: {
+//             number: 1,
+//             firstName: 'max',
+//             secondName: 'verstappen',
+//             team: './images/teams/red-bull.png'
+//         },
+//         perez: {
+//             number: 11,
+//             firstName: 'sergio',
+//             secondName: 'perez',
+//             team: './images/teams/red-bull.png'
+//         },
+//         hamilton: {
+//             number: 44,
+//             firstName: 'lewis',
+//             secondName: 'hamilton',
+//             team: './images/teams/mercedes.png'
+//         },
+//         russell: {
+//             number: 63,
+//             firstName: 'george',
+//             secondName: 'russell',
+//             team: './images/teams/mercedes.png'
+//         },
+//         leclerc: {
+//             number: 16,
+//             firstName: 'charles',
+//             secondName: 'leclerc',
+//             team: './images/teams/ferrari.png'
+//         },
+//         sainz: {
+//             number: 55,
+//             firstName: 'carlos',
+//             secondName: 'sainz',
+//             team: './images/teams/ferrari.png'
+//         },
+//         alonso: {
+//             number: 14,
+//             firstName: 'fernando',
+//             secondName: 'alonso',
+//             team: './images/teams/aston.png'
+//         },
+//         stroll: {
+//             number: 18,
+//             firstName: 'lance',
+//             secondName: 'stroll',
+//             team: './images/teams/aston.png'
+//         },
+//         norris: {
+//             number: 4,
+//             firstName: 'lando',
+//             secondName: 'norris',
+//             team: './images/teams/mclaren.png'
+//         },
+//         piastri: {
+//             number: 81,
+//             firstName: 'oscar',
+//             secondName: 'piastri',
+//             team: './images/teams/mclaren.png'
+//         },
+//         gasly: {
+//             number: 10,
+//             firstName: 'pierre',
+//             secondName: 'gasly',
+//             team: './images/teams/alpine.png'
+//         },
+//         ocon: {
+//             number: 31,
+//             firstName: 'esteban',
+//             secondName: 'ocon',
+//             team: './images/teams/alpine.png'
+//         },
+//         bottas: {
+//             number: 77,
+//             firstName: 'valterri',
+//             secondName: 'bottas',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         zhou: {
+//             number: 24,
+//             firstName: 'guanyu',
+//             secondName: 'zhou',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         devries: {
+//             number: 21,
+//             firstName: 'nyck',
+//             secondName: 'de vries',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         tsunoda: {
+//             number: 22,
+//             firstName: 'yuki',
+//             secondName: 'tsunoda',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         magnussen: {
+//             number: 20,
+//             firstName: 'kevin',
+//             secondName: 'magnussen',
+//             team: './images/teams/haas.png'
+//         },
+//         hulkenberg: {
+//             number: 27,
+//             firstName: 'niko',
+//             secondName: 'hulkenberg',
+//             team: './images/teams/haas.png'
+//         },
+//         albon: {
+//             number: 23,
+//             firstName: 'alexander',
+//             secondName: 'albon',
+//             team: './images/teams/williams.png'
+//         },
+//         sargeant: {
+//             number: 2,
+//             firstName: 'logan',
+//             secondName: 'sargeant',
+//             team: './images/teams/williams.png'
+//         }
+//     };
     
-    const createDriverCard = (driver) => {
-        return `<li class="driver-container">
-                  <div class="driver-details">
-                    <div class="driver-number">
-                      <p>${driver.number}</p>
-                    </div>
-                    <div class="driver-name">
-                      <p class="firstname">${driver.firstName}</p>
-                      <p class="surname">${driver.secondName}</p>
-                    </div>
-                  </div>
-                  <figure class="driver-img">
-                    <img src="${driver.team}" alt="">
-                  </figure>
-                </li>`;
-      };
+//     const createDriverCard = (driver) => {
+//         return `<li class="driver-container">
+//                   <div class="driver-details">
+//                     <div class="driver-number">
+//                       <p>${driver.number}</p>
+//                     </div>
+//                     <div class="driver-name">
+//                       <p class="firstname">${driver.firstName}</p>
+//                       <p class="surname">${driver.secondName}</p>
+//                     </div>
+//                   </div>
+//                   <figure class="driver-img">
+//                     <img src="${driver.team}" alt="">
+//                   </figure>
+//                 </li>`;
+//       };
 
-    const p1sub = createDriverCard(drivers[p1]);
-    const p2sub = createDriverCard(drivers[p2]);
-    const p3sub = createDriverCard(drivers[p3]);
-    const p4sub = createDriverCard(drivers[p4]);
-    const p5sub = createDriverCard(drivers[p5]);
-    const p6sub = createDriverCard(drivers[p6]);
-    const p7sub = createDriverCard(drivers[p7]);
-    const p8sub = createDriverCard(drivers[p8]);
-    const p9sub = createDriverCard(drivers[p9]);
-    const p10sub = createDriverCard(drivers[p10]);
+//     const p1sub = createDriverCard(drivers[p1]);
+//     const p2sub = createDriverCard(drivers[p2]);
+//     const p3sub = createDriverCard(drivers[p3]);
+//     const p4sub = createDriverCard(drivers[p4]);
+//     const p5sub = createDriverCard(drivers[p5]);
+//     const p6sub = createDriverCard(drivers[p6]);
+//     const p7sub = createDriverCard(drivers[p7]);
+//     const p8sub = createDriverCard(drivers[p8]);
+//     const p9sub = createDriverCard(drivers[p9]);
+//     const p10sub = createDriverCard(drivers[p10]);
 
-    predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
-}
+//     predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+// }
 
-tomData("Tom Miami");
+// tomData("Tom Miami");
 
 
-// owen miami
-const owenMiamiPred = document.querySelector(".owen-miami-pred");
+// // owen miami
+// const owenMiamiPred = document.querySelector(".owen-miami-pred");
 
-if(owenMiamiPred) {
-    owenMiamiPred.addEventListener("submit", event => {
+// if(owenMiamiPred) {
+//     owenMiamiPred.addEventListener("submit", event => {
 
-    const formData = new FormData(owenMiamiPred);
-    const data = Object.fromEntries(formData);
-    const dataJson = JSON.stringify(data);
+//     const formData = new FormData(owenMiamiPred);
+//     const data = Object.fromEntries(formData);
+//     const dataJson = JSON.stringify(data);
 
-    localStorage.setItem("Owen Miami", dataJson);
+//     localStorage.setItem("Owen Miami", dataJson);
 
-})
-};
+// })
+// };
 
-const owenData = (dataName) => {
-    const dataJson = localStorage.getItem(dataName);
-    const data = JSON.parse(dataJson);
-    const p1 = data.p1;
-    const p2 = data.p2;
-    const p3 = data.p3;
-    const p4 = data.p4;
-    const p5 = data.p5;
-    const p6 = data.p6;
-    const p7 = data.p7;
-    const p8 = data.p8;
-    const p9 = data.p9;
-    const p10 = data.p10;
+// const owenData = (dataName) => {
+//     const dataJson = localStorage.getItem(dataName);
+//     const data = JSON.parse(dataJson);
+//     const p1 = data.p1;
+//     const p2 = data.p2;
+//     const p3 = data.p3;
+//     const p4 = data.p4;
+//     const p5 = data.p5;
+//     const p6 = data.p6;
+//     const p7 = data.p7;
+//     const p8 = data.p8;
+//     const p9 = data.p9;
+//     const p10 = data.p10;
 
-    const predBox = document.querySelector(".owen-pred");
+//     const predBox = document.querySelector(".owen-pred");
 
-    const drivers = {
-        verstappen: {
-            number: 1,
-            firstName: 'max',
-            secondName: 'verstappen',
-            team: './images/teams/red-bull.png'
-        },
-        perez: {
-            number: 11,
-            firstName: 'sergio',
-            secondName: 'perez',
-            team: './images/teams/red-bull.png'
-        },
-        hamilton: {
-            number: 44,
-            firstName: 'lewis',
-            secondName: 'hamilton',
-            team: './images/teams/mercedes.png'
-        },
-        russell: {
-            number: 63,
-            firstName: 'george',
-            secondName: 'russell',
-            team: './images/teams/mercedes.png'
-        },
-        leclerc: {
-            number: 16,
-            firstName: 'charles',
-            secondName: 'leclerc',
-            team: './images/teams/ferrari.png'
-        },
-        sainz: {
-            number: 55,
-            firstName: 'carlos',
-            secondName: 'sainz',
-            team: './images/teams/ferrari.png'
-        },
-        alonso: {
-            number: 14,
-            firstName: 'fernando',
-            secondName: 'alonso',
-            team: './images/teams/aston.png'
-        },
-        stroll: {
-            number: 18,
-            firstName: 'lance',
-            secondName: 'stroll',
-            team: './images/teams/aston.png'
-        },
-        norris: {
-            number: 4,
-            firstName: 'lando',
-            secondName: 'norris',
-            team: './images/teams/mclaren.png'
-        },
-        piastri: {
-            number: 81,
-            firstName: 'oscar',
-            secondName: 'piastri',
-            team: './images/teams/mclaren.png'
-        },
-        gasly: {
-            number: 10,
-            firstName: 'pierre',
-            secondName: 'gasly',
-            team: './images/teams/alpine.png'
-        },
-        ocon: {
-            number: 31,
-            firstName: 'esteban',
-            secondName: 'ocon',
-            team: './images/teams/alpine.png'
-        },
-        bottas: {
-            number: 77,
-            firstName: 'valterri',
-            secondName: 'bottas',
-            team: './images/teams/alfa-romeo.png'
-        },
-        zhou: {
-            number: 24,
-            firstName: 'guanyu',
-            secondName: 'zhou',
-            team: './images/teams/alfa-romeo.png'
-        },
-        devries: {
-            number: 21,
-            firstName: 'nyck',
-            secondName: 'de vries',
-            team: './images/teams/alpha-tauri.png'
-        },
-        tsunoda: {
-            number: 22,
-            firstName: 'yuki',
-            secondName: 'tsunoda',
-            team: './images/teams/alpha-tauri.png'
-        },
-        magnussen: {
-            number: 20,
-            firstName: 'kevin',
-            secondName: 'magnussen',
-            team: './images/teams/haas.png'
-        },
-        hulkenberg: {
-            number: 27,
-            firstName: 'niko',
-            secondName: 'hulkenberg',
-            team: './images/teams/haas.png'
-        },
-        albon: {
-            number: 23,
-            firstName: 'alexander',
-            secondName: 'albon',
-            team: './images/teams/williams.png'
-        },
-        sargeant: {
-            number: 2,
-            firstName: 'logan',
-            secondName: 'sargeant',
-            team: './images/teams/williams.png'
-        }
-    };
+//     const drivers = {
+//         verstappen: {
+//             number: 1,
+//             firstName: 'max',
+//             secondName: 'verstappen',
+//             team: './images/teams/red-bull.png'
+//         },
+//         perez: {
+//             number: 11,
+//             firstName: 'sergio',
+//             secondName: 'perez',
+//             team: './images/teams/red-bull.png'
+//         },
+//         hamilton: {
+//             number: 44,
+//             firstName: 'lewis',
+//             secondName: 'hamilton',
+//             team: './images/teams/mercedes.png'
+//         },
+//         russell: {
+//             number: 63,
+//             firstName: 'george',
+//             secondName: 'russell',
+//             team: './images/teams/mercedes.png'
+//         },
+//         leclerc: {
+//             number: 16,
+//             firstName: 'charles',
+//             secondName: 'leclerc',
+//             team: './images/teams/ferrari.png'
+//         },
+//         sainz: {
+//             number: 55,
+//             firstName: 'carlos',
+//             secondName: 'sainz',
+//             team: './images/teams/ferrari.png'
+//         },
+//         alonso: {
+//             number: 14,
+//             firstName: 'fernando',
+//             secondName: 'alonso',
+//             team: './images/teams/aston.png'
+//         },
+//         stroll: {
+//             number: 18,
+//             firstName: 'lance',
+//             secondName: 'stroll',
+//             team: './images/teams/aston.png'
+//         },
+//         norris: {
+//             number: 4,
+//             firstName: 'lando',
+//             secondName: 'norris',
+//             team: './images/teams/mclaren.png'
+//         },
+//         piastri: {
+//             number: 81,
+//             firstName: 'oscar',
+//             secondName: 'piastri',
+//             team: './images/teams/mclaren.png'
+//         },
+//         gasly: {
+//             number: 10,
+//             firstName: 'pierre',
+//             secondName: 'gasly',
+//             team: './images/teams/alpine.png'
+//         },
+//         ocon: {
+//             number: 31,
+//             firstName: 'esteban',
+//             secondName: 'ocon',
+//             team: './images/teams/alpine.png'
+//         },
+//         bottas: {
+//             number: 77,
+//             firstName: 'valterri',
+//             secondName: 'bottas',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         zhou: {
+//             number: 24,
+//             firstName: 'guanyu',
+//             secondName: 'zhou',
+//             team: './images/teams/alfa-romeo.png'
+//         },
+//         devries: {
+//             number: 21,
+//             firstName: 'nyck',
+//             secondName: 'de vries',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         tsunoda: {
+//             number: 22,
+//             firstName: 'yuki',
+//             secondName: 'tsunoda',
+//             team: './images/teams/alpha-tauri.png'
+//         },
+//         magnussen: {
+//             number: 20,
+//             firstName: 'kevin',
+//             secondName: 'magnussen',
+//             team: './images/teams/haas.png'
+//         },
+//         hulkenberg: {
+//             number: 27,
+//             firstName: 'niko',
+//             secondName: 'hulkenberg',
+//             team: './images/teams/haas.png'
+//         },
+//         albon: {
+//             number: 23,
+//             firstName: 'alexander',
+//             secondName: 'albon',
+//             team: './images/teams/williams.png'
+//         },
+//         sargeant: {
+//             number: 2,
+//             firstName: 'logan',
+//             secondName: 'sargeant',
+//             team: './images/teams/williams.png'
+//         }
+//     };
     
-    const createDriverCard = (driver) => {
-        return `<li class="driver-container">
-                  <div class="driver-details">
-                    <div class="driver-number">
-                      <p>${driver.number}</p>
-                    </div>
-                    <div class="driver-name">
-                      <p class="firstname">${driver.firstName}</p>
-                      <p class="surname">${driver.secondName}</p>
-                    </div>
-                  </div>
-                  <figure class="driver-img">
-                    <img src="${driver.team}" alt="">
-                  </figure>
-                </li>`;
-      };
+//     const createDriverCard = (driver) => {
+//         return `<li class="driver-container">
+//                   <div class="driver-details">
+//                     <div class="driver-number">
+//                       <p>${driver.number}</p>
+//                     </div>
+//                     <div class="driver-name">
+//                       <p class="firstname">${driver.firstName}</p>
+//                       <p class="surname">${driver.secondName}</p>
+//                     </div>
+//                   </div>
+//                   <figure class="driver-img">
+//                     <img src="${driver.team}" alt="">
+//                   </figure>
+//                 </li>`;
+//       };
 
-    const p1sub = createDriverCard(drivers[p1]);
-    const p2sub = createDriverCard(drivers[p2]);
-    const p3sub = createDriverCard(drivers[p3]);
-    const p4sub = createDriverCard(drivers[p4]);
-    const p5sub = createDriverCard(drivers[p5]);
-    const p6sub = createDriverCard(drivers[p6]);
-    const p7sub = createDriverCard(drivers[p7]);
-    const p8sub = createDriverCard(drivers[p8]);
-    const p9sub = createDriverCard(drivers[p9]);
-    const p10sub = createDriverCard(drivers[p10]);
+//     const p1sub = createDriverCard(drivers[p1]);
+//     const p2sub = createDriverCard(drivers[p2]);
+//     const p3sub = createDriverCard(drivers[p3]);
+//     const p4sub = createDriverCard(drivers[p4]);
+//     const p5sub = createDriverCard(drivers[p5]);
+//     const p6sub = createDriverCard(drivers[p6]);
+//     const p7sub = createDriverCard(drivers[p7]);
+//     const p8sub = createDriverCard(drivers[p8]);
+//     const p9sub = createDriverCard(drivers[p9]);
+//     const p10sub = createDriverCard(drivers[p10]);
 
-    predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
-}
+//     predBox.innerHTML = `${p1sub} ${p2sub} ${p3sub} ${p4sub} ${p5sub} ${p6sub} ${p7sub} ${p8sub} ${p9sub} ${p10sub}`;
+// }
 
-owenData("Owen Miami");
+// owenData("Owen Miami");
 
 
 
