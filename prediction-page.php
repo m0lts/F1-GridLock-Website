@@ -57,12 +57,12 @@
                             <label for="user">User:</label>
                             <select name="user" id="user">
                                 <option value="???">--Select yourself--</option>
-                                <option value="ali">Ali</option>
-                                <option value="ed">Ed</option>
-                                <option value="jack">Jack</option>
-                                <option value="toby">Toby</option>
-                                <option value="tom">Tom</option>
-                                <option value="owen">Owen</option>
+                                <option value="Ali">Ali</option>
+                                <option value="Ed">Ed</option>
+                                <option value="Jack">Jack</option>
+                                <option value="Toby">Toby</option>
+                                <option value="Tom">Tom</option>
+                                <option value="Owen">Owen</option>
                             </select>
                             <label for="p1">1.</label>
                             <select name="p1-ali" id="p1">
