@@ -130,14 +130,14 @@
                                 
                                 foreach ($rows as $row):
                                     ?>
-                                    <li class="driver-container">
+                                    <li class="driver-container <?= $row ['p1'] ?>">
                                     <div class="driver-details">
                                         <div class="driver-number">
                                         <p class="driver-number-p">0</p>
                                         </div>
                                         <div class="driver-name">
                                         <p class="firstname">firstname</p>
-                                        <p class="surname"><?= $row['p1']?></p>
+                                        <p class="surname">surname</p>
                                         </div>
                                     </div>
                                     <figure class="driver-img">
