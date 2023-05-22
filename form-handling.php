@@ -1,9 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
+    <script src="https://kit.fontawesome.com/d7b281748b.js" crossorigin="anonymous"></script>
+    <script src="./functionality/app.js" type="module"></script>
+    <title>F1-GridLock</title>
+    <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
+</head>
+<body>
+    <!--top header, inc. logo on left and responsive menu on right-->
+    <header class="header">
+        <!--logo container and logo nested-->
+        <figure class="logo-cont">
+            <img src="./images/common/F1 (1).png" alt="F1-GridLock logo">
+        </figure>
+        <!--menu button - common across all pages-->
+        <button class="btn menu-btn">
+            Menu +
+        </button>
+
+        <!--hidden nav-screen. Background image to be yas marina circuit-->
+        <nav class="nav-screen">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#">Race</a></li>
+                <li class="nav-item"><a href="./standings.html">Standings</a></li>
+                <!-- <li class="nav-item"><a href="./champ-predictions.html">Predictions</a></li> -->
+                <li class="nav-item"><a href="./points-system.html">Points System</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--end of header-->
+
+    <!--main pages-->
+    <main class="page-alignment">
+            <!-- race weekend top-banner -->
+            <div class="race-weekend-hero">
+                <h1 id="race-country"></h1>
+                <figure class="flag-cont">
+                    <img class="flag-fill" src="" alt="">
+                </figure>
+            </div>
+            <p class="form-submission-thanks">Thank you <?= $user ?> , you submission has been recorded.</p>
+</main>
+</body>
+</html>
+
+
 <?php
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    $race = "monaco";
-   $user = "ali";
+   $user = $_POST["user"];
    $p1 =  $_POST["p1-ali"];
    $p2 =  $_POST["p2-ali"];
    $p3 =  $_POST["p3-ali"];
@@ -39,26 +92,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $stmt->close();
    $conn->close();
 
-   //Redirect to a different page
-   header('Location: index.html');
-   exit();
 
 }
 
-
-
-
-// $stmt = mysqli_stmt_init($conn);
-
-//  if ( ! mysqli_stmt_prepare($stmt, $sql)) {
-//    die(mysqli_error($conn));
-//  }
-
-// mysqli_stmt_bind_param($stmt, "ssssssssssss", $race, $user, $p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10);
-
-// mysqli_stmt_execute($stmt);
-
-// echo "Prediction saved";
+?>
 
 
 
