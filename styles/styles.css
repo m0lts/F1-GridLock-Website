@@ -190,6 +190,15 @@ img {
 .timer, .timer-text {
     font-size: 1.5rem;
 }
+.make-prediction {
+    border:1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--red);
+    color: var(--white);
+    text-decoration: none;
+}
 /* stats and predictions box */
 .grey-container {
     background-color: var(--light-grey);
@@ -591,3 +600,12 @@ img {
 
 
 
+/* PREDICTION-PAGE.PHP */
+.prediction-title-h2 {
+    text-align: center;
+    padding:25px;
+}
+.information {
+    text-align: center;
+    padding-bottom:25px;
+}
