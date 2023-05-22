@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -98,7 +97,43 @@
                     </ul>
                     <div class="ali-pred">
                         <h5 class="prediction-title">Ali's Prediction</h5>
-                        
+                        <?php
+                            // Database details
+                            $host = "localhost";
+                            $dbname = "u128425984_predictions";
+                            $username = "u128425984_moltontom";
+                            $password = "Wilson2000";
+
+                            // Connect to database
+                            $conn = new mysqli($host, $username, $password, $dbname);
+
+                            // Check connection
+                            if ($conn->connect_error) {
+                                die('Connection failed: ' . $conn->connect_error);
+                            }
+                            
+                            // SQL query to fetch data
+                            $sql = "SELECT * FROM monaco_predictions";
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                // Output data of each row
+                                while ($row = $result->fetch_assoc()) {
+                                    // Access data using column names
+                                    $column1Value = $row["column1"];
+                                    $column2Value = $row["column2"];
+                            
+                                    // Perform desired actions with the retrieved data
+                                    // ...
+                                }
+                            } else {
+                                echo "No results found.";
+                            }
+                            
+                            // Close connection
+                            $conn->close();
+
+                        ?>
                     </div>
                     <div class="ed-pred">
                         <h5 class="prediction-title">Ed's Prediction</h5>
