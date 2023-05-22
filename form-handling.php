@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
-            <p class="form-submission-thanks">Thank you<?php echo $user; ?> , your submission has been recorded.</p>
+            <p class="form-submission-thanks">Thank you <?php echo $user; ?> , your submission has been recorded.</p>
 </main>
 </body>
 </html>

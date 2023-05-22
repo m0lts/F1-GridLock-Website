@@ -112,7 +112,12 @@
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT p1 FROM monaco_predictions");
+                                $stmt = $conn->prepare("SELECT p1 FROM monaco_predictions WHERE user = :search_value");
+
+                                //Bind the search value to the prepared statement
+                                $searchValue = "Tom";
+                                $stmt->bindParam(':search_value', $searchValue);
+
                                 $stmt->execute();
                             
                                 // Fetch all rows as an associative array
@@ -121,7 +126,7 @@
                                 // Output the fetched data as an HTML unordered list
                                 echo "<ul>";
                                 foreach ($rows as $row) {
-                                    echo "<li>" . $row['p1'] . "</li>";
+                                    echo "<li>" . $row['p1'] . ":" . $row['p2'] . ":" . $row['p3'] . ":" . $row['p4'] . "</li>";
                                 }
                                 echo "</ul>";
                             } catch (PDOException $e) {
