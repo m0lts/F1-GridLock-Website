@@ -97,7 +97,6 @@
                     </ul>
                     <div class="ali-pred">
                         <h5 class="prediction-title">Ali's Prediction</h5>
-                        <ul>
                         <?php
                             // Database details
                             $host = "localhost";
@@ -127,31 +126,20 @@
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
                                 // Output the fetched data as an HTML unordered list
-                                foreach ($rows as $row):
-                                    ?>
-                                <li class="driver-container">
-                                <div class="driver-details">
-                                    <div class="driver-number">
-                                    <p>1</p>
-                                    </div>
-                                    <div class="driver-name">
-                                    <p class="firstname">firstname</p>
-                                    <p class="surname"><?= $row['p1'] ?></p>
-                                    </div>
-                                </div>
-                                <figure class="driver-img">
-                                    <img src="${driver.team}" alt="">
-                                </figure>
-                                </li>
-                                <?php
-                                endforeach;
+                                echo "<ul>";
+                                foreach ($rows as $row) {
+                                    echo "<li>" . $row['p1'] . ":" . $row['p2'] . ":" . $row['p3'] . ":" . $row['p4'] . "</li>";
+                                }
 
+                                
+
+
+                                echo "</ul>";
                             } catch (PDOException $e) {
                                 echo "Query failed: " . $e->getMessage();
                             }
 
                         ?>
-                        </ul>
                     </div>
                     <div class="ed-pred">
                         <h5 class="prediction-title">Ed's Prediction</h5>
