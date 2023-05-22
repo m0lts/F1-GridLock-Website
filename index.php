@@ -104,39 +104,29 @@
                             $username = "u128425984_moltontom";
                             $password = "Wilson2000";
 
-                            // Connect to database
-                            $conn = new mysqli($host, $username, $password, $dbname);
-
-                            // Check connection
-                            if ($conn->connect_error) {
-                                die('Connection failed: ' . $conn->connect_error);
-                            }
+                            try {
+                                // Create a new PDO instance
+                                $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
                             
-                            // SQL query to fetch data
-                            $sql = "SELECT * FROM monaco_predictions";
-                            $result = $conn->query($sql);
-
-                            if ($result->num_rows > 0) {
-
+                                // Set PDO error mode to exception
+                                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            
+                                // Prepare and execute the SQL query
+                                $stmt = $conn->prepare("SELECT * FROM your_table_name");
+                                $stmt->execute();
+                            
+                                // Fetch all rows as an associative array
+                                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            
+                                // Output the fetched data as an HTML unordered list
                                 echo "<ul>";
-
-                                // Output data of each row
-                                while ($row = $result->fetch_assoc()) {
-                                    // Access data using column names
-                                    $column1Value = $row["column1"];
-                                    $column2Value = $row["column2"];
-                            
-                                    // Generate list item for each row
-                                    echo "<li>$column1Value - $column2Value</li>";
+                                foreach ($rows as $row) {
+                                    echo "<li>" . $row['id'] . " - " . $row['race'] . " - " . $row['user'] . "</li>";
                                 }
-
                                 echo "</ul>";
-                            } else {
-                                echo "No results found.";
+                            } catch (PDOException $e) {
+                                echo "Query failed: " . $e->getMessage();
                             }
-                            
-                            // Close connection
-                            $conn->close();
 
                         ?>
                     </div>
