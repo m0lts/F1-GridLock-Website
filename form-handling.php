@@ -1,20 +1,18 @@
 <?php
 
-// $race = "monaco";
-// $user = "ali";
-// $p1 =  $_POST["p1-ali"];
-// $p2 =  $_POST["p2-ali"];
-// $p3 =  $_POST["p3-ali"];
-// $p4 =  $_POST["p4-ali"];
-// $p5 =  $_POST["p5-ali"];
-// $p6 =  $_POST["p6-ali"];
-// $p7 =  $_POST["p7-ali"];
-// $p8 =  $_POST["p8-ali"];
-// $p9 =  $_POST["p9-ali"];
-// $p10 =  $_POST["p10-ali"];
+$race = "monaco";
+$user = "ali";
+$p1 =  $_POST["p1-ali"];
+$p2 =  $_POST["p2-ali"];
+$p3 =  $_POST["p3-ali"];
+$p4 =  $_POST["p4-ali"];
+$p5 =  $_POST["p5-ali"];
+$p6 =  $_POST["p6-ali"];
+$p7 =  $_POST["p7-ali"];
+$p8 =  $_POST["p8-ali"];
+$p9 =  $_POST["p9-ali"];
+$p10 =  $_POST["p10-ali"];
 
-$race = $_POST["race"];
-$user = $_POST["user"];
 
 
 
@@ -35,8 +33,8 @@ if ($conn->connect_error) {
 }
 
 // Prepare and execute SQL statement
-$stmt = $conn->prepare('INSERT INTO monaco_predictions (race, user) VALUES (?, ?)');
-$stmt->bind_param('ss', $race, $user);
+$stmt = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+$stmt->bind_param('ssssssssssss', $race, $user, $p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10);
 $stmt->execute();
 
 // Close statement and database connection
