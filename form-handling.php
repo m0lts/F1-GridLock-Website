@@ -26,7 +26,7 @@
         <nav class="nav-screen">
             <ul class="nav-list">
                 <li class="nav-item"><a href="./index.php">Race</a></li>
-                <li class="nav-item"><a href="./standings.html">Standings</a></li>
+                <li class="nav-item"><a href="./standings.php">Standings</a></li>
                 <!-- <li class="nav-item"><a href="./champ-predictions.html">Predictions</a></li> -->
                 <li class="nav-item"><a href="./points-system.html">Points System</a></li>
             </ul>
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
-            <p class="form-submission-thanks">Thank you <?php echo $user; ?> , your submission has been recorded.</p>
+            <p class="form-submission-thanks">Thank you <?php echo $user; ?>, your submission has been recorded.</p>
 </main>
 </body>
 </html>
