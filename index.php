@@ -141,7 +141,7 @@
                                         </div>
                                     </div>
                                     <figure class="driver-img">
-                                        <img src="" alt="">
+                                        <img class="team-img" src="" alt="">
                                     </figure>
                                     </li>
                                     <li class="driver-container">

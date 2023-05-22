@@ -225,14 +225,41 @@ fetchNextRace(nextRaceLink);
 
 
 // AUTO FILL DRIVER DETAILS FROM PHP DATABASE RETRIEVAL
-
-const driverNumberElement = document.querySelectorAll('.driver-number-p');
 const driverSurnameRetrieval = document.querySelectorAll('.surname');
+const driverNumberElement = document.querySelectorAll('.driver-number-p');
+const driverFirstNameElement = document.querySelectorAll('.firstname');
+const driverTeam = document.querySelectorAll('.team-img'); 
+
 
 // driver surname inner HTML
-    driverSurnameRetrieval.forEach(surname => {
-        console.log(surname.textContent);
-    });
+driverSurnameRetrieval.forEach(surname => {
+    if (surname.textContent === ocon) {
+        driverNumberElement.forEach(number => {
+            number.textContent = 31;
+        });
+        driverFirstNameElement.forEach(firstName => {
+            firstName.textContent = "Esteban";
+        });
+        driverTeam.forEach(img => {
+            img.src = './images/teams/alpine.png';
+        });
+    } else if (surname.textContent === gasly) {
+        driverNumberElement.forEach(number => {
+            number.textContent = 10;
+        });
+        driverFirstNameElement.forEach(firstName => {
+            firstName.textContent = "Pierre";
+        });
+        driverTeam.forEach(img => {
+            img.src = './images/teams/alpine.png';
+        });
+    }
+
+
+
+    console.log(surname.textContent);
+})
+
 
 
 
