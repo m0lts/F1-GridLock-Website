@@ -871,14 +871,18 @@
                             
                                 // Set PDO error mode to exception
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            
-                                // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+
+                                // Auto-fill database with fallback predictions if user doesn't enter a prediction
 
                                 // Get the next race name
                                 $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
                                 $result = json_decode($content);
                                 $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                
+                            
+                                // Prepare and execute the SQL query
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Tom";
@@ -887,12 +891,16 @@
                                 $stmt->bindParam(':race_value', $raceValue);
 
                                 $stmt->execute();
+
+                                if ($stmt->rowCount() === 0) {
+                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2->execute([$raceValue, $userValue, "verstappen", "perez", "alonso", "leclerc", "sainz", "hamilton", "stroll", "russell", "norris", "ocon"]);
+                                };
                             
                                 // Fetch all rows as an associative array
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
                                 // Output the fetched data as an HTML unordered list
-                                
                                 foreach ($rows as $row):
                                     ?>
                                     <li class="driver-container <?= $row ['p1'] ?>">
