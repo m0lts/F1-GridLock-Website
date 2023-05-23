@@ -902,7 +902,7 @@
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                $qualifying = date('2023-05-23 19:17:00');
+                                $qualifying = date('2023-05-23 19:22:00');
 
 
                                 // Access current date and time
@@ -1064,13 +1064,6 @@
                                 endforeach;
                             } catch (PDOException $e) {
                                 echo "Query failed: " . $e->getMessage();
-                            }
-                            $currentDateTime = date('Y-m-d H:i:s');
-                            $qualifying = date('2023-05-23 19:00:00');
-                            if ($currentDateTime < $qualifying) {
-                                echo "correct";
-                            } else {
-                                echo "incorrect";
                             }
                         ?>
                         </ul>
