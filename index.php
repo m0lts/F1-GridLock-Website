@@ -111,14 +111,17 @@
                             
                                 // Set PDO error mode to exception
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            
-                                // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+
 
                                 // Get the next race name
                                 $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
                                 $result = json_decode($content);
                                 $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                
+                            
+                                // Prepare and execute the SQL query
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ali";
@@ -127,12 +130,33 @@
                                 $stmt->bindParam(':race_value', $raceValue);
 
                                 $stmt->execute();
+
+                                // Fetch qualifying time
+                                $qualiTime = $result->MRData->RaceTable->Races[0]->Qualifying->time;
+                                $timeString = str_split($qualiTime);
+                                array_pop($timeString);
+                                $timeString[1]++;
+                                $returnedQualiTime = implode("", $timeString);
+                                // Fetch qualifying date
+                                $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
+                                // Concatenate qualifying time and date in format: Y-M-D H-M-S
+                                // $qualifying = $qualiDate . " " . $returnedQualiTime;
+                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+
+
+                                // Access current date and time
+                                $currentDateTime = date('Y-m-d H:i:s');
+
+                                // Auto-fill database with fallback predictions if user doesn't enter a prediction
+                                if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
+                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2->execute([$raceValue, $userValue, "verstappen", "leclerc", "perez", "alonso", "sainz", "hamilton", "stroll", "russell", "norris", "gasly"]);
+                                };
                             
                                 // Fetch all rows as an associative array
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
                                 // Output the fetched data as an HTML unordered list
-                                
                                 foreach ($rows as $row):
                                     ?>
                                     <li class="driver-container <?= $row ['p1'] ?>">
@@ -301,14 +325,17 @@
                             
                                 // Set PDO error mode to exception
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            
-                                // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+
 
                                 // Get the next race name
                                 $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
                                 $result = json_decode($content);
                                 $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                
+                            
+                                // Prepare and execute the SQL query
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ed";
@@ -317,12 +344,33 @@
                                 $stmt->bindParam(':race_value', $raceValue);
 
                                 $stmt->execute();
+
+                                // Fetch qualifying time
+                                $qualiTime = $result->MRData->RaceTable->Races[0]->Qualifying->time;
+                                $timeString = str_split($qualiTime);
+                                array_pop($timeString);
+                                $timeString[1]++;
+                                $returnedQualiTime = implode("", $timeString);
+                                // Fetch qualifying date
+                                $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
+                                // Concatenate qualifying time and date in format: Y-M-D H-M-S
+                                // $qualifying = $qualiDate . " " . $returnedQualiTime;
+                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+
+
+                                // Access current date and time
+                                $currentDateTime = date('Y-m-d H:i:s');
+
+                                // Auto-fill database with fallback predictions if user doesn't enter a prediction
+                                if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
+                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2->execute([$raceValue, $userValue, "verstappen", "perez", "leclerc", "russell", "hamilton", "sainz", "alonso", "norris", "ocon", "piastri"]);
+                                };
                             
                                 // Fetch all rows as an associative array
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
                                 // Output the fetched data as an HTML unordered list
-                                
                                 foreach ($rows as $row):
                                     ?>
                                     <li class="driver-container <?= $row ['p1'] ?>">
@@ -491,14 +539,17 @@
                             
                                 // Set PDO error mode to exception
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            
-                                // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+
 
                                 // Get the next race name
                                 $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
                                 $result = json_decode($content);
                                 $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                
+                            
+                                // Prepare and execute the SQL query
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Jack";
@@ -507,12 +558,33 @@
                                 $stmt->bindParam(':race_value', $raceValue);
 
                                 $stmt->execute();
+
+                                // Fetch qualifying time
+                                $qualiTime = $result->MRData->RaceTable->Races[0]->Qualifying->time;
+                                $timeString = str_split($qualiTime);
+                                array_pop($timeString);
+                                $timeString[1]++;
+                                $returnedQualiTime = implode("", $timeString);
+                                // Fetch qualifying date
+                                $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
+                                // Concatenate qualifying time and date in format: Y-M-D H-M-S
+                                // $qualifying = $qualiDate . " " . $returnedQualiTime;
+                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+
+
+                                // Access current date and time
+                                $currentDateTime = date('Y-m-d H:i:s');
+
+                                // Auto-fill database with fallback predictions if user doesn't enter a prediction
+                                if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
+                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2->execute([$raceValue, $userValue, "leclerc", "verstappen", "perez", "sainz", "russell", "hamilton", "norris", "alonso", "stroll", "bottas"]);
+                                };
                             
                                 // Fetch all rows as an associative array
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
                                 // Output the fetched data as an HTML unordered list
-                                
                                 foreach ($rows as $row):
                                     ?>
                                     <li class="driver-container <?= $row ['p1'] ?>">
@@ -681,14 +753,17 @@
                             
                                 // Set PDO error mode to exception
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            
-                                // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
-                                
+
+
                                 // Get the next race name
                                 $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
                                 $result = json_decode($content);
                                 $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                
+                            
+                                // Prepare and execute the SQL query
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Toby";
@@ -697,12 +772,33 @@
                                 $stmt->bindParam(':race_value', $raceValue);
 
                                 $stmt->execute();
+
+                                // Fetch qualifying time
+                                $qualiTime = $result->MRData->RaceTable->Races[0]->Qualifying->time;
+                                $timeString = str_split($qualiTime);
+                                array_pop($timeString);
+                                $timeString[1]++;
+                                $returnedQualiTime = implode("", $timeString);
+                                // Fetch qualifying date
+                                $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
+                                // Concatenate qualifying time and date in format: Y-M-D H-M-S
+                                // $qualifying = $qualiDate . " " . $returnedQualiTime;
+                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+
+
+                                // Access current date and time
+                                $currentDateTime = date('Y-m-d H:i:s');
+
+                                // Auto-fill database with fallback predictions if user doesn't enter a prediction
+                                if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
+                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2->execute([$raceValue, $userValue, "verstappen", "leclerc", "perez", "sainz", "hamilton", "russell", "ocon", "gasly", "alonso", "norris"]);
+                                };
                             
                                 // Fetch all rows as an associative array
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
                                 // Output the fetched data as an HTML unordered list
-                                
                                 foreach ($rows as $row):
                                     ?>
                                     <li class="driver-container <?= $row ['p1'] ?>">
@@ -851,7 +947,6 @@
                             } catch (PDOException $e) {
                                 echo "Query failed: " . $e->getMessage();
                             }
-
                         ?>
                         </ul>
                     </div>
@@ -872,7 +967,6 @@
                                 // Set PDO error mode to exception
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                                // Auto-fill database with fallback predictions if user doesn't enter a prediction
 
                                 // Get the next race name
                                 $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
@@ -902,12 +996,13 @@
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                $qualifying = date('2023-05-23 19:22:00');
+                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
 
 
                                 // Access current date and time
                                 $currentDateTime = date('Y-m-d H:i:s');
 
+                                // Auto-fill database with fallback predictions if user doesn't enter a prediction
                                 if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
                                     $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                                     $stmt2->execute([$raceValue, $userValue, "verstappen", "perez", "alonso", "leclerc", "sainz", "hamilton", "stroll", "russell", "norris", "ocon"]);
@@ -1084,14 +1179,17 @@
                             
                                 // Set PDO error mode to exception
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            
-                                // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+
 
                                 // Get the next race name
                                 $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
                                 $result = json_decode($content);
                                 $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                
+                            
+                                // Prepare and execute the SQL query
+                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Owen";
@@ -1100,12 +1198,33 @@
                                 $stmt->bindParam(':race_value', $raceValue);
 
                                 $stmt->execute();
+
+                                // Fetch qualifying time
+                                $qualiTime = $result->MRData->RaceTable->Races[0]->Qualifying->time;
+                                $timeString = str_split($qualiTime);
+                                array_pop($timeString);
+                                $timeString[1]++;
+                                $returnedQualiTime = implode("", $timeString);
+                                // Fetch qualifying date
+                                $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
+                                // Concatenate qualifying time and date in format: Y-M-D H-M-S
+                                // $qualifying = $qualiDate . " " . $returnedQualiTime;
+                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+
+
+                                // Access current date and time
+                                $currentDateTime = date('Y-m-d H:i:s');
+
+                                // Auto-fill database with fallback predictions if user doesn't enter a prediction
+                                if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
+                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2->execute([$raceValue, $userValue, "verstappen", "leclerc", "alonso", "perez", "hamilton", "russell", "gasly", "stroll", "ocon", "norris"]);
+                                };
                             
                                 // Fetch all rows as an associative array
                                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             
                                 // Output the fetched data as an HTML unordered list
-                                
                                 foreach ($rows as $row):
                                     ?>
                                     <li class="driver-container <?= $row ['p1'] ?>">

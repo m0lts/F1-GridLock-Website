@@ -630,3 +630,9 @@ img {
 .prediction-selection {
     display: block;
 }
+
+/* FORM-HANDLING.PHP */
+.form-submission-thanks {
+    text-align: center;
+    padding:10% 0;
+}
