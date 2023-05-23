@@ -892,7 +892,23 @@
 
                                 $stmt->execute();
 
-                                if ($stmt->rowCount() === 0) {
+                                // Fetch qualifying time
+                                $qualiTime = $result->MRData->RaceTable->Races[0]->Qualifying->time;
+                                $timeString = str_split($qualiTime);
+                                array_pop($timeString);
+                                $timeString[1]++;
+                                $returnedQualiTime = implode("", $timeString);
+                                // Fetch qualifying date
+                                $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
+                                // Concatenate qualifying time and date in format: Y-M-D H-M-S
+                                // $qualifying = $qualiDate . " " . $returnedQualiTime;
+                                $qualifying = "2023-05-23 18:50:00";
+
+
+                                // Access current date and time
+                                $currentDateTime = date('Y-m-d H:i:s');
+
+                                if ($stmt->rowCount() === 0 && $currentDateTime === $qualifying) {
                                     $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                                     $stmt2->execute([$raceValue, $userValue, "verstappen", "perez", "alonso", "leclerc", "sainz", "hamilton", "stroll", "russell", "norris", "ocon"]);
                                 };

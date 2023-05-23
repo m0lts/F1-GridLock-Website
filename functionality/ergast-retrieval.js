@@ -149,7 +149,7 @@ export const fetchNextRace = async (link) => {
     const returnedQualiTime = timeString.join("");
     const qualiDate = data.MRData.RaceTable.Races[0].Qualifying.date;
     // countdown logic
-    let countdownDate = new Date(`${qualiDate} ${qualiTime}`);
+    let countdownDate = new Date(`${qualiDate} ${returnedQualiTime}`);
     let countdown = setInterval(function() {
         let now = new Date().getTime();
         let distance = countdownDate - now;
