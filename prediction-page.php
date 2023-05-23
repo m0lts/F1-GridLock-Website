@@ -52,7 +52,17 @@
             <section class="prediction-section">
                 <h2 class="prediction-title-h2">Make your prediction:*</h2>
                 <p class="information">*please only submit once, check that your name is selected and don't submit the same driver twice.</p>
-                <div class="ali-prediction-selection">
+                <p class="information">The next race is:
+                    <?php
+                    $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
+
+                    $result = json_decode($content);
+
+                    print_r($result->MRData->RaceTable->Races[0]->raceName);
+
+                    ?>
+                </p>
+                <div>
                         <form class="prediction-forms" action="form-handling.php" method="post">
                             <label for="user">User:</label>
                             <select name="user" id="user">
@@ -306,7 +316,10 @@
                             </select>
                             <button type="submit" class="submit-btn">Submit</button>
                         </form>
-                    </div>
+                </div>
+            </section>
+            <section class="times-up-section hide">
+                <h2 class="time-up-title">Sorry, qualifying has started. Your fallback prediction will be used this week.</h2>
             </section>
 </main>
 </body>

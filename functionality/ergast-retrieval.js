@@ -148,7 +148,6 @@ export const fetchNextRace = async (link) => {
     timeString[1]++;
     const returnedQualiTime = timeString.join("");
     const qualiDate = data.MRData.RaceTable.Races[0].Qualifying.date;
-    const countdownClock = document.querySelector('.timer');
     // countdown logic
     let countdownDate = new Date(`${qualiDate} ${qualiTime}`);
     let countdown = setInterval(function() {
@@ -166,11 +165,20 @@ export const fetchNextRace = async (link) => {
                 return num;
             }
         }
+        // fill timer banner with clock
+        const countdownClock = document.querySelector('.timer');
         countdownClock.innerHTML = addZero(days) + ":" + addZero(hours) + ":" + addZero(minutes) + ":" + addZero(seconds);
+        // select prediction box and time up message box
+        const timeUp = document.querySelector('.times-up-section');
+        const predictionSection = document.querySelector('.prediction-section');
         if (distance < 0) {
             clearInterval(countdown);
+            // change countdown banner style and text
             countdownClock.innerHTML = "LIVE";
             countdownClock.style.color = 'red';
+            // remove prediction form from view when countdown strikes 0
+            timeUp.classList.toggle('hide');
+            predictionSection.classList.toggle('hide');
         };
     }, 1000);
     // fill circuit map

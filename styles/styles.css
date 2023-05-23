@@ -610,3 +610,23 @@ img {
     text-align: center;
     padding-bottom:25px;
 }
+
+/* time-up section */
+.times-up-section {
+    margin:10% 0;
+    text-align: center;
+}
+.time-up-title {
+    color:var(--red);
+}
+
+/* hide form and show time up message */
+.prediction-section.hide,
+.times-up-section.hide {
+    display: none;
+}
+
+.times-up-section,
+.prediction-selection {
+    display: block;
+}

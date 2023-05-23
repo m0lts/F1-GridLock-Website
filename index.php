@@ -855,9 +855,14 @@
                                 // Prepare and execute the SQL query
                                 $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
 
+                                // Get the next race name
+                                $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
+                                $result = json_decode($content);
+                                $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
                                 //Bind the search values to the prepared statement
                                 $userValue = "Tom";
-                                $raceValue = "monaco";
+                                $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
