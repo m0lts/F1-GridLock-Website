@@ -52,16 +52,6 @@
             <section class="prediction-section">
                 <h2 class="prediction-title-h2">Make your prediction:*</h2>
                 <p class="information">*please only submit once, check that your name is selected and don't submit the same driver twice.</p>
-                <p class="information">The next race is:
-                    <?php
-                    $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
-
-                    $result = json_decode($content);
-
-                    print_r($result->MRData->RaceTable->Races[0]->raceName);
-
-                    ?>
-                </p>
                 <div>
                         <form class="prediction-forms" action="form-handling.php" method="post">
                             <label for="user">User:</label>

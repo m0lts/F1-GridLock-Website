@@ -45,6 +45,51 @@
             </div>
             <?php
 
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     // Get the next race name
+//     $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
+//     $result = json_decode($content);
+//     $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+//     // Get posted form data
+//     $race = $nextRace;
+//     $user = $_POST["user"];
+//     $p1 =  $_POST["p1-ali"];
+//     $p2 =  $_POST["p2-ali"];
+//     $p3 =  $_POST["p3-ali"];
+//     $p4 =  $_POST["p4-ali"];
+//     $p5 =  $_POST["p5-ali"];
+//     $p6 =  $_POST["p6-ali"];
+//     $p7 =  $_POST["p7-ali"];
+//     $p8 =  $_POST["p8-ali"];
+//     $p9 =  $_POST["p9-ali"];
+//     $p10 =  $_POST["p10-ali"];
+
+//     // Database details
+
+//     $host = "localhost";
+//     $dbname = "u128425984_predictions";
+//     $username = "u128425984_moltontom";
+//     $password = "Wilson2000";
+
+//     // Connect to database
+//     $conn = new mysqli($host, $username, $password, $dbname);
+
+//     // Check connection
+//     if ($conn->connect_error) {
+//         die('Connection failed: ' . $conn->connect_error);
+//     }
+
+//     // Prepare and execute SQL statement
+//     $stmt = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+//     $stmt->bind_param('ssssssssssss', $race, $user, $p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10);
+//     $stmt->execute();
+
+//     // Close statement and database connection
+//     $stmt->close();
+//     $conn->close();
+// }
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the next race name
     $content = file_get_contents("https://ergast.com/api/f1/current/next.json");
@@ -66,29 +111,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $p10 =  $_POST["p10-ali"];
 
     // Database details
-
     $host = "localhost";
     $dbname = "u128425984_predictions";
     $username = "u128425984_moltontom";
     $password = "Wilson2000";
 
-    // Connect to database
-    $conn = new mysqli($host, $username, $password, $dbname);
+    // Connect to database using PDO
+    try {
+        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die('Connection failed: ' . $conn->connect_error);
+        // Prepare and execute SQL statement
+        $stmt = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $stmt->execute([$race, $user, $p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10]);
+
+    } catch(PDOException $e) {
+        die('Connection failed: ' . $e->getMessage());
     }
 
-    // Prepare and execute SQL statement
-    $stmt = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-    $stmt->bind_param('ssssssssssss', $race, $user, $p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10);
-    $stmt->execute();
 
-    // Close statement and database connection
-    $stmt->close();
-    $conn->close();
+
 }
+
 
 ?>
             <p class="form-submission-thanks">Thank you <?php echo $user; ?>, your submission has been recorded.</p>
