@@ -195,9 +195,6 @@ import { fetchLastResult } from "./ergast-retrieval.js";
 const lastRaceResultLink = 'https://ergast.com/api/f1/current/last/results.json';
 fetchLastResult(lastRaceResultLink, ".previous-race-result");
 
-const lastYearResultLink = 'https://ergast.com/api/f1/2022/8/results.json'
-fetchLastResult(lastYearResultLink, ".previous-year-result");
-
 
 // retrieve next race details
 

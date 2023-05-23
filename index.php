@@ -65,14 +65,6 @@
                     <figure class="circuit">
                         <img class="circuit-fill" src="" alt="">
                     </figure>
-
-                    <div class="previous-results">
-                        <!-- last year's result at track -->
-                        <h3 class="h3-title stats-h3">previous year result <i class="right-arrow fa-solid fa-arrow-right"></i></h3>
-                        <ul class="previous-year-result">
-                            <!-- filled with JS -->
-                        </ul>
-                    </div>
                     <div class="previous-results">
                         <!-- previous race result -->
                         <h3 class="h3-title stats-h3">previous race result <i class="right-arrow fa-solid fa-arrow-right"></i></h3>
