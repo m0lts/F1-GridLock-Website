@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
 
     // Get posted form data
-    $race = $nextRace;
+    $race = "Miami Grand Prix";
     $user = $_POST["user"];
     $p1 =  $_POST["p1-ali"];
     $p2 =  $_POST["p2-ali"];
