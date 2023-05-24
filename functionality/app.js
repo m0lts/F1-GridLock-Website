@@ -418,4 +418,40 @@ driverContainer.forEach(container => {
 
 
 
+// Make prev-points list item invisible unless points are assigned to it
 
+const prevPoints = document.querySelectorAll('.prev-points');
+
+prevPoints.forEach(item => {
+    if (!item.textContent) {
+        item.style.display = "none";
+    } else {
+        item.style.display = "block";
+    }
+})
+
+
+// const checkObjectStructure = async (link) => {
+//     try {
+//       const response = await fetch(link);
+//       const data = await response.json();
+//       console.log(data.MRData.RaceTable.Races[0].Results);
+//       const grid = data.MRData.RaceTable.Races[0].Results;
+//       let newArray = [];
+//       for (let i = 0; i < grid.length; i++) {
+//         let driverSurname = grid[i].Driver.familyName;
+//         newArray.push(driverSurname);
+//       };
+//       let normalisedArray = [];
+//       for (let j = 0; j < newArray.length; j++) {
+//         let normalisation = newArray[j].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+//         let lowerCase = normalisation.toLowerCase();
+//         normalisedArray.push(lowerCase);
+//       };
+//       console.log(normalisedArray);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+
+// checkObjectStructure("https://ergast.com/api/f1/current/5/results.json");

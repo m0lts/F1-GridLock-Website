@@ -113,7 +113,7 @@
                                 
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+                                $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ali";
@@ -141,7 +141,7 @@
 
                                 // Auto-fill database with fallback predictions if user doesn't enter a prediction
                                 if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
-                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2 = $conn->prepare('INSERT INTO predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                                     $stmt2->execute([$raceValue, $userValue, "verstappen", "leclerc", "perez", "alonso", "sainz", "hamilton", "stroll", "russell", "norris", "gasly"]);
                                 };
                             
@@ -327,7 +327,7 @@
                                 
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+                                $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ed";
@@ -355,7 +355,7 @@
 
                                 // Auto-fill database with fallback predictions if user doesn't enter a prediction
                                 if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
-                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2 = $conn->prepare('INSERT INTO predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                                     $stmt2->execute([$raceValue, $userValue, "verstappen", "perez", "leclerc", "russell", "hamilton", "sainz", "alonso", "norris", "ocon", "piastri"]);
                                 };
                             
@@ -541,7 +541,7 @@
                                 
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+                                $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Jack";
@@ -569,7 +569,7 @@
 
                                 // Auto-fill database with fallback predictions if user doesn't enter a prediction
                                 if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
-                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2 = $conn->prepare('INSERT INTO predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                                     $stmt2->execute([$raceValue, $userValue, "leclerc", "verstappen", "perez", "sainz", "russell", "hamilton", "norris", "alonso", "stroll", "bottas"]);
                                 };
                             
@@ -755,7 +755,7 @@
                                 
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+                                $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Toby";
@@ -783,7 +783,7 @@
 
                                 // Auto-fill database with fallback predictions if user doesn't enter a prediction
                                 if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
-                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2 = $conn->prepare('INSERT INTO predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                                     $stmt2->execute([$raceValue, $userValue, "verstappen", "leclerc", "perez", "sainz", "hamilton", "russell", "ocon", "gasly", "alonso", "norris"]);
                                 };
                             
@@ -968,7 +968,7 @@
                                 
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+                                $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Tom";
@@ -996,7 +996,7 @@
 
                                 // Auto-fill database with fallback predictions if user doesn't enter a prediction
                                 if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
-                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2 = $conn->prepare('INSERT INTO predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                                     $stmt2->execute([$raceValue, $userValue, "verstappen", "perez", "alonso", "leclerc", "sainz", "hamilton", "stroll", "russell", "norris", "ocon"]);
                                 };
                             
@@ -1181,7 +1181,7 @@
                                 
                             
                                 // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM monaco_predictions WHERE race = :race_value AND user = :user_value");
+                                $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Owen";
@@ -1209,7 +1209,7 @@
 
                                 // Auto-fill database with fallback predictions if user doesn't enter a prediction
                                 if ($stmt->rowCount() === 0 && $currentDateTime > $qualifying) {
-                                    $stmt2 = $conn->prepare('INSERT INTO monaco_predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                    $stmt2 = $conn->prepare('INSERT INTO predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                                     $stmt2->execute([$raceValue, $userValue, "verstappen", "leclerc", "alonso", "perez", "hamilton", "russell", "gasly", "stroll", "ocon", "norris"]);
                                 };
                             
