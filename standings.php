@@ -114,7 +114,7 @@
 
                                     $newArray = [];
                                     foreach ($raceResult as $item) {
-                                    $driverSurname = $item['Driver']['familyName'];
+                                    $driverSurname = $item->Driver->familyName;
                                     $newArray[] = $driverSurname;
                                     };
 
@@ -126,7 +126,7 @@
                                     $normalisedArray[] = $lowerCase;
                                     };
 
-                                    print_r($normalisedArray);
+                                    print_r($newArray);
                                     
                                 } catch (PDOException $e) {
                                     echo "Query failed: " . $e->getMessage();
