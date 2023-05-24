@@ -126,7 +126,7 @@
                                     $normalisedArray[] = $lowerCase;
                                     };
 
-                                    print_r($newArray);
+                                    print_r($raceResult);
                                     
                                 } catch (PDOException $e) {
                                     echo "Query failed: " . $e->getMessage();
