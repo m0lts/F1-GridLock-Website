@@ -91,7 +91,7 @@
                                     $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                     // Get the next race name
-                                    $content = file_get_contents("https://ergast.com/api/f1/current/6.json");
+                                    $content = file_get_contents("https://ergast.com/api/f1/current/5.json");
                                     $result = json_decode($content);
                                     $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
 
@@ -126,7 +126,7 @@
                                     $normalisedArray[] = $lowerCase;
                                     };
 
-                                    print_r($raceResult);
+                                    print_r($normalisedArray);
                                     
                                 } catch (PDOException $e) {
                                     echo "Query failed: " . $e->getMessage();
