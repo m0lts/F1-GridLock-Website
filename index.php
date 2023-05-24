@@ -297,9 +297,6 @@
                             } catch (PDOException $e) {
                                 echo "Query failed: " . $e->getMessage();
                             }
-
-                            
-
                         ?>
                         </ul>
                     </div>

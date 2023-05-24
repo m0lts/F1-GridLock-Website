@@ -455,3 +455,17 @@ prevPoints.forEach(item => {
 // };
 
 // checkObjectStructure("https://ergast.com/api/f1/current/5/results.json");
+
+
+// for (let i = 0; i < predictedTop10.length; i++) {
+//     if (predictedTop10[i] === actualTop10[i]) {
+//         points += 2;
+//     }
+// };
+// for (let j = 0; j < predictedTop10.length; j++) {
+//     for (let l = 0; l < actualTop10.length; l++) {
+//         if (predictedTop10[j] === actualTop10[l]) {
+//             points += 1;
+//         }
+//     }
+// }
