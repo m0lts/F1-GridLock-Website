@@ -89,12 +89,9 @@
                                         $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                         // Get the next race name
-                                        $nextRace = "";
-                                        $content = @file_get_contents("https://ergast.com/api/f1/current/4/results.json");
-                                        if ($content !== false) {
-                                            $result = json_decode($content);
-                                            $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
-                                        }
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/5/results.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
@@ -105,50 +102,53 @@
                                         $stmt->execute();
 
                                         // Fetch the first row as an indexed array
-                                        $row = $stmt->fetch(PDO::FETCH_NUM);
-                                        $predictedTop10 = array_slice($row, 3);
+                                        if ($stmt) {                                        
+                                            $row = $stmt->fetch(PDO::FETCH_NUM);
+                                            $predictedTop10 = array_slice($row, 3);
+                                        };
 
                                         // Get the actual race result and extract top 10 drivers
-                                        $actualTop10 = [];
-                                        if ($nextRace !== "") {
-                                            $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+                                        $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+                                        if ($raceResult) {
+                                            $actualTop10 = [];
                                             foreach ($raceResult as $item) {
-                                                $driverSurname = $item->Driver->familyName;
-                                                $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
-                                                $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
-                                                $lowerCase = mb_strtolower($normalisation);
-                                                $actualTop10[] = $lowerCase;
+                                            $driverSurname = $item->Driver->familyName;
+                                            $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                            $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                            $lowerCase = mb_strtolower($normalisation);
+                                            $actualTop10[] = $lowerCase;
                                             }
-                                        }
-
-                                        // Reduce the array to top 10 drivers
-                                        $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                        };
 
                                         // Points calculation
-                                        $points = 0;
-                                        if ($predictedTop10 === $actualTop10) {
-                                            $points += 10;
-                                        }
-                                        for ($i = 0; $i < count($predictedTop10); $i++) {
-                                            if ($predictedTop10[$i] === $actualTop10[$i]) {
-                                                $points += 2;
+                                        if ($raceResult && $stmt) {
+                                            $points = 0;
+                                            if ($predictedTop10 === $actualTop10) {
+                                                $points += 10;
                                             }
-                                        }
-                                        for ($j = 0; $j < count($predictedTop10); $j++) {
-                                            for ($l = 0; $l < count($actualTop10); $l++) {
-                                                if ($predictedTop10[$j] === $actualTop10[$l]) {
-                                                    $points += 1;
+                                            for ($i = 0; $i < count($predictedTop10); $i++) {
+                                                if ($predictedTop10[$i] === $actualTop10[$i]) {
+                                                    $points += 2;
                                                 }
                                             }
+                                            for ($j = 0; $j < count($predictedTop10); $j++) {
+                                                for ($l = 0; $l < count($actualTop10); $l++) {
+                                                    if ($predictedTop10[$j] === $actualTop10[$l]) {
+                                                        $points += 1;
+                                                    }
+                                                }
+                                            }
+                                            // Print points
+                                            echo $points;
+                                        } else {
+                                            echo "-";
                                         }
 
-                                        // Print points
-                                        echo $points;
+                                        
 
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
-                                    } catch (Exception $e) {
-                                        echo "Error: " . $e->getMessage();
                                     }
                                 ?>
                             </li>
