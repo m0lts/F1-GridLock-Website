@@ -106,7 +106,8 @@
                                     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     // Extract only the values from the associative arrays and remove the user and race indices
                                     $values = array_values($rows);
-                                    $predictedTop10 = array_slice($values, 2);
+                                    $refinedValues = $values[0];
+                                    $predictedTop10 = array_slice($refinedValues, 3);
 
 
 
