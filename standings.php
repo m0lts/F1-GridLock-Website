@@ -150,7 +150,7 @@
                                     };
 
                                     // Print points
-                                    print_r($values);
+                                    print_r($predictedTop10);
                                     echo "\n";
                                     print_r($actualTop10);
 
