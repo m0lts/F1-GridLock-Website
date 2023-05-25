@@ -533,11 +533,7 @@
 
                                             // Print points
                                             echo $points;
-                                        } else {
-                                            // Handle case when no rows are returned
-                                            echo "";
-                                        }
-
+                                        };
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
                                     } catch (Exception $e) {
@@ -614,18 +610,13 @@
 
                                             // Print points
                                             echo $points;
-                                        } else {
-                                            // Handle case when no rows are returned
-                                            echo "";
-                                        }
-
+                                        };
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
                                     } catch (Exception $e) {
                                         echo "Error: " . $e->getMessage();
                                     }
                                 ?>
-
                             </li>
                             <li class="prev-points">
                                 <?php
@@ -696,11 +687,7 @@
 
                                             // Print points
                                             echo $points;
-                                        } else {
-                                            // Handle case when no rows are returned
-                                            echo "";
-                                        }
-
+                                        };
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
                                     } catch (Exception $e) {
