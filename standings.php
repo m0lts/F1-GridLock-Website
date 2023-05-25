@@ -71,7 +71,6 @@
                             <li class="prev-points">14</li>
                             <li class="prev-points">9</li>
                             <li class="prev-points">12</li>
-                            <li class="prev-points">14</li>
                             <li class="prev-points">
                             <?php
                                 // Database details
@@ -91,11 +90,11 @@
                                     $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                     // Get the next race name
-                                    $content = file_get_contents("https://ergast.com/api/f1/current/6/results.json");
+                                    $content = file_get_contents("https://ergast.com/api/f1/current/5/results.json");
                                     $result = json_decode($content);
                                     $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
 
-                                    //Bind the search values to the prepared statement
+                                    // Bind the search values to the prepared statement
                                     $userValue = "Ali";
                                     $raceValue = $nextRace;
                                     $stmt->bindParam(':user_value', $userValue);
@@ -109,17 +108,22 @@
                                     $values = array_values($rows);
                                     $predictedTop10 = array_slice($values, 2);
 
-                                    // Get the actual top 10 drivers
-                                    $raceResult = $result->MRData->RaceTable->Races[0]->Results;
 
+
+                                    // Get the actual race result and assign to newArray
+                                    $raceResult = $result->MRData->RaceTable->Races[0]->Results;
                                     $newArray = [];
                                     foreach ($raceResult as $item) {
                                     $driverSurname = $item->Driver->familyName;
                                     $newArray[] = $driverSurname;
                                     };
 
+                                    // Reduce array to top 10 drivers
+                                    $raceTop10 = array_slice($newArray, 0 , -10);
+
+                                    // Edit indices to lowercase and accent-free. Assign array to actualTop10
                                     $actualTop10 = [];
-                                    foreach ($newArray as $value) {
+                                    foreach ($raceTop10 as $value) {
                                     $normalisation = normalizer_normalize($value, Normalizer::FORM_D);
                                     $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
                                     $lowerCase = mb_strtolower($normalisation);
@@ -143,12 +147,16 @@
                                             };
                                         };
                                     };
+
+                                    // Print points
+                                    echo $points;
                                     
                                 } catch (PDOException $e) {
                                     echo "Query failed: " . $e->getMessage();
                                 }
                             ?>
                             </li>
+                            <li class="prev-points"></li>
                             <li class="prev-points"></li>
                             <li class="prev-points"></li>
                             <li class="prev-points"></li>
