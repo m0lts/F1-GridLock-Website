@@ -10197,6 +10197,14 @@
                                     }
 
                                     // Print points
+                                    print_r($actualTop10);
+
+                                echo "\n";
+                                    
+                                print_r($predictedTop10);
+
+                                echo "\n";
+
                                     echo $points;
 
                                 } catch (PDOException $e) {
