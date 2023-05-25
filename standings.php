@@ -82,10 +82,10 @@
                                 try {
                                     // Create a new PDO instance
                                     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                                
+                                    
                                     // Set PDO error mode to exception
                                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                
+                                    
                                     // Prepare and execute the SQL query
                                     $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
@@ -101,62 +101,43 @@
                                     $stmt->bindParam(':race_value', $raceValue);
 
                                     $stmt->execute();
-                                
-                                    // Fetch all rows as an associative array
-                                    $rows = $stmt->fetchAll(PDO::FETCH_NUM);
-                                    // Extract only the values from the associative arrays and remove the user and race indices
-                                    $values = array_values($rows);
-                                    $refinedValues = $values[0];
-                                    $predictedTop10 = array_slice($refinedValues, 3);
 
+                                    // Fetch the first row as an indexed array
+                                    $row = $stmt->fetch(PDO::FETCH_NUM);
+                                    $predictedTop10 = array_slice($row, 3);
 
-
-                                    // Get the actual race result and assign to newArray
+                                    // Get the actual race result and extract top 10 drivers
                                     $raceResult = $result->MRData->RaceTable->Races[0]->Results;
-                                    $newArray = [];
-                                    foreach ($raceResult as $item) {
-                                    $driverSurname = $item->Driver->familyName;
-                                    $newArray[] = $driverSurname;
-                                    };
-
-                                    // Reduce array to top 10 drivers
-                                    $raceTop10 = array_slice($newArray, 0 , -10);
-
-                                    // Edit indices to lowercase and accent-free. Assign array to actualTop10
                                     $actualTop10 = [];
-                                    foreach ($raceTop10 as $value) {
-                                    $normalisation = normalizer_normalize($value, Normalizer::FORM_D);
-                                    $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
-                                    $lowerCase = mb_strtolower($normalisation);
-                                    $actualTop10[] = $lowerCase;
-                                    };
+                                    foreach ($raceResult as $item) {
+                                        $driverSurname = $item->Driver->familyName;
+                                        $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                        $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                        $lowerCase = mb_strtolower($normalisation);
+                                        $actualTop10[] = $lowerCase;
+                                    }
 
                                     // Points calculation
                                     $points = 0;
                                     if ($predictedTop10 === $actualTop10) {
                                         $points += 10;
-                                    };
+                                    }
                                     for ($i = 0; $i < count($predictedTop10); $i++) {
                                         if ($predictedTop10[$i] === $actualTop10[$i]) {
                                             $points += 2;
-                                        };
-                                    };
+                                        }
+                                    }
                                     for ($j = 0; $j < count($predictedTop10); $j++) {
                                         for ($l = 0; $l < count($actualTop10); $l++) {
                                             if ($predictedTop10[$j] === $actualTop10[$l]) {
                                                 $points += 1;
-                                            };
-                                        };
-                                    };
+                                            }
+                                        }
+                                    }
 
                                     // Print points
-                                    print_r($predictedTop10);
-                                    echo "\n";
-                                    print_r($actualTop10);
-                                    echo "\n";
                                     echo $points;
 
-                                    
                                 } catch (PDOException $e) {
                                     echo "Query failed: " . $e->getMessage();
                                 }
@@ -3455,7 +3436,78 @@
                             <li class="prev-points">11</li>
                             <li class="prev-points">10</li>
                             <li class="prev-points">14</li>
-                            <li class="prev-points">11</li>
+                            <li class="prev-points">
+                            <?php
+                                // Database details
+                                $host = "localhost";
+                                $dbname = "u128425984_predictions";
+                                $username = "u128425984_moltontom";
+                                $password = "Wilson2000";
+
+                                try {
+                                    // Create a new PDO instance
+                                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                    // Set PDO error mode to exception
+                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                    // Prepare and execute the SQL query
+                                    $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                    // Get the next race name
+                                    $content = file_get_contents("https://ergast.com/api/f1/current/5/results.json");
+                                    $result = json_decode($content);
+                                    $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                    // Bind the search values to the prepared statement
+                                    $userValue = "Toby";
+                                    $raceValue = $nextRace;
+                                    $stmt->bindParam(':user_value', $userValue);
+                                    $stmt->bindParam(':race_value', $raceValue);
+
+                                    $stmt->execute();
+
+                                    // Fetch the first row as an indexed array
+                                    $row = $stmt->fetch(PDO::FETCH_NUM);
+                                    $predictedTop10 = array_slice($row, 3);
+
+                                    // Get the actual race result and extract top 10 drivers
+                                    $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+                                    $actualTop10 = [];
+                                    foreach ($raceResult as $item) {
+                                        $driverSurname = $item->Driver->familyName;
+                                        $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                        $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                        $lowerCase = mb_strtolower($normalisation);
+                                        $actualTop10[] = $lowerCase;
+                                    }
+
+                                    // Points calculation
+                                    $points = 0;
+                                    if ($predictedTop10 === $actualTop10) {
+                                        $points += 10;
+                                    }
+                                    for ($i = 0; $i < count($predictedTop10); $i++) {
+                                        if ($predictedTop10[$i] === $actualTop10[$i]) {
+                                            $points += 2;
+                                        }
+                                    }
+                                    for ($j = 0; $j < count($predictedTop10); $j++) {
+                                        for ($l = 0; $l < count($actualTop10); $l++) {
+                                            if ($predictedTop10[$j] === $actualTop10[$l]) {
+                                                $points += 1;
+                                            }
+                                        }
+                                    }
+
+                                    // Print points
+                                    echo $points;
+
+                                } catch (PDOException $e) {
+                                    echo "Query failed: " . $e->getMessage();
+                                }
+                            ?>
+                            </li>
                             <li class="points-total">57</li>
                         </ul>
                     </div>
@@ -6732,7 +6784,78 @@
                             <li class="prev-points">10</li>
                             <li class="prev-points">8</li>
                             <li class="prev-points">13</li>
-                            <li class="prev-points">14</li>
+                            <li class="prev-points">
+                            <?php
+                                // Database details
+                                $host = "localhost";
+                                $dbname = "u128425984_predictions";
+                                $username = "u128425984_moltontom";
+                                $password = "Wilson2000";
+
+                                try {
+                                    // Create a new PDO instance
+                                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                    // Set PDO error mode to exception
+                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                    // Prepare and execute the SQL query
+                                    $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                    // Get the next race name
+                                    $content = file_get_contents("https://ergast.com/api/f1/current/5/results.json");
+                                    $result = json_decode($content);
+                                    $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                    // Bind the search values to the prepared statement
+                                    $userValue = "Ed";
+                                    $raceValue = $nextRace;
+                                    $stmt->bindParam(':user_value', $userValue);
+                                    $stmt->bindParam(':race_value', $raceValue);
+
+                                    $stmt->execute();
+
+                                    // Fetch the first row as an indexed array
+                                    $row = $stmt->fetch(PDO::FETCH_NUM);
+                                    $predictedTop10 = array_slice($row, 3);
+
+                                    // Get the actual race result and extract top 10 drivers
+                                    $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+                                    $actualTop10 = [];
+                                    foreach ($raceResult as $item) {
+                                        $driverSurname = $item->Driver->familyName;
+                                        $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                        $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                        $lowerCase = mb_strtolower($normalisation);
+                                        $actualTop10[] = $lowerCase;
+                                    }
+
+                                    // Points calculation
+                                    $points = 0;
+                                    if ($predictedTop10 === $actualTop10) {
+                                        $points += 10;
+                                    }
+                                    for ($i = 0; $i < count($predictedTop10); $i++) {
+                                        if ($predictedTop10[$i] === $actualTop10[$i]) {
+                                            $points += 2;
+                                        }
+                                    }
+                                    for ($j = 0; $j < count($predictedTop10); $j++) {
+                                        for ($l = 0; $l < count($actualTop10); $l++) {
+                                            if ($predictedTop10[$j] === $actualTop10[$l]) {
+                                                $points += 1;
+                                            }
+                                        }
+                                    }
+
+                                    // Print points
+                                    echo $points;
+
+                                } catch (PDOException $e) {
+                                    echo "Query failed: " . $e->getMessage();
+                                }
+                            ?>
+                            </li>
                             <li class="points-total">57</li>
                         </ul>
                     </div>
@@ -10009,7 +10132,78 @@
                             <li class="prev-points">14</li>
                             <li class="prev-points">6</li>
                             <li class="prev-points">13</li>
-                            <li class="prev-points">12</li>
+                            <li class="prev-points">
+                            <?php
+                                // Database details
+                                $host = "localhost";
+                                $dbname = "u128425984_predictions";
+                                $username = "u128425984_moltontom";
+                                $password = "Wilson2000";
+
+                                try {
+                                    // Create a new PDO instance
+                                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                    // Set PDO error mode to exception
+                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                    // Prepare and execute the SQL query
+                                    $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                    // Get the next race name
+                                    $content = file_get_contents("https://ergast.com/api/f1/current/5/results.json");
+                                    $result = json_decode($content);
+                                    $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                    // Bind the search values to the prepared statement
+                                    $userValue = "Jack";
+                                    $raceValue = $nextRace;
+                                    $stmt->bindParam(':user_value', $userValue);
+                                    $stmt->bindParam(':race_value', $raceValue);
+
+                                    $stmt->execute();
+
+                                    // Fetch the first row as an indexed array
+                                    $row = $stmt->fetch(PDO::FETCH_NUM);
+                                    $predictedTop10 = array_slice($row, 3);
+
+                                    // Get the actual race result and extract top 10 drivers
+                                    $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+                                    $actualTop10 = [];
+                                    foreach ($raceResult as $item) {
+                                        $driverSurname = $item->Driver->familyName;
+                                        $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                        $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                        $lowerCase = mb_strtolower($normalisation);
+                                        $actualTop10[] = $lowerCase;
+                                    }
+
+                                    // Points calculation
+                                    $points = 0;
+                                    if ($predictedTop10 === $actualTop10) {
+                                        $points += 10;
+                                    }
+                                    for ($i = 0; $i < count($predictedTop10); $i++) {
+                                        if ($predictedTop10[$i] === $actualTop10[$i]) {
+                                            $points += 2;
+                                        }
+                                    }
+                                    for ($j = 0; $j < count($predictedTop10); $j++) {
+                                        for ($l = 0; $l < count($actualTop10); $l++) {
+                                            if ($predictedTop10[$j] === $actualTop10[$l]) {
+                                                $points += 1;
+                                            }
+                                        }
+                                    }
+
+                                    // Print points
+                                    echo $points;
+
+                                } catch (PDOException $e) {
+                                    echo "Query failed: " . $e->getMessage();
+                                }
+                            ?>
+                            </li>
                             <li class="points-total">56</li>
                         </ul>
                     </div>
@@ -13286,7 +13480,78 @@
                             <li class="prev-points">12</li>
                             <li class="prev-points">8</li>
                             <li class="prev-points">8</li>
-                            <li class="prev-points">14</li>
+                            <li class="prev-points">
+                            <?php
+                                // Database details
+                                $host = "localhost";
+                                $dbname = "u128425984_predictions";
+                                $username = "u128425984_moltontom";
+                                $password = "Wilson2000";
+
+                                try {
+                                    // Create a new PDO instance
+                                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                    // Set PDO error mode to exception
+                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                    // Prepare and execute the SQL query
+                                    $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                    // Get the next race name
+                                    $content = file_get_contents("https://ergast.com/api/f1/current/5/results.json");
+                                    $result = json_decode($content);
+                                    $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                    // Bind the search values to the prepared statement
+                                    $userValue = "Tom";
+                                    $raceValue = $nextRace;
+                                    $stmt->bindParam(':user_value', $userValue);
+                                    $stmt->bindParam(':race_value', $raceValue);
+
+                                    $stmt->execute();
+
+                                    // Fetch the first row as an indexed array
+                                    $row = $stmt->fetch(PDO::FETCH_NUM);
+                                    $predictedTop10 = array_slice($row, 3);
+
+                                    // Get the actual race result and extract top 10 drivers
+                                    $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+                                    $actualTop10 = [];
+                                    foreach ($raceResult as $item) {
+                                        $driverSurname = $item->Driver->familyName;
+                                        $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                        $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                        $lowerCase = mb_strtolower($normalisation);
+                                        $actualTop10[] = $lowerCase;
+                                    }
+
+                                    // Points calculation
+                                    $points = 0;
+                                    if ($predictedTop10 === $actualTop10) {
+                                        $points += 10;
+                                    }
+                                    for ($i = 0; $i < count($predictedTop10); $i++) {
+                                        if ($predictedTop10[$i] === $actualTop10[$i]) {
+                                            $points += 2;
+                                        }
+                                    }
+                                    for ($j = 0; $j < count($predictedTop10); $j++) {
+                                        for ($l = 0; $l < count($actualTop10); $l++) {
+                                            if ($predictedTop10[$j] === $actualTop10[$l]) {
+                                                $points += 1;
+                                            }
+                                        }
+                                    }
+
+                                    // Print points
+                                    echo $points;
+
+                                } catch (PDOException $e) {
+                                    echo "Query failed: " . $e->getMessage();
+                                }
+                            ?>
+                            </li>
                             <li class="points-total">53</li>
                         </ul>
                     </div>
@@ -16563,7 +16828,78 @@
                             <li class="prev-points">12</li>
                             <li class="prev-points">7</li>
                             <li class="prev-points">8</li>
-                            <li class="prev-points">14</li>
+                            <li class="prev-points">
+                            <?php
+                                // Database details
+                                $host = "localhost";
+                                $dbname = "u128425984_predictions";
+                                $username = "u128425984_moltontom";
+                                $password = "Wilson2000";
+
+                                try {
+                                    // Create a new PDO instance
+                                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                    // Set PDO error mode to exception
+                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                    // Prepare and execute the SQL query
+                                    $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                    // Get the next race name
+                                    $content = file_get_contents("https://ergast.com/api/f1/current/5/results.json");
+                                    $result = json_decode($content);
+                                    $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                    // Bind the search values to the prepared statement
+                                    $userValue = "Owen";
+                                    $raceValue = $nextRace;
+                                    $stmt->bindParam(':user_value', $userValue);
+                                    $stmt->bindParam(':race_value', $raceValue);
+
+                                    $stmt->execute();
+
+                                    // Fetch the first row as an indexed array
+                                    $row = $stmt->fetch(PDO::FETCH_NUM);
+                                    $predictedTop10 = array_slice($row, 3);
+
+                                    // Get the actual race result and extract top 10 drivers
+                                    $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+                                    $actualTop10 = [];
+                                    foreach ($raceResult as $item) {
+                                        $driverSurname = $item->Driver->familyName;
+                                        $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                        $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                        $lowerCase = mb_strtolower($normalisation);
+                                        $actualTop10[] = $lowerCase;
+                                    }
+
+                                    // Points calculation
+                                    $points = 0;
+                                    if ($predictedTop10 === $actualTop10) {
+                                        $points += 10;
+                                    }
+                                    for ($i = 0; $i < count($predictedTop10); $i++) {
+                                        if ($predictedTop10[$i] === $actualTop10[$i]) {
+                                            $points += 2;
+                                        }
+                                    }
+                                    for ($j = 0; $j < count($predictedTop10); $j++) {
+                                        for ($l = 0; $l < count($actualTop10); $l++) {
+                                            if ($predictedTop10[$j] === $actualTop10[$l]) {
+                                                $points += 1;
+                                            }
+                                        }
+                                    }
+
+                                    // Print points
+                                    echo $points;
+
+                                } catch (PDOException $e) {
+                                    echo "Query failed: " . $e->getMessage();
+                                }
+                            ?>
+                            </li>
                             <li class="points-total">52</li>
                         </ul>
                     </div>
