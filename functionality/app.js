@@ -423,7 +423,7 @@ driverContainer.forEach(container => {
 const prevPoints = document.querySelectorAll('.prev-points');
 
 prevPoints.forEach(item => {
-    if (!item.textContent) {
+    if (item.innerHTML === " ") {
         item.style.display = "none";
     } else {
         item.style.display = "block";

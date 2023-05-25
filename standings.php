@@ -533,7 +533,9 @@
 
                                             // Print points
                                             echo $points;
-                                        };
+                                        } else {
+                                            echo " ";
+                                        }
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
                                     } catch (Exception $e) {
@@ -610,7 +612,9 @@
 
                                             // Print points
                                             echo $points;
-                                        };
+                                        } else {
+                                            echo " ";
+                                        }
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
                                     } catch (Exception $e) {
@@ -687,7 +691,11 @@
 
                                             // Print points
                                             echo $points;
-                                        };
+                                        } else {
+                                            // Handle case when no rows are returned
+                                            echo " ";
+                                        }
+
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
                                     } catch (Exception $e) {
