@@ -149,7 +149,10 @@
                                     };
 
                                     // Print points
-                                    echo $points;
+                                    print_r($predictedTop10);
+                                    echo "\n";
+                                    print_r($actualTop10);
+                                    
                                     
                                 } catch (PDOException $e) {
                                     echo "Query failed: " . $e->getMessage();
