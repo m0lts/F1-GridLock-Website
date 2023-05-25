@@ -103,7 +103,7 @@
                                     $stmt->execute();
                                 
                                     // Fetch all rows as an associative array
-                                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    $rows = $stmt->fetchAll(PDO::FETCH_NUM);
                                     // Extract only the values from the associative arrays and remove the user and race indices
                                     $values = array_values($rows);
                                     $refinedValues = $values[0];
