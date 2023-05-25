@@ -116,6 +116,7 @@
                                         $lowerCase = mb_strtolower($normalisation);
                                         $actualTop10[] = $lowerCase;
                                     }
+                                    $actualTop10 = array_slice($actualTop10, 0, -10);
 
                                     // Points calculation
                                     $points = 0;
@@ -3481,6 +3482,7 @@
                                         $lowerCase = mb_strtolower($normalisation);
                                         $actualTop10[] = $lowerCase;
                                     }
+                                    $actualTop10 = array_slice($actualTop10, 0, -10);
 
                                     // Points calculation
                                     $points = 0;
@@ -6829,6 +6831,7 @@
                                         $lowerCase = mb_strtolower($normalisation);
                                         $actualTop10[] = $lowerCase;
                                     }
+                                    $actualTop10 = array_slice($actualTop10, 0, -10);
 
                                     // Points calculation
                                     $points = 0;
@@ -10177,6 +10180,7 @@
                                         $lowerCase = mb_strtolower($normalisation);
                                         $actualTop10[] = $lowerCase;
                                     }
+                                    $actualTop10 = array_slice($actualTop10, 0, -10);
 
                                     // Points calculation
                                     $points = 0;
@@ -10197,14 +10201,6 @@
                                     }
 
                                     // Print points
-                                    print_r($actualTop10);
-
-                                echo "\n";
-                                    
-                                print_r($predictedTop10);
-
-                                echo "\n";
-
                                     echo $points;
 
                                 } catch (PDOException $e) {
@@ -13533,6 +13529,7 @@
                                         $lowerCase = mb_strtolower($normalisation);
                                         $actualTop10[] = $lowerCase;
                                     }
+                                    $actualTop10 = array_slice($actualTop10, 0, -10);
 
                                     // Points calculation
                                     $points = 0;
@@ -16881,6 +16878,7 @@
                                         $lowerCase = mb_strtolower($normalisation);
                                         $actualTop10[] = $lowerCase;
                                     }
+                                    $actualTop10 = array_slice($actualTop10, 0, -10);
 
                                     // Points calculation
                                     $points = 0;
