@@ -101,28 +101,25 @@
 
                                         $stmt->execute();
 
-                                        // Fetch the first row as an indexed array
-                                        if ($stmt) {                                        
+                                        // Check if there is at least one row
+                                        if ($stmt->rowCount() > 0) {
+                                            // Fetch the first row as an indexed array
                                             $row = $stmt->fetch(PDO::FETCH_NUM);
                                             $predictedTop10 = array_slice($row, 3);
-                                        };
 
-                                        // Get the actual race result and extract top 10 drivers
-                                        $raceResult = $result->MRData->RaceTable->Races[0]->Results;
-                                        if ($raceResult) {
+                                            // Get the actual race result and extract top 10 drivers
+                                            $raceResult = $result->MRData->RaceTable->Races[0]->Results;
                                             $actualTop10 = [];
                                             foreach ($raceResult as $item) {
-                                            $driverSurname = $item->Driver->familyName;
-                                            $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
-                                            $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
-                                            $lowerCase = mb_strtolower($normalisation);
-                                            $actualTop10[] = $lowerCase;
+                                                $driverSurname = $item->Driver->familyName;
+                                                $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                                $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                                $lowerCase = mb_strtolower($normalisation);
+                                                $actualTop10[] = $lowerCase;
                                             }
                                             $actualTop10 = array_slice($actualTop10, 0, -10);
-                                        };
 
-                                        // Points calculation
-                                        if ($raceResult && $stmt) {
+                                            // Points calculation
                                             $points = 0;
                                             if ($predictedTop10 === $actualTop10) {
                                                 $points += 10;
@@ -139,16 +136,18 @@
                                                     }
                                                 }
                                             }
+
                                             // Print points
                                             echo $points;
                                         } else {
-                                            echo "-";
+                                            // Handle case when no rows are returned
+                                            echo "No predictions found.";
                                         }
-
-                                        
 
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
+                                    } catch (Exception $e) {
+                                        echo "Error: " . $e->getMessage();
                                     }
                                 ?>
                             </li>
