@@ -15,7 +15,22 @@ playerListItem.forEach(item => {
 const prevPoints = document.querySelectorAll('.prev-points');
 
 prevPoints.forEach(item => {
-    if (item.innerHTML === null) {
+    if (item.textContent === 0) {
         item.style.display = 'none';
     }
+});
+
+const owenPoints = document.querySelectorAll('.owen-points');
+const owenTotalPoints = document.querySelector('.owen-points-total');
+
+let owenPointsSum = 0;
+
+owenPoints.forEach(point => {
+    const value = parseFloat(point.textContent);
+
+    if (!isNaN(value)) {
+        owenPointsSum += value;
+    };
 })
+
+owenTotalPoints.innerHTML = owenPointsSum;

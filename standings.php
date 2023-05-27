@@ -2794,197 +2794,197 @@
                                         echo "Query failed: " . $e->getMessage();
                                     }
 
-                                ?>
+                                    ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Monaco:</h5>
                                 <ul class="previous-prediction-drivers-list ali-monaco-pred">
                                     <?php
-                            // Database details
-                            $host = "localhost";
-                            $dbname = "u128425984_predictions";
-                            $username = "u128425984_moltontom";
-                            $password = "Wilson2000";
+                                        // Database details
+                                        $host = "localhost";
+                                        $dbname = "u128425984_predictions";
+                                        $username = "u128425984_moltontom";
+                                        $password = "Wilson2000";
 
-                            try {
-                                // Create a new PDO instance
-                                $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                            
-                                // Set PDO error mode to exception
-                                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            
-                                // Prepare and execute the SQL query
-                                $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+                                        try {
+                                            // Create a new PDO instance
+                                            $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                        
+                                            // Set PDO error mode to exception
+                                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                        
+                                            // Prepare and execute the SQL query
+                                            $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
-                                // Get the next race name
-                                $content = file_get_contents("https://ergast.com/api/f1/current/6.json");
-                                $result = json_decode($content);
-                                $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+                                            // Get the next race name
+                                            $content = file_get_contents("https://ergast.com/api/f1/current/6.json");
+                                            $result = json_decode($content);
+                                            $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
 
-                                //Bind the search values to the prepared statement
-                                $userValue = "Ali";
-                                $raceValue = $nextRace;
-                                $stmt->bindParam(':user_value', $userValue);
-                                $stmt->bindParam(':race_value', $raceValue);
+                                            //Bind the search values to the prepared statement
+                                            $userValue = "Ali";
+                                            $raceValue = $nextRace;
+                                            $stmt->bindParam(':user_value', $userValue);
+                                            $stmt->bindParam(':race_value', $raceValue);
 
-                                $stmt->execute();
-                            
-                                // Fetch all rows as an associative array
-                                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                            
-                                // Output the fetched data as an HTML unordered list
-                                
-                                foreach ($rows as $row):
+                                            $stmt->execute();
+                                        
+                                            // Fetch all rows as an associative array
+                                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                        
+                                            // Output the fetched data as an HTML unordered list
+                                            
+                                            foreach ($rows as $row):
+                                                ?>
+                                                <li class="driver-container <?= $row ['p1'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p2'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p3'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p4'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p5'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p6'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p7'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p8'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p9'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                <li class="driver-container <?= $row ['p10'] ?>">
+                                                <div class="driver-details">
+                                                    <div class="driver-number">
+                                                    <p class="driver-number-p"></p>
+                                                    </div>
+                                                    <div class="driver-name">
+                                                    <p class="firstname"></p>
+                                                    <p class="surname"></p>
+                                                    </div>
+                                                </div>
+                                                <figure class="driver-img">
+                                                    <img class="team-img" src="" alt="">
+                                                </figure>
+                                                </li>
+                                                
+                                            <?php
+                                            endforeach;
+                                        } catch (PDOException $e) {
+                                            echo "Query failed: " . $e->getMessage();
+                                        }
+
                                     ?>
-                                    <li class="driver-container <?= $row ['p1'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p2'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p3'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p4'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p5'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p6'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p7'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p8'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p9'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    <li class="driver-container <?= $row ['p10'] ?>">
-                                    <div class="driver-details">
-                                        <div class="driver-number">
-                                        <p class="driver-number-p"></p>
-                                        </div>
-                                        <div class="driver-name">
-                                        <p class="firstname"></p>
-                                        <p class="surname"></p>
-                                        </div>
-                                    </div>
-                                    <figure class="driver-img">
-                                        <img class="team-img" src="" alt="">
-                                    </figure>
-                                    </li>
-                                    
-                                <?php
-                                endforeach;
-                            } catch (PDOException $e) {
-                                echo "Query failed: " . $e->getMessage();
-                            }
-
-                        ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
@@ -7824,31 +7824,951 @@
                             <li class="previous-prediction-item">
                                 <h5>Bahrain:</h5>
                                 <ul class="previous-prediction-drivers-list toby-bahrain-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/1.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Toby";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Saudi Arabia:</h5>
                                 <ul class="previous-prediction-drivers-list toby-saudi-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/2.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Toby";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Australia:</h5>
                                 <ul class="previous-prediction-drivers-list toby-aus-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/3.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Toby";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Baku:</h5>
                                 <ul class="previous-prediction-drivers-list toby-baku-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/4.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Toby";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Miami:</h5>
                                 <ul class="previous-prediction-drivers-list toby-miami-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/5.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Toby";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
@@ -12878,31 +13798,951 @@
                             <li class="previous-prediction-item">
                                 <h5>Bahrain:</h5>
                                 <ul class="previous-prediction-drivers-list ed-bahrain-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/1.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Ed";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Saudi Arabia:</h5>
                                 <ul class="previous-prediction-drivers-list ed-saudi-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/2.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Ed";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Australia:</h5>
                                 <ul class="previous-prediction-drivers-list ed-aus-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/3.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Ed";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Baku:</h5>
                                 <ul class="previous-prediction-drivers-list ed-baku-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/4.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Ed";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Miami:</h5>
                                 <ul class="previous-prediction-drivers-list ed-miami-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/5.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Ed";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
@@ -17932,31 +19772,951 @@
                             <li class="previous-prediction-item">
                                 <h5>Bahrain:</h5>
                                 <ul class="previous-prediction-drivers-list jack-bahrain-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/1.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Jack";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Saudi Arabia:</h5>
                                 <ul class="previous-prediction-drivers-list jack-saudi-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/2.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Jack";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Australia:</h5>
                                 <ul class="previous-prediction-drivers-list jack-aus-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/3.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Jack";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Baku:</h5>
                                 <ul class="previous-prediction-drivers-list jack-baku-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/4.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Jack";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Miami:</h5>
                                 <ul class="previous-prediction-drivers-list jack-miami-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/5.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Jack";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
@@ -22986,31 +25746,951 @@
                             <li class="previous-prediction-item">
                                 <h5>Bahrain:</h5>
                                 <ul class="previous-prediction-drivers-list tom-bahrain-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/1.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Tom";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Saudi Arabia:</h5>
                                 <ul class="previous-prediction-drivers-list tom-saudi-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/2.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Tom";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Australia:</h5>
                                 <ul class="previous-prediction-drivers-list tom-aus-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/3.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Tom";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Baku:</h5>
                                 <ul class="previous-prediction-drivers-list tom-baku-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/4.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Tom";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Miami:</h5>
                                 <ul class="previous-prediction-drivers-list tom-miami-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/5.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Tom";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
@@ -26250,7 +29930,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Owen</h4>
                         <ul class="points-list">
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26321,7 +30001,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26331,7 +30011,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26402,7 +30082,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26412,7 +30092,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26483,7 +30163,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26493,7 +30173,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26564,7 +30244,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26574,7 +30254,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26645,7 +30325,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26655,7 +30335,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26726,7 +30406,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26736,7 +30416,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26807,7 +30487,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26817,7 +30497,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26888,7 +30568,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26898,7 +30578,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -26969,7 +30649,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -26979,7 +30659,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27050,7 +30730,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27060,7 +30740,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27131,7 +30811,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27141,7 +30821,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27212,7 +30892,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27222,7 +30902,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27293,7 +30973,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27303,7 +30983,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27374,7 +31054,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27384,7 +31064,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27455,7 +31135,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27465,7 +31145,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27536,7 +31216,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27546,7 +31226,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27617,7 +31297,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27627,7 +31307,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27698,7 +31378,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27708,7 +31388,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27779,7 +31459,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27789,7 +31469,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27860,7 +31540,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27870,7 +31550,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -27941,7 +31621,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -27951,7 +31631,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points owen-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -28022,7 +31702,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "";
+                                            echo "0";
                                         }
 
                                     } catch (PDOException $e) {
@@ -28032,7 +31712,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="points-total">52</li>
+                            <li class="owen-points-total">52</li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -28040,31 +31720,951 @@
                             <li class="previous-prediction-item">
                                 <h5>Bahrain:</h5>
                                 <ul class="previous-prediction-drivers-list owen-bahrain-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/1.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Owen";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Saudi Arabia:</h5>
                                 <ul class="previous-prediction-drivers-list owen-saudi-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/2.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Owen";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Australia:</h5>
                                 <ul class="previous-prediction-drivers-list owen-aus-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/3.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Owen";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Baku:</h5>
                                 <ul class="previous-prediction-drivers-list owen-baku-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/4.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Owen";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
                                 <h5>Miami:</h5>
                                 <ul class="previous-prediction-drivers-list owen-miami-pred">
-                                    <!-- filled with JS -->
+                                <?php
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
+
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                    
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Get the next race name
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/5.json");
+                                        $result = json_decode($content);
+                                        $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+
+                                        //Bind the search values to the prepared statement
+                                        $userValue = "Owen";
+                                        $raceValue = $nextRace;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+                                    
+                                        // Fetch all rows as an associative array
+                                        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    
+                                        // Output the fetched data as an HTML unordered list
+                                        
+                                        foreach ($rows as $row):
+                                            ?>
+                                            <li class="driver-container <?= $row ['p1'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p2'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p3'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p4'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p5'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p6'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p7'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p8'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p9'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            <li class="driver-container <?= $row ['p10'] ?>">
+                                            <div class="driver-details">
+                                                <div class="driver-number">
+                                                <p class="driver-number-p"></p>
+                                                </div>
+                                                <div class="driver-name">
+                                                <p class="firstname"></p>
+                                                <p class="surname"></p>
+                                                </div>
+                                            </div>
+                                            <figure class="driver-img">
+                                                <img class="team-img" src="" alt="">
+                                            </figure>
+                                            </li>
+                                            
+                                        <?php
+                                        endforeach;
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    }
+
+                                ?>
                                 </ul>
                             </li>
                             <li class="previous-prediction-item">
