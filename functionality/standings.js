@@ -15,9 +15,5 @@ playerListItem.forEach(item => {
 const prevPoints = document.querySelectorAll('.prev-points');
 
 prevPoints.forEach(item => {
-    if (item.innerHTML === "") {
-        item.style.display = "none";
-    } else {
-        item.style.display = "block";
-    }
+    console.log(item.innerHTML);
 })
