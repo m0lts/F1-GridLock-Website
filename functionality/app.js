@@ -418,17 +418,7 @@ driverContainer.forEach(container => {
 
 
 
-// Make prev-points list item invisible unless points are assigned to it
 
-const prevPoints = document.querySelectorAll('.prev-points');
-
-prevPoints.forEach(item => {
-    if (item.innerHTML === " ") {
-        item.style.display = "none";
-    } else {
-        item.style.display = "block";
-    }
-})
 
 
 // const checkObjectStructure = async (link) => {
