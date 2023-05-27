@@ -68,7 +68,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Ali</h4>
                         <ul class="points-list">
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -149,7 +149,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -230,7 +230,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -311,7 +311,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -392,7 +392,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -465,7 +465,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -544,7 +544,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -623,7 +623,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -704,7 +704,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -785,7 +785,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -866,7 +866,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -947,7 +947,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1028,7 +1028,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1109,7 +1109,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1190,7 +1190,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1271,7 +1271,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1352,7 +1352,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1434,7 +1434,7 @@
                                 ?>
 
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1515,7 +1515,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1597,7 +1597,7 @@
                                 ?>
 
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1679,7 +1679,7 @@
                                 ?>
 
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1761,7 +1761,7 @@
                                 ?>
 
                             </li>
-                            <li class="prev-points ali-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
