@@ -6036,7 +6036,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Toby</h4>
                         <ul class="points-list">
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6117,7 +6117,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6198,7 +6198,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6279,7 +6279,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6360,7 +6360,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6441,7 +6441,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6522,7 +6522,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6603,7 +6603,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6684,7 +6684,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6765,7 +6765,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6846,7 +6846,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6927,7 +6927,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7008,7 +7008,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7089,7 +7089,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7170,7 +7170,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7251,7 +7251,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7332,7 +7332,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7413,7 +7413,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7494,7 +7494,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7575,7 +7575,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7656,7 +7656,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7737,7 +7737,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points toby-points">
+                            <li class="prev-points toby-points<?php echo ($stmt->rowCount() === 0) ? ' no-rows' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";

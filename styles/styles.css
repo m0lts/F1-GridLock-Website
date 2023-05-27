@@ -442,7 +442,7 @@ img {
 .prev-points {
     color: var(--grey);
 }
-.zero-points {
+.no-rows {
     display: none;
 }
 .points-tally {
