@@ -1842,7 +1842,7 @@
                                 ?>
 
                             </li>
-                            <li class="ali-points-total">65</li>
+                            <li class="ali-points-total points-tally"></li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -7816,7 +7816,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="toby-points-total">57</li>
+                            <li class="toby-points-total points-tally"></li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -13790,7 +13790,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="ed-points-total">57</li>
+                            <li class="ed-points-total points-tally"></li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -19764,7 +19764,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="jack-points-total">56</li>
+                            <li class="jack-points-total points-tally"></li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -25738,7 +25738,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="tom-points-total">53</li>
+                            <li class="tom-points-total points-tally"></li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -29930,7 +29930,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Owen</h4>
                         <ul class="points-list">
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30001,7 +30001,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30011,7 +30011,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30092,7 +30092,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30173,7 +30173,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30254,7 +30254,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30335,7 +30335,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30416,7 +30416,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30497,7 +30497,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30578,7 +30578,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30659,7 +30659,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30740,7 +30740,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30821,7 +30821,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30902,7 +30902,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -30983,7 +30983,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -31064,7 +31064,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -31145,7 +31145,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -31226,7 +31226,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -31307,7 +31307,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -31388,7 +31388,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -31469,7 +31469,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -31550,7 +31550,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -31631,7 +31631,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points owen-points">
+                            <li class="prev-points owen-points <?php echo ($points === 0) ? 'zero-points' : ''; ?>">
                                 <?php
                                     // Database details
                                     $host = "localhost";

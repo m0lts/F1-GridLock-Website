@@ -10,17 +10,6 @@ playerListItem.forEach(item => {
 });
 
 
-// Make prev-points list item invisible unless points are assigned to it
-
-const prevPoints = document.querySelectorAll('.prev-points');
-
-prevPoints.forEach(item => {
-    if (item.textContent === '0') {
-        item.style.display = 'none';
-    }
-});
-
-
 // Tally up points for each user
 
 function calculatePoints(classNames, totalPointsElement) {
