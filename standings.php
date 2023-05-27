@@ -63,7 +63,8 @@
             </div>
             <ul class="grey-container player-standings-box">
                 <h3 class="standings-title">Standings:</h3>
-                <li class="points-list-container ali-points">
+                <!-- ALI POINTS -->
+                <li class="points-list-container">
                     <div class="player-standings-item">
                         <h4 class="points-heading">Ali</h4>
                         <ul class="points-list">
@@ -6030,7 +6031,8 @@
                         </ul>
                     </div>
                 </li>
-                <li class="points-list-container toby-points">
+                <!-- TOBY POINTS -->
+                <li class="points-list-container">
                     <div class="player-standings-item">
                         <h4 class="points-heading">Toby</h4>
                         <ul class="points-list">
@@ -12004,7 +12006,8 @@
                         </ul>
                     </div>
                 </li>
-                <li class="points-list-container ed-points">
+                <!-- ED POINTS -->
+                <li class="points-list-container">
                     <div class="player-standings-item">
                         <h4 class="points-heading">Ed</h4>
                         <ul class="points-list">
@@ -17978,7 +17981,8 @@
                         </ul>
                     </div>
                 </li>
-                <li class="points-list-container jack-points">
+                <!-- JACK POINTS -->
+                <li class="points-list-container">
                     <div class="player-standings-item">
                         <h4 class="points-heading">Jack</h4>
                         <ul class="points-list">
@@ -23952,7 +23956,8 @@
                         </ul>
                     </div>
                 </li>
-                <li class="points-list-container tom-points">
+                <!-- TOM POINTS -->
+                <li class="points-list-container">
                     <div class="player-standings-item">
                         <h4 class="points-heading">Tom</h4>
                         <ul class="points-list">
@@ -29926,7 +29931,8 @@
                         </ul>
                     </div>
                 </li>
-                <li class="points-list-container owen-points">
+                <!-- OWEN POINTS -->
+                <li class="points-list-container">
                     <div class="player-standings-item">
                         <h4 class="points-heading">Owen</h4>
                         <ul class="points-list">
@@ -30001,7 +30007,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30082,7 +30088,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30163,7 +30169,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30244,7 +30250,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30325,7 +30331,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30406,7 +30412,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30487,7 +30493,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30568,7 +30574,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30649,7 +30655,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30730,7 +30736,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30811,7 +30817,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30892,7 +30898,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -30973,7 +30979,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31054,7 +31060,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31135,7 +31141,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31216,7 +31222,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31297,7 +31303,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31378,7 +31384,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31459,7 +31465,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31540,7 +31546,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31621,7 +31627,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -31702,7 +31708,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "0";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
