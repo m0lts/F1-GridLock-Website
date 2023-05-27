@@ -67,7 +67,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Ali</h4>
                         <ul class="points-list">
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -148,7 +148,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -229,7 +229,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -310,7 +310,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -391,7 +391,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -464,7 +464,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -543,7 +543,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -622,7 +622,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -703,7 +703,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -784,7 +784,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -865,7 +865,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -946,7 +946,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1027,7 +1027,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1108,7 +1108,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1189,7 +1189,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1270,7 +1270,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1351,7 +1351,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1433,7 +1433,7 @@
                                 ?>
 
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1514,7 +1514,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1596,7 +1596,7 @@
                                 ?>
 
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1678,7 +1678,7 @@
                                 ?>
 
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1760,7 +1760,7 @@
                                 ?>
 
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ali-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -1842,7 +1842,7 @@
                                 ?>
 
                             </li>
-                            <li class="points-total">65</li>
+                            <li class="ali-points-total">65</li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -6034,7 +6034,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Toby</h4>
                         <ul class="points-list">
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6115,7 +6115,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6196,7 +6196,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6277,7 +6277,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6358,7 +6358,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6439,7 +6439,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6520,7 +6520,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6601,7 +6601,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6682,7 +6682,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6763,7 +6763,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6844,7 +6844,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -6925,7 +6925,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7006,7 +7006,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7087,7 +7087,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7168,7 +7168,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7249,7 +7249,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7330,7 +7330,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7411,7 +7411,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7492,7 +7492,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7573,7 +7573,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7654,7 +7654,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7735,7 +7735,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points toby-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -7816,7 +7816,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="points-total">57</li>
+                            <li class="toby-points-total">57</li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -12008,7 +12008,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Ed</h4>
                         <ul class="points-list">
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12089,7 +12089,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12170,7 +12170,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12251,7 +12251,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12332,7 +12332,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12413,7 +12413,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12494,7 +12494,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12575,7 +12575,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12656,7 +12656,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12737,7 +12737,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12818,7 +12818,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12899,7 +12899,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -12980,7 +12980,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13061,7 +13061,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13142,7 +13142,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13223,7 +13223,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13304,7 +13304,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13385,7 +13385,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13466,7 +13466,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13547,7 +13547,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13628,7 +13628,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13709,7 +13709,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points ed-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -13790,7 +13790,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="points-total">57</li>
+                            <li class="ed-points-total">57</li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -17982,7 +17982,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Jack</h4>
                         <ul class="points-list">
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18063,7 +18063,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18144,7 +18144,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18225,7 +18225,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18306,7 +18306,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18387,7 +18387,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18468,7 +18468,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18549,7 +18549,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18630,7 +18630,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18711,7 +18711,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18792,7 +18792,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18873,7 +18873,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -18954,7 +18954,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19035,7 +19035,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19116,7 +19116,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19197,7 +19197,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19278,7 +19278,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19359,7 +19359,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19440,7 +19440,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19521,7 +19521,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19602,7 +19602,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19683,7 +19683,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points jack-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -19764,7 +19764,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="points-total">56</li>
+                            <li class="jack-points-total">56</li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -23956,7 +23956,7 @@
                     <div class="player-standings-item">
                         <h4 class="points-heading">Tom</h4>
                         <ul class="points-list">
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24037,7 +24037,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24118,7 +24118,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24199,7 +24199,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24280,7 +24280,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24361,7 +24361,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24442,7 +24442,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24523,7 +24523,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24604,7 +24604,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24685,7 +24685,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24766,7 +24766,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24847,7 +24847,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -24928,7 +24928,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25009,7 +25009,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25090,7 +25090,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25171,7 +25171,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25252,7 +25252,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25333,7 +25333,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25414,7 +25414,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25495,7 +25495,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25576,7 +25576,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25657,7 +25657,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="prev-points">
+                            <li class="prev-points tom-points">
                                 <?php
                                     // Database details
                                     $host = "localhost";
@@ -25738,7 +25738,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="points-total">53</li>
+                            <li class="tom-points-total">53</li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">
@@ -31712,7 +31712,7 @@
                                     }
                                 ?>
                             </li>
-                            <li class="owen-points-total">52</li>
+                            <li class="owen-points-total points-tally">52</li>
                         </ul>
                     </div>
                     <div class="previous-player-predictions">

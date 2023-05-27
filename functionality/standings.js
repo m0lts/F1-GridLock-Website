@@ -15,22 +15,49 @@ playerListItem.forEach(item => {
 const prevPoints = document.querySelectorAll('.prev-points');
 
 prevPoints.forEach(item => {
-    if (item.textContent === 0) {
+    if (item.textContent === '0') {
         item.style.display = 'none';
     }
 });
 
-const owenPoints = document.querySelectorAll('.owen-points');
-const owenTotalPoints = document.querySelector('.owen-points-total');
 
-let owenPointsSum = 0;
+// Tally up points for each user
 
-owenPoints.forEach(point => {
-    const value = parseFloat(point.textContent);
+function calculatePoints(classNames, totalPointsElement) {
+    const points = document.querySelectorAll(classNames);
+    let pointsSum = 0;
+  
+    points.forEach(point => {
+      const value = parseFloat(point.textContent);
+  
+      if (!isNaN(value)) {
+        pointsSum += value;
+      }
+    });
+  
+    totalPointsElement.innerHTML = pointsSum;
+  }
+  
+  // OWEN
+  const owenTotalPoints = document.querySelector('.owen-points-total');
+  calculatePoints('.owen-points', owenTotalPoints);
+  
+  // TOM
+  const tomTotalPoints = document.querySelector('.tom-points-total');
+  calculatePoints('.tom-points', tomTotalPoints);
 
-    if (!isNaN(value)) {
-        owenPointsSum += value;
-    };
-})
+  // TOBY
+  const tobyTotalPoints = document.querySelector('toby-points-total');
+  calculatePoints('.toby-points', tobyTotalPoints);
 
-owenTotalPoints.innerHTML = owenPointsSum;
+  // ALI
+  const aliTotalPoints = document.querySelector('ali-points-total');
+  calculatePoints('.ali-points', aliTotalPoints);
+
+  // ED
+  const edTotalPoints = document.querySelector('ed-points-total');
+  calculatePoints('.ed-points', edTotalPoints);
+
+  // TOBY
+  const jackTotalPoints = document.querySelector('jack-points-total');
+  calculatePoints('.jack-points', jackTotalPoints);

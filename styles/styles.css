@@ -442,7 +442,7 @@ img {
 .prev-points {
     color: var(--grey);
 }
-.points-total {
+.points-tally {
     font-weight: 600;
     color: var(--red);
 }
