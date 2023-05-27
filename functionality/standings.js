@@ -36,17 +36,17 @@ function calculatePoints(classNames, totalPointsElement) {
   calculatePoints('.tom-points', tomTotalPoints);
 
   // TOBY
-  const tobyTotalPoints = document.querySelector('toby-points-total');
+  const tobyTotalPoints = document.querySelector('.toby-points-total');
   calculatePoints('.toby-points', tobyTotalPoints);
 
   // ALI
-  const aliTotalPoints = document.querySelector('ali-points-total');
+  const aliTotalPoints = document.querySelector('.ali-points-total');
   calculatePoints('.ali-points', aliTotalPoints);
 
   // ED
-  const edTotalPoints = document.querySelector('ed-points-total');
+  const edTotalPoints = document.querySelector('.ed-points-total');
   calculatePoints('.ed-points', edTotalPoints);
 
   // TOBY
-  const jackTotalPoints = document.querySelector('jack-points-total');
+  const jackTotalPoints = document.querySelector('.jack-points-total');
   calculatePoints('.jack-points', jackTotalPoints);
