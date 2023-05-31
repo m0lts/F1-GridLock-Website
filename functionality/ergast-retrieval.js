@@ -130,6 +130,7 @@ export const fetchNextRace = async (link) => {
   try {
     const response = await fetch(link);
     const data = await response.json();
+    console.log(data);
     // fill circuit country title
     const raceName = data.MRData.RaceTable.Races[0].raceName;
     const circuitName = circuitNames[raceName];

@@ -193,7 +193,7 @@ if(predictionsBox) {
 
 import { fetchNextRace } from "./ergast-retrieval.js";
 
-const nextRaceLink = 'https://ergast.com/api/f1/current/next.json';
+const nextRaceLink = 'https://ergast.com/api/f1/current/1/results.json';
 fetchNextRace(nextRaceLink);
 
 
