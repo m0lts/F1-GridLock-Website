@@ -90,6 +90,7 @@
                                         $content = file_get_contents("https://ergast.com/api/f1/current/1/results.json");
                                         $result = json_decode($content);
                                         $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
+                                        print_r($nextRace);
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
@@ -115,8 +116,7 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
-                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'bottas', 'gasly', 'albon'];
+                                            $actualTop10 = array_slice($actualTop10, 0, -10);
 
                                             // Points calculation
                                             $points = 0;
