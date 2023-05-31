@@ -93,6 +93,7 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
+                                        // $raceValue = $nextRace;
                                         $raceValue = "Bahrain Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
@@ -115,7 +116,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'bottas', 'gasly', 'albon'];
 
                                             // Points calculation
                                             $points = 0;
@@ -136,7 +138,7 @@
                                             }
 
                                             // Print points
-                                            echo $result;
+                                            echo $points;
                                         } else {
                                             // Handle case when no rows are returned
                                             echo "Correct";
@@ -174,7 +176,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Saudi Arabian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -196,7 +199,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'hamilton', 'sainz', 'leclerc', 'ocon', 'gasly', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -220,7 +224,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "Correct";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -255,7 +259,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Australian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -277,7 +282,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'hamilton', 'alonso', 'stroll', 'perez', 'norris', 'hulkenberg', 'piastri', 'zhou', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -301,7 +307,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "Correct";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -336,7 +342,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Azerbaijan Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -358,7 +365,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['perez', 'verstappen', 'leclerc', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'norris', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -382,7 +390,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "Correct";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -411,13 +419,14 @@
                                         $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                         // Get the next race name
-                                        $content = file_get_contents("https://ergast.com/api/f1/current/4/results.json");
+                                        $content = file_get_contents("https://ergast.com/api/f1/current/5/results.json");
                                         $result = json_decode($content);
                                         $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Miami Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -439,7 +448,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'sainz', 'hamilton', 'leclerc', 'gasly', 'ocon', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -463,7 +473,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "Correct";
+                                            echo "";
                                         }
 
                                     } catch (PDOException $e) {
@@ -498,7 +508,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Monaco Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -520,7 +531,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'alonso', 'ocon', 'hamilton', 'russell', 'leclerc', 'gasly', 'sainz', 'norris', 'piastri'];
 
                                             // Points calculation
                                             $points = 0;
@@ -543,8 +555,10 @@
                                             // Print points
                                             echo $points;
                                         } else {
-                                            echo "Correct";
+                                            // Handle case when no rows are returned
+                                            echo "";
                                         }
+
                                     } catch (PDOException $e) {
                                         echo "Query failed: " . $e->getMessage();
                                     } catch (Exception $e) {
@@ -586,7 +600,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Toby";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Bahrain Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -608,7 +623,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'bottas', 'gasly', 'albon'];
 
                                             // Points calculation
                                             $points = 0;
@@ -667,7 +683,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Toby";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Saudi Arabian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -689,7 +706,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'hamilton', 'sainz', 'leclerc', 'ocon', 'gasly', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -748,7 +766,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Toby";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Australian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -770,7 +789,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'hamilton', 'alonso', 'stroll', 'perez', 'norris', 'hulkenberg', 'piastri', 'zhou', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -829,7 +849,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Toby";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Azerbaijan Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -851,7 +872,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['perez', 'verstappen', 'leclerc', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'norris', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -910,7 +932,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Toby";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Miami Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -932,7 +955,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'sainz', 'hamilton', 'leclerc', 'gasly', 'ocon', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -991,7 +1015,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Toby";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Monaco Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1013,7 +1038,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'alonso', 'ocon', 'hamilton', 'russell', 'leclerc', 'gasly', 'sainz', 'norris', 'piastri'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1081,7 +1107,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ed";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Bahrain Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1103,7 +1130,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'bottas', 'gasly', 'albon'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1162,7 +1190,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ed";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Saudi Arabian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1184,7 +1213,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'hamilton', 'sainz', 'leclerc', 'ocon', 'gasly', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1243,7 +1273,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ed";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Australian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1265,7 +1296,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'hamilton', 'alonso', 'stroll', 'perez', 'norris', 'hulkenberg', 'piastri', 'zhou', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1324,7 +1356,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ed";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Azerbaijan Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1346,7 +1379,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['perez', 'verstappen', 'leclerc', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'norris', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1405,7 +1439,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ed";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Miami Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1427,7 +1462,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'sainz', 'hamilton', 'leclerc', 'gasly', 'ocon', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1486,7 +1522,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ed";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Monaco Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1508,7 +1545,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'alonso', 'ocon', 'hamilton', 'russell', 'leclerc', 'gasly', 'sainz', 'norris', 'piastri'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1576,7 +1614,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Jack";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Bahrain Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1598,7 +1637,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'bottas', 'gasly', 'albon'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1657,7 +1697,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Jack";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Saudi Arabian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1679,7 +1720,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'hamilton', 'sainz', 'leclerc', 'ocon', 'gasly', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1738,7 +1780,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Jack";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Australian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1760,7 +1803,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'hamilton', 'alonso', 'stroll', 'perez', 'norris', 'hulkenberg', 'piastri', 'zhou', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1819,7 +1863,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Jack";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Azerbaijan Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1841,7 +1886,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['perez', 'verstappen', 'leclerc', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'norris', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1900,7 +1946,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Jack";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Miami Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -1922,7 +1969,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'sainz', 'hamilton', 'leclerc', 'gasly', 'ocon', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -1981,7 +2029,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Jack";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Monaco Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2003,7 +2052,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'alonso', 'ocon', 'hamilton', 'russell', 'leclerc', 'gasly', 'sainz', 'norris', 'piastri'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2071,7 +2121,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Tom";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Bahrain Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2093,7 +2144,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'bottas', 'gasly', 'albon'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2152,7 +2204,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Tom";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Saudi Arabian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2174,7 +2227,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'hamilton', 'sainz', 'leclerc', 'ocon', 'gasly', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2233,7 +2287,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Tom";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Australian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2255,7 +2310,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'hamilton', 'alonso', 'stroll', 'perez', 'norris', 'hulkenberg', 'piastri', 'zhou', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2314,7 +2370,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Tom";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Azerbaijan Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2336,7 +2393,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['perez', 'verstappen', 'leclerc', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'norris', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2395,7 +2453,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Tom";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Miami Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2417,7 +2476,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'sainz', 'hamilton', 'leclerc', 'gasly', 'ocon', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2476,7 +2536,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Tom";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Monaco Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2498,7 +2559,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'alonso', 'ocon', 'hamilton', 'russell', 'leclerc', 'gasly', 'sainz', 'norris', 'piastri'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2566,7 +2628,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Owen";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Bahrain Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2588,7 +2651,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'bottas', 'gasly', 'albon'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2647,7 +2711,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Owen";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Saudi Arabian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2669,7 +2734,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'hamilton', 'sainz', 'leclerc', 'ocon', 'gasly', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2728,7 +2794,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Owen";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Australian Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2750,7 +2817,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'hamilton', 'alonso', 'stroll', 'perez', 'norris', 'hulkenberg', 'piastri', 'zhou', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2809,7 +2877,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Owen";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Azerbaijan Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2831,7 +2900,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['perez', 'verstappen', 'leclerc', 'alonso', 'sainz', 'hamilton', 'stroll', 'russell', 'norris', 'tsunoda'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2890,7 +2960,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Owen";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Miami Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2912,7 +2983,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'perez', 'alonso', 'russell', 'sainz', 'hamilton', 'leclerc', 'gasly', 'ocon', 'magnussen'];
 
                                             // Points calculation
                                             $points = 0;
@@ -2971,7 +3043,8 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Owen";
-                                        $raceValue = $nextRace;
+                                        // $raceValue = $nextRace;
+                                        $raceValue = "Monaco Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
@@ -2993,7 +3066,8 @@
                                                 $lowerCase = mb_strtolower($normalisation);
                                                 $actualTop10[] = $lowerCase;
                                             }
-                                            $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            // $actualTop10 = array_slice($actualTop10, 0, -10);
+                                            $actualTop10 = ['verstappen', 'alonso', 'ocon', 'hamilton', 'russell', 'leclerc', 'gasly', 'sainz', 'norris', 'piastri'];
 
                                             // Points calculation
                                             $points = 0;
