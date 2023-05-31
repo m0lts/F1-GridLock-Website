@@ -139,7 +139,7 @@
                                             echo $points;
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "Correct";
+                                            print_r($stmt->fetch(PDO::FETCH_NUM));
                                         }
 
                                     } catch (PDOException $e) {
