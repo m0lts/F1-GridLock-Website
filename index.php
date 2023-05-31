@@ -117,7 +117,8 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ali";
-                                $raceValue = $nextRace;
+                                // $raceValue = $nextRace;
+                                $raceValue = "Spanish Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -330,7 +331,8 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ed";
-                                $raceValue = $nextRace;
+                                // $raceValue = $nextRace;
+                                $raceValue = "Spanish Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -544,7 +546,8 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Jack";
-                                $raceValue = $nextRace;
+                                // $raceValue = $nextRace;
+                                $raceValue = "Spanish Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -759,7 +762,8 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Toby";
-                                $raceValue = $nextRace;
+                                // $raceValue = $nextRace;
+                                $raceValue = "Spanish Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -972,7 +976,8 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Tom";
-                                $raceValue = $nextRace;
+                                // $raceValue = $nextRace;
+                                $raceValue = "Spanish Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -1185,7 +1190,8 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Owen";
-                                $raceValue = $nextRace;
+                                // $raceValue = $nextRace;
+                                $raceValue = "Spanish Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
