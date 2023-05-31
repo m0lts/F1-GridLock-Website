@@ -136,7 +136,7 @@
                                             }
 
                                             // Print points
-                                            echo $nextRace;
+                                            echo $result;
                                         } else {
                                             // Handle case when no rows are returned
                                             echo "Correct";
