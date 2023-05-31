@@ -42,25 +42,6 @@
      <main class="page-alignment">
         <!--rest-of-page segement with red to blue gradient. common across all pages-->
         <section class="standings">
-            <!-- hero at top of standings page -->
-            <div class="standings-hero">
-                <h3 class="h3-title">Races Complete:</h3>
-                <!--list of flags of races already complete-->
-                <ul class="flags">
-                    <li class="flag">
-                        <img src="./images/flags/Flag_of_Bahrain.png" alt="">
-                    </li>
-                    <li class="flag">
-                        <img src="./images/flags/saudi_flag.jpeg" alt="">
-                    </li>
-                    <li class="flag">
-                        <img src="./images/flags/Flag-Australia.webp" alt="">
-                    </li>
-                    <li class="flag">
-                        <img src="./images/flags/azer_flag.png" alt="">
-                    </li>
-                </ul>
-            </div>
             <ul class="grey-container player-standings-box">
                 <h3 class="standings-title">Standings:</h3>
                 <!-- ALI POINTS -->
