@@ -141,10 +141,7 @@
                                         echo $points;
 
                                         echo '</li>';
-                                    } else {
-                                        // Set display to none for list item
-                                        echo '<li class="prev-points ali-points" style="display: none;"></li>';
-                                    }
+                                    } 
                                 }
                             } catch (PDOException $e) {
                                 echo "Query failed: " . $e->getMessage();
