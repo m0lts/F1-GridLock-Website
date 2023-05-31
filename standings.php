@@ -90,7 +90,6 @@
                                         $content = file_get_contents("https://ergast.com/api/f1/current/1/results.json");
                                         $result = json_decode($content);
                                         $nextRace = $result->MRData->RaceTable->Races[0]->raceName;
-                                        print_r($nextRace);
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
@@ -137,7 +136,7 @@
                                             }
 
                                             // Print points
-                                            echo $points;
+                                            echo $nextRace;
                                         } else {
                                             // Handle case when no rows are returned
                                             echo "Correct";
