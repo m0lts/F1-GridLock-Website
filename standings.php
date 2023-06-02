@@ -119,9 +119,15 @@
 
                                             // Print points
                                             echo $points;
+                                            print_r($raceValue);
+                                            print_r($actualTop10);
+
                                         } else {
                                             // Handle case when no rows are returned
                                             echo "Correct";
+                                            print_r($raceValue);
+                                            print_r($actualTop10);
+
                                         }
 
                                     } catch (PDOException $e) {
