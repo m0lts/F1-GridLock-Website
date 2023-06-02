@@ -188,12 +188,19 @@ if(predictionsBox) {
 
 
 
+// RETRIEVE ERGAST DEVELOPER API
+
+import { fetchLastResult } from "./ergast-retrieval.js";
+
+const lastRaceResultLink = 'https://ergast.com/api/f1/current/last/results.json';
+fetchLastResult(lastRaceResultLink, ".previous-race-result");
+
 
 // retrieve next race details
 
 import { fetchNextRace } from "./ergast-retrieval.js";
 
-const nextRaceLink = 'https://ergast.com/api/f1/current/1/results.json';
+const nextRaceLink = 'https://ergast.com/api/f1/current/next.json';
 fetchNextRace(nextRaceLink);
 
 
