@@ -74,7 +74,7 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
-                                        $raceValue = $nextRace;
+                                        $raceValue = "Bahrain Grand Prix";
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
