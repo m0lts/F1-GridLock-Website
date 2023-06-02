@@ -442,6 +442,11 @@ img {
 .prev-points {
     color: var(--grey);
 }
+@media screen and (max-width:768px) {
+    .prev-points {
+        display:none;
+    }
+}
 .no-rows {
     display: none;
 }

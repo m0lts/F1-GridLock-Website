@@ -134,7 +134,8 @@
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                // $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                $qualifying = date('2023-06-03 15:00:00');
 
 
                                 // Access current date and time
@@ -348,7 +349,9 @@
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                // $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                $qualifying = date('2023-06-03 15:00:00');
+
 
 
                                 // Access current date and time
@@ -563,7 +566,9 @@
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                // $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                $qualifying = date('2023-06-03 15:00:00');
+
 
 
                                 // Access current date and time
@@ -779,7 +784,9 @@
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                // $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                $qualifying = date('2023-06-03 15:00:00');
+
 
 
                                 // Access current date and time
@@ -993,7 +1000,9 @@
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                // $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                $qualifying = date('2023-06-03 15:00:00');
+
 
 
                                 // Access current date and time
@@ -1207,7 +1216,9 @@
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                // $qualifying = date($qualiDate . " " . $returnedQualiTime);
+                                $qualifying = date('2023-06-03 15:00:00');
+
 
 
                                 // Access current date and time
