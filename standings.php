@@ -74,11 +74,13 @@
 
                                         // Bind the search values to the prepared statement
                                         $userValue = "Ali";
-                                        $raceValue = "Bahrain Grand Prix";
+                                        $raceValue = $nextRace;
                                         $stmt->bindParam(':user_value', $userValue);
                                         $stmt->bindParam(':race_value', $raceValue);
 
                                         $stmt->execute();
+
+                                        echo $raceValue;
 
                                         // Check if there is at least one row
                                         if ($stmt->rowCount() > 0) {
@@ -119,15 +121,10 @@
 
                                             // Print points
                                             echo $points;
-                                            echo $raceValue;
-                                            echo $actualTop10;
 
                                         } else {
                                             // Handle case when no rows are returned
                                             echo "Correct";
-                                            echo $raceValue;
-                                            echo $actualTop10;
-
                                         }
 
                                     } catch (PDOException $e) {
