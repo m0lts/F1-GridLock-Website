@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Get posted form data
     // $race = $nextRace;
-    $race = "Spanish Grand Prix";
+    $race = "Canadian Grand Prix";
     $user = $_POST["user"];
     $p1 =  $_POST["p1-ali"];
     $p2 =  $_POST["p2-ali"];

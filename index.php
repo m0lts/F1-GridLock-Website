@@ -118,7 +118,7 @@
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ali";
                                 // $raceValue = $nextRace;
-                                $raceValue = "Spanish Grand Prix";
+                                $raceValue = "Canadian Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -135,7 +135,7 @@
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
                                 // $qualifying = date($qualiDate . " " . $returnedQualiTime);
-                                $qualifying = date('2023-06-03 15:00:00');
+                                $qualifying = date('2023-06-17 21:00:00');
 
 
                                 // Access current date and time
@@ -333,7 +333,7 @@
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ed";
                                 // $raceValue = $nextRace;
-                                $raceValue = "Spanish Grand Prix";
+                                $raceValue = "Canadian Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -350,7 +350,7 @@
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
                                 // $qualifying = date($qualiDate . " " . $returnedQualiTime);
-                                $qualifying = date('2023-06-03 15:00:00');
+                                $qualifying = date('2023-06-17 21:00:00');
 
 
 
@@ -550,7 +550,7 @@
                                 //Bind the search values to the prepared statement
                                 $userValue = "Jack";
                                 // $raceValue = $nextRace;
-                                $raceValue = "Spanish Grand Prix";
+                                $raceValue = "Canadian Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -567,7 +567,7 @@
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
                                 // $qualifying = date($qualiDate . " " . $returnedQualiTime);
-                                $qualifying = date('2023-06-03 15:00:00');
+                                $qualifying = date('2023-06-17 21:00:00');
 
 
 
@@ -768,7 +768,7 @@
                                 //Bind the search values to the prepared statement
                                 $userValue = "Toby";
                                 // $raceValue = $nextRace;
-                                $raceValue = "Spanish Grand Prix";
+                                $raceValue = "Canadian Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -785,7 +785,7 @@
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
                                 // $qualifying = date($qualiDate . " " . $returnedQualiTime);
-                                $qualifying = date('2023-06-03 15:00:00');
+                                $qualifying = date('2023-06-17 21:00:00');
 
 
 
@@ -984,7 +984,7 @@
                                 //Bind the search values to the prepared statement
                                 $userValue = "Tom";
                                 // $raceValue = $nextRace;
-                                $raceValue = "Spanish Grand Prix";
+                                $raceValue = "Canadian Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -1001,7 +1001,7 @@
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
                                 // $qualifying = date($qualiDate . " " . $returnedQualiTime);
-                                $qualifying = date('2023-06-03 15:00:00');
+                                $qualifying = date('2023-06-03 21:00:00');
 
 
 
@@ -1200,7 +1200,7 @@
                                 //Bind the search values to the prepared statement
                                 $userValue = "Owen";
                                 // $raceValue = $nextRace;
-                                $raceValue = "Spanish Grand Prix";
+                                $raceValue = "Canadian Grand Prix";
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -1217,7 +1217,7 @@
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
                                 // $qualifying = date($qualiDate . " " . $returnedQualiTime);
-                                $qualifying = date('2023-06-03 15:00:00');
+                                $qualifying = date('2023-06-17 21:00:00');
 
 
 
