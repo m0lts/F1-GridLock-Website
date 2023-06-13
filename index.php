@@ -1001,7 +1001,7 @@
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
                                 // $qualifying = $qualiDate . " " . $returnedQualiTime;
                                 // $qualifying = date($qualiDate . " " . $returnedQualiTime);
-                                $qualifying = date('2023-06-03 21:00:00');
+                                $qualifying = date('2023-06-17 21:00:00');
 
 
 
