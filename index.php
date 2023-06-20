@@ -118,8 +118,7 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ali";
-                                // $raceValue = $nextRace;
-                                $raceValue = "Canadian Grand Prix";
+                                $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -134,9 +133,8 @@
                                 // Fetch qualifying date
                                 $qualiDate = $result->MRData->RaceTable->Races[0]->Qualifying->date;
                                 // Concatenate qualifying time and date in format: Y-M-D H-M-S
-                                // $qualifying = $qualiDate . " " . $returnedQualiTime;
-                                // $qualifying = date($qualiDate . " " . $returnedQualiTime);
-                                $qualifying = date('2023-06-17 21:00:00');
+                                $qualifying = $qualiDate . " " . $returnedQualiTime;
+                                $qualifying = date($qualiDate . " " . $returnedQualiTime);
 
 
                                 // Access current date and time
@@ -333,8 +331,7 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Ed";
-                                // $raceValue = $nextRace;
-                                $raceValue = "Canadian Grand Prix";
+                                $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -550,8 +547,7 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Jack";
-                                // $raceValue = $nextRace;
-                                $raceValue = "Canadian Grand Prix";
+                                $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -768,8 +764,7 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Toby";
-                                // $raceValue = $nextRace;
-                                $raceValue = "Canadian Grand Prix";
+                                $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -984,8 +979,7 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Tom";
-                                // $raceValue = $nextRace;
-                                $raceValue = "Canadian Grand Prix";
+                                $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
@@ -1200,8 +1194,7 @@
 
                                 //Bind the search values to the prepared statement
                                 $userValue = "Owen";
-                                // $raceValue = $nextRace;
-                                $raceValue = "Canadian Grand Prix";
+                                $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
 
