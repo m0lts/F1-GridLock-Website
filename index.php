@@ -52,6 +52,7 @@
             <a class="make-prediction" href="./prediction-page.php">
                 <h2 class="mp-text">Make Prediction <i class="fa-solid fa-arrow-right"></i></h2>
             </a>
+
             <section class="grey-container">
                 <!-- selection tabs -->
                 <ul class="tabs-list">
