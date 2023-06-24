@@ -41,3 +41,39 @@ function calculatePoints(classNames, totalPointsElement) {
   // TOBY
   const jackTotalPoints = document.querySelector('.jack-points-total');
   calculatePoints('.jack-points', jackTotalPoints);
+
+
+
+  // PUT SCORES IN ORDER
+
+const listElements = document.querySelectorAll('.points-tally');
+
+const listElementsArray = Array.from(listElements);
+
+listElementsArray.sort(function(a, b) {
+    var numA = parseFloat(a.innerHTML);
+    var numB = parseFloat(b.innerHTML);
+  
+    if (!isNaN(numA) && !isNaN(numB)) {
+      // Both elements are numbers
+      return numB - numA; // Sort in descending order
+    } else if (!isNaN(numA)) {
+      // Only 'a' is a number, 'b' is not
+      return -1; // Maintain the order with text elements
+    } else if (!isNaN(numB)) {
+      // Only 'b' is a number, 'a' is not
+      return 1; // Maintain the order with text elements
+    } else {
+      // Both elements are text
+      return 0; // Maintain the original order
+    }
+  });
+
+const ul = document.createElement("ul");
+listElementsArray.forEach(element => {
+    ul.appendChild(element);
+});
+
+const sortedListParent = document.querySelector('.standings');
+
+sortedListParent.appendChild(ul);
