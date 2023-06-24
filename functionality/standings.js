@@ -76,4 +76,4 @@ listElementsArray.forEach(element => {
 
 const sortedListParent = document.querySelector('.standings');
 
-sortedListParent.appendChild(ul);
+document.sortedListParent.appendChild(ul);
