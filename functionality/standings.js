@@ -43,3 +43,13 @@ function calculatePoints(classNames, totalPointsElement) {
   calculatePoints('.jack-points', jackTotalPoints);
 
 
+
+// HIDE EMPTY ELEMENT LOGIC
+
+const listItems = document.querySelectorAll('.prev-points');
+
+listItems.forEach(list => {
+    if (list.textContent === ' ') {
+        list.style.display = 'none';
+    } 
+})
