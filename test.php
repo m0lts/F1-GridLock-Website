@@ -65,41 +65,66 @@
                                 "https://ergast.com/api/f1/current/22/results.json"
                             ];
 
+                            // Function to calculate points
+                            function calculatePoints($predictedTop10, $actualTop10)
+                            {
+                                $points = 0;
 
-                            
+                                if ($predictedTop10 === $actualTop10) {
+                                    $points += 10;
+                                }
 
-                            // LOOP OVER THE LINKS PRINTING POINTS OUT
-                            foreach ($links as $link) {
+                                foreach ($predictedTop10 as $key => $predictedDriver) {
+                                    if (in_array($predictedDriver, $actualTop10)) {
+                                        $points += 1;
+                                        if ($key < 10 && $predictedDriver === $actualTop10[$key]) {
+                                            $points += 1;
+                                        }
+                                    }
+                                }
+
+                                return $points;
+                            }
+
+                            // Function to fetch race results from a link
+                            function fetchRaceResults($link)
+                            {
                                 $content = file_get_contents($link);
+                                if ($content === false) {
+                                    return null;
+                                }
+
                                 $result = json_decode($content);
-                                $race = $result->MRData->RaceTable->Races;
-                                $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+                                return $result->MRData->RaceTable->Races;
+                            }
 
-                                if ($race) {
-                                    $race = $result->MRData->RaceTable->Races[0]->raceName;
+                            // Database details
+                            $host = "localhost";
+                            $dbname = "u128425984_predictions";
+                            $username = "u128425984_moltontom";
+                            $password = "Wilson2000";
 
-                                    // Database details
-                                    $host = "localhost";
-                                    $dbname = "u128425984_predictions";
-                                    $username = "u128425984_moltontom";
-                                    $password = "Wilson2000";
+                            try {
+                                // Create a new PDO instance
+                                $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
-                                    try {
-                                        // Create a new PDO instance
-                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                                        
-                                        // Set PDO error mode to exception
-                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                        
-                                        // Prepare and execute the SQL query
-                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+                                // Set PDO error mode to exception
+                                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                                        // Bind the search values to the prepared statement
-                                        $userValue = "Ali";
-                                        $raceValue = $race;
-                                        $stmt->bindParam(':user_value', $userValue);
-                                        $stmt->bindParam(':race_value', $raceValue);
+                                // Prepare and execute the SQL query
+                                $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
+                                // Bind the search value to the prepared statement
+                                $userValue = "Ali";
+                                $stmt->bindParam(':user_value', $userValue);
+
+                                // Loop over the links printing points
+                                foreach ($links as $link) {
+                                    $races = fetchRaceResults($link);
+
+                                    if ($races) {
+                                        $race = $races[0]->raceName;
+                                        $stmt->bindParam(':race_value', $race);
                                         $stmt->execute();
 
                                         // Check if there is at least one row
@@ -107,8 +132,9 @@
                                             // Fetch the first row as an indexed array
                                             $row = $stmt->fetch(PDO::FETCH_NUM);
                                             $predictedTop10 = array_slice($row, 3);
-                                            
+
                                             // Get the actual race result and extract top 10 drivers
+                                            $raceResult = $races[0]->Results;
                                             $actualTop10 = [];
                                             foreach ($raceResult as $item) {
                                                 $driverSurname = $item->Driver->familyName;
@@ -119,44 +145,115 @@
                                             }
                                             $actualTop10 = array_slice($actualTop10, 0, -10);
 
-                                            // Points calculation
-                                            $points = 0;
-                                            if ($predictedTop10 === $actualTop10) {
-                                                $points += 10;
-                                            }
-                                            for ($i = 0; $i < count($predictedTop10); $i++) {
-                                                if ($predictedTop10[$i] === $actualTop10[$i]) {
-                                                    $points += 2;
-                                                }
-                                            }
-                                            for ($j = 0; $j < count($predictedTop10); $j++) {
-                                                for ($l = 0; $l < count($actualTop10); $l++) {
-                                                    if ($predictedTop10[$j] === $actualTop10[$l]) {
-                                                        $points += 1;
-                                                    }
-                                                }
-                                            }
+                                            // Calculate points
+                                            $points = calculatePoints($predictedTop10, $actualTop10);
 
                                             // Print points
                                             echo "<li>$points</li>";
-                                            
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo " ";
+                                            echo "<li></li>";
                                         }
-
-                                    } catch (PDOException $e) {
-                                        echo "Query failed: " . $e->getMessage();
-                                    } catch (Exception $e) {
-                                        echo "Error: " . $e->getMessage();
+                                    } else {
+                                        echo "<li>...</li>";
                                     }
+                                }
+                            } catch (PDOException $e) {
+                                echo "Query failed: " . $e->getMessage();
+                            } catch (Exception $e) {
+                                echo "Error: " . $e->getMessage();
+                            }
+                            
+
+                            // // LOOP OVER THE LINKS PRINTING POINTS OUT
+                            // foreach ($links as $link) {
+                            //     $content = file_get_contents($link);
+                            //     $result = json_decode($content);
+                            //     $race = $result->MRData->RaceTable->Races;
+                            //     $raceResult = $result->MRData->RaceTable->Races[0]->Results;
+
+                            //     if ($race) {
+                            //         $race = $result->MRData->RaceTable->Races[0]->raceName;
+
+                            //         // Database details
+                            //         $host = "localhost";
+                            //         $dbname = "u128425984_predictions";
+                            //         $username = "u128425984_moltontom";
+                            //         $password = "Wilson2000";
+
+                            //         try {
+                            //             // Create a new PDO instance
+                            //             $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                        
+                            //             // Set PDO error mode to exception
+                            //             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                        
+                            //             // Prepare and execute the SQL query
+                            //             $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                            //             // Bind the search values to the prepared statement
+                            //             $userValue = "Ali";
+                            //             $raceValue = $race;
+                            //             $stmt->bindParam(':user_value', $userValue);
+                            //             $stmt->bindParam(':race_value', $raceValue);
+
+                            //             $stmt->execute();
+
+                            //             // Check if there is at least one row
+                            //             if ($stmt->rowCount() > 0) {
+                            //                 // Fetch the first row as an indexed array
+                            //                 $row = $stmt->fetch(PDO::FETCH_NUM);
+                            //                 $predictedTop10 = array_slice($row, 3);
+                                            
+                            //                 // Get the actual race result and extract top 10 drivers
+                            //                 $actualTop10 = [];
+                            //                 foreach ($raceResult as $item) {
+                            //                     $driverSurname = $item->Driver->familyName;
+                            //                     $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                            //                     $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                            //                     $lowerCase = mb_strtolower($normalisation);
+                            //                     $actualTop10[] = $lowerCase;
+                            //                 }
+                            //                 $actualTop10 = array_slice($actualTop10, 0, -10);
+
+                            //                 // Points calculation
+                            //                 $points = 0;
+                            //                 if ($predictedTop10 === $actualTop10) {
+                            //                     $points += 10;
+                            //                 }
+                            //                 for ($i = 0; $i < count($predictedTop10); $i++) {
+                            //                     if ($predictedTop10[$i] === $actualTop10[$i]) {
+                            //                         $points += 2;
+                            //                     }
+                            //                 }
+                            //                 for ($j = 0; $j < count($predictedTop10); $j++) {
+                            //                     for ($l = 0; $l < count($actualTop10); $l++) {
+                            //                         if ($predictedTop10[$j] === $actualTop10[$l]) {
+                            //                             $points += 1;
+                            //                         }
+                            //                     }
+                            //                 }
+
+                            //                 // Print points
+                            //                 echo "<li>$points</li>";
+                                            
+                            //             } else {
+                            //                 // Handle case when no rows are returned
+                            //                 echo " ";
+                            //             }
+
+                            //         } catch (PDOException $e) {
+                            //             echo "Query failed: " . $e->getMessage();
+                            //         } catch (Exception $e) {
+                            //             echo "Error: " . $e->getMessage();
+                            //         }
 
                                     
-                                } else {
-                                    echo "<li>No array found</li>";
-                                };
+                            //     } else {
+                            //         echo "<li>No array found</li>";
+                            //     };
 
-                            }
+                            // }
 
                             
 
