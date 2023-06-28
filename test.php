@@ -105,8 +105,9 @@
                                             // Fetch the first row as an indexed array
                                             $row = $stmt->fetch(PDO::FETCH_NUM);
                                             $predictedTop10 = array_slice($row, 3);
+                                            $inWords = print_r($predictedTop10);
 
-                                            echo "<li>$predictedTop10</li>";
+                                            echo "<li>$inWords</li>";
                                             
                                         } else {
                                             // Handle case when no rows are returned
