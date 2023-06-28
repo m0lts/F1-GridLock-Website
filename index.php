@@ -29,6 +29,10 @@
                 <li class="nav-item"><a href="./standings.php">Standings</a></li>
                 <!-- <li class="nav-item"><a href="./champ-predictions.html">Predictions</a></li> -->
                 <li class="nav-item"><a href="./points-system.html">Points System</a></li>
+
+                <li class="nav-item"><a href="./test.php">Points System</a></li>
+
+
             </ul>
         </nav>
     </header>
