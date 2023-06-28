@@ -108,14 +108,8 @@
                                     $testPrint = databaseQuery("Ali", $race);
 
                                     echo "<li>$testPrint</li>";
-
-                                    
-
-                                    echo $race;
-                                    echo "\n";
                                 } else {
-                                    echo "No array found";
-                                    echo "\n";
+                                    echo "<li>No array found</li>";
                                 };
 
                             }
