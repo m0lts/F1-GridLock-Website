@@ -77,7 +77,13 @@
                                 ];
                                 
                                 // CREATE CLASS NAME WITH USER NAME
-                                $userName = "Ali";
+                                
+                                $ali = "Ali";
+                                $toby = "Toby";
+                                $tom = "Tom";
+                                $jack = "Jack";
+                                $ed = "Ed";
+                                $owen = "Owen";
                                 
                                 function makeClassName($name) {
                                     $lc = mb_strtolower($name);
@@ -113,7 +119,7 @@
                                             $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                             // Bind the search values to the prepared statement
-                                            $userValue = $userName;
+                                            $userValue = $ali;
                                             $raceValue = $race;
                                             $stmt->bindParam(':user_value', $userValue);
                                             $stmt->bindParam(':race_value', $raceValue);
@@ -156,7 +162,7 @@
                                                 }
 
                                                 // Print points
-                                                echo "<li class='prev-points " . makeClassName($userName) . "'>$points</li>";
+                                                echo "<li class='prev-points " . makeClassName($ali) . "'>$points</li>";
                                                 
                                             } else {
                                                 // Handle case when no rows are returned
@@ -186,42 +192,6 @@
                         <h4 class="points-heading">Toby</h4>
                         <ul class="points-list">
                             <?php
-                                // LINKS OF ALL THE RACES
-                                $links = [
-                                    "https://ergast.com/api/f1/current/1/results.json",
-                                    "https://ergast.com/api/f1/current/2/results.json",
-                                    "https://ergast.com/api/f1/current/3/results.json",
-                                    "https://ergast.com/api/f1/current/4/results.json",
-                                    "https://ergast.com/api/f1/current/5/results.json",
-                                    "https://ergast.com/api/f1/current/6/results.json",
-                                    "https://ergast.com/api/f1/current/7/results.json",
-                                    "https://ergast.com/api/f1/current/8/results.json",
-                                    "https://ergast.com/api/f1/current/9/results.json",
-                                    "https://ergast.com/api/f1/current/10/results.json",
-                                    "https://ergast.com/api/f1/current/11/results.json",
-                                    "https://ergast.com/api/f1/current/12/results.json",
-                                    "https://ergast.com/api/f1/current/13/results.json",
-                                    "https://ergast.com/api/f1/current/14/results.json",
-                                    "https://ergast.com/api/f1/current/15/results.json",
-                                    "https://ergast.com/api/f1/current/16/results.json",
-                                    "https://ergast.com/api/f1/current/17/results.json",
-                                    "https://ergast.com/api/f1/current/18/results.json",
-                                    "https://ergast.com/api/f1/current/19/results.json",
-                                    "https://ergast.com/api/f1/current/20/results.json",
-                                    "https://ergast.com/api/f1/current/21/results.json",
-                                    "https://ergast.com/api/f1/current/22/results.json"
-                                ];
-                                
-                                // CREATE CLASS NAME WITH USER NAME
-                                $userName = "Toby";
-                                
-                                function makeClassName($name) {
-                                    $lc = mb_strtolower($name);
-                                    $class = "-points";
-                                    $concatenate = $lc . $class;
-                                    return $concatenate;
-                                };
-
                                 // LOOP OVER THE LINKS PRINTING POINTS OUT
                                 foreach ($links as $link) {
                                     $content = file_get_contents($link);
@@ -249,7 +219,7 @@
                                             $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                             // Bind the search values to the prepared statement
-                                            $userValue = $userName;
+                                            $userValue = $toby;
                                             $raceValue = $race;
                                             $stmt->bindParam(':user_value', $userValue);
                                             $stmt->bindParam(':race_value', $raceValue);
@@ -292,7 +262,7 @@
                                                 }
 
                                                 // Print points
-                                                echo "<li class='prev-points " . makeClassName($userName) . "'>$points</li>";
+                                                echo "<li class='prev-points " . makeClassName($toby) . "'>$points</li>";
                                                 
                                             } else {
                                                 // Handle case when no rows are returned
@@ -322,42 +292,6 @@
                         <h4 class="points-heading">Ed</h4>
                         <ul class="points-list">
                             <?php
-                                // LINKS OF ALL THE RACES
-                                $links = [
-                                    "https://ergast.com/api/f1/current/1/results.json",
-                                    "https://ergast.com/api/f1/current/2/results.json",
-                                    "https://ergast.com/api/f1/current/3/results.json",
-                                    "https://ergast.com/api/f1/current/4/results.json",
-                                    "https://ergast.com/api/f1/current/5/results.json",
-                                    "https://ergast.com/api/f1/current/6/results.json",
-                                    "https://ergast.com/api/f1/current/7/results.json",
-                                    "https://ergast.com/api/f1/current/8/results.json",
-                                    "https://ergast.com/api/f1/current/9/results.json",
-                                    "https://ergast.com/api/f1/current/10/results.json",
-                                    "https://ergast.com/api/f1/current/11/results.json",
-                                    "https://ergast.com/api/f1/current/12/results.json",
-                                    "https://ergast.com/api/f1/current/13/results.json",
-                                    "https://ergast.com/api/f1/current/14/results.json",
-                                    "https://ergast.com/api/f1/current/15/results.json",
-                                    "https://ergast.com/api/f1/current/16/results.json",
-                                    "https://ergast.com/api/f1/current/17/results.json",
-                                    "https://ergast.com/api/f1/current/18/results.json",
-                                    "https://ergast.com/api/f1/current/19/results.json",
-                                    "https://ergast.com/api/f1/current/20/results.json",
-                                    "https://ergast.com/api/f1/current/21/results.json",
-                                    "https://ergast.com/api/f1/current/22/results.json"
-                                ];
-                                
-                                // CREATE CLASS NAME WITH USER NAME
-                                $userName = "Ed";
-                                
-                                function makeClassName($name) {
-                                    $lc = mb_strtolower($name);
-                                    $class = "-points";
-                                    $concatenate = $lc . $class;
-                                    return $concatenate;
-                                };
-
                                 // LOOP OVER THE LINKS PRINTING POINTS OUT
                                 foreach ($links as $link) {
                                     $content = file_get_contents($link);
@@ -385,7 +319,7 @@
                                             $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                             // Bind the search values to the prepared statement
-                                            $userValue = $userName;
+                                            $userValue = $ed;
                                             $raceValue = $race;
                                             $stmt->bindParam(':user_value', $userValue);
                                             $stmt->bindParam(':race_value', $raceValue);
@@ -428,7 +362,7 @@
                                                 }
 
                                                 // Print points
-                                                echo "<li class='prev-points " . makeClassName($userName) . "'>$points</li>";
+                                                echo "<li class='prev-points " . makeClassName($ed) . "'>$points</li>";
                                                 
                                             } else {
                                                 // Handle case when no rows are returned
@@ -458,42 +392,6 @@
                         <h4 class="points-heading">Jack</h4>
                         <ul class="points-list">
                             <?php
-                                // LINKS OF ALL THE RACES
-                                $links = [
-                                    "https://ergast.com/api/f1/current/1/results.json",
-                                    "https://ergast.com/api/f1/current/2/results.json",
-                                    "https://ergast.com/api/f1/current/3/results.json",
-                                    "https://ergast.com/api/f1/current/4/results.json",
-                                    "https://ergast.com/api/f1/current/5/results.json",
-                                    "https://ergast.com/api/f1/current/6/results.json",
-                                    "https://ergast.com/api/f1/current/7/results.json",
-                                    "https://ergast.com/api/f1/current/8/results.json",
-                                    "https://ergast.com/api/f1/current/9/results.json",
-                                    "https://ergast.com/api/f1/current/10/results.json",
-                                    "https://ergast.com/api/f1/current/11/results.json",
-                                    "https://ergast.com/api/f1/current/12/results.json",
-                                    "https://ergast.com/api/f1/current/13/results.json",
-                                    "https://ergast.com/api/f1/current/14/results.json",
-                                    "https://ergast.com/api/f1/current/15/results.json",
-                                    "https://ergast.com/api/f1/current/16/results.json",
-                                    "https://ergast.com/api/f1/current/17/results.json",
-                                    "https://ergast.com/api/f1/current/18/results.json",
-                                    "https://ergast.com/api/f1/current/19/results.json",
-                                    "https://ergast.com/api/f1/current/20/results.json",
-                                    "https://ergast.com/api/f1/current/21/results.json",
-                                    "https://ergast.com/api/f1/current/22/results.json"
-                                ];
-                                
-                                // CREATE CLASS NAME WITH USER NAME
-                                $userName = "Jack";
-                                
-                                function makeClassName($name) {
-                                    $lc = mb_strtolower($name);
-                                    $class = "-points";
-                                    $concatenate = $lc . $class;
-                                    return $concatenate;
-                                };
-
                                 // LOOP OVER THE LINKS PRINTING POINTS OUT
                                 foreach ($links as $link) {
                                     $content = file_get_contents($link);
@@ -521,7 +419,7 @@
                                             $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                             // Bind the search values to the prepared statement
-                                            $userValue = $userName;
+                                            $userValue = $jack;
                                             $raceValue = $race;
                                             $stmt->bindParam(':user_value', $userValue);
                                             $stmt->bindParam(':race_value', $raceValue);
@@ -564,7 +462,7 @@
                                                 }
 
                                                 // Print points
-                                                echo "<li class='prev-points " . makeClassName($userName) . "'>$points</li>";
+                                                echo "<li class='prev-points " . makeClassName($jack) . "'>$points</li>";
                                                 
                                             } else {
                                                 // Handle case when no rows are returned
@@ -594,42 +492,6 @@
                         <h4 class="points-heading">Tom</h4>
                         <ul class="points-list">
                             <?php
-                                // LINKS OF ALL THE RACES
-                                $links = [
-                                    "https://ergast.com/api/f1/current/1/results.json",
-                                    "https://ergast.com/api/f1/current/2/results.json",
-                                    "https://ergast.com/api/f1/current/3/results.json",
-                                    "https://ergast.com/api/f1/current/4/results.json",
-                                    "https://ergast.com/api/f1/current/5/results.json",
-                                    "https://ergast.com/api/f1/current/6/results.json",
-                                    "https://ergast.com/api/f1/current/7/results.json",
-                                    "https://ergast.com/api/f1/current/8/results.json",
-                                    "https://ergast.com/api/f1/current/9/results.json",
-                                    "https://ergast.com/api/f1/current/10/results.json",
-                                    "https://ergast.com/api/f1/current/11/results.json",
-                                    "https://ergast.com/api/f1/current/12/results.json",
-                                    "https://ergast.com/api/f1/current/13/results.json",
-                                    "https://ergast.com/api/f1/current/14/results.json",
-                                    "https://ergast.com/api/f1/current/15/results.json",
-                                    "https://ergast.com/api/f1/current/16/results.json",
-                                    "https://ergast.com/api/f1/current/17/results.json",
-                                    "https://ergast.com/api/f1/current/18/results.json",
-                                    "https://ergast.com/api/f1/current/19/results.json",
-                                    "https://ergast.com/api/f1/current/20/results.json",
-                                    "https://ergast.com/api/f1/current/21/results.json",
-                                    "https://ergast.com/api/f1/current/22/results.json"
-                                ];
-                                
-                                // CREATE CLASS NAME WITH USER NAME
-                                $userName = "Tom";
-                                
-                                function makeClassName($name) {
-                                    $lc = mb_strtolower($name);
-                                    $class = "-points";
-                                    $concatenate = $lc . $class;
-                                    return $concatenate;
-                                };
-
                                 // LOOP OVER THE LINKS PRINTING POINTS OUT
                                 foreach ($links as $link) {
                                     $content = file_get_contents($link);
@@ -657,7 +519,7 @@
                                             $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                             // Bind the search values to the prepared statement
-                                            $userValue = $userName;
+                                            $userValue = $tom;
                                             $raceValue = $race;
                                             $stmt->bindParam(':user_value', $userValue);
                                             $stmt->bindParam(':race_value', $raceValue);
@@ -700,7 +562,7 @@
                                                 }
 
                                                 // Print points
-                                                echo "<li class='prev-points " . makeClassName($userName) . "'>$points</li>";
+                                                echo "<li class='prev-points " . makeClassName($tom) . "'>$points</li>";
                                                 
                                             } else {
                                                 // Handle case when no rows are returned
@@ -730,42 +592,6 @@
                         <h4 class="points-heading">Owen</h4>
                         <ul class="points-list">
                             <?php
-                                // LINKS OF ALL THE RACES
-                                $links = [
-                                    "https://ergast.com/api/f1/current/1/results.json",
-                                    "https://ergast.com/api/f1/current/2/results.json",
-                                    "https://ergast.com/api/f1/current/3/results.json",
-                                    "https://ergast.com/api/f1/current/4/results.json",
-                                    "https://ergast.com/api/f1/current/5/results.json",
-                                    "https://ergast.com/api/f1/current/6/results.json",
-                                    "https://ergast.com/api/f1/current/7/results.json",
-                                    "https://ergast.com/api/f1/current/8/results.json",
-                                    "https://ergast.com/api/f1/current/9/results.json",
-                                    "https://ergast.com/api/f1/current/10/results.json",
-                                    "https://ergast.com/api/f1/current/11/results.json",
-                                    "https://ergast.com/api/f1/current/12/results.json",
-                                    "https://ergast.com/api/f1/current/13/results.json",
-                                    "https://ergast.com/api/f1/current/14/results.json",
-                                    "https://ergast.com/api/f1/current/15/results.json",
-                                    "https://ergast.com/api/f1/current/16/results.json",
-                                    "https://ergast.com/api/f1/current/17/results.json",
-                                    "https://ergast.com/api/f1/current/18/results.json",
-                                    "https://ergast.com/api/f1/current/19/results.json",
-                                    "https://ergast.com/api/f1/current/20/results.json",
-                                    "https://ergast.com/api/f1/current/21/results.json",
-                                    "https://ergast.com/api/f1/current/22/results.json"
-                                ];
-                                
-                                // CREATE CLASS NAME WITH USER NAME
-                                $userName = "Owen";
-                                
-                                function makeClassName($name) {
-                                    $lc = mb_strtolower($name);
-                                    $class = "-points";
-                                    $concatenate = $lc . $class;
-                                    return $concatenate;
-                                };
-
                                 // LOOP OVER THE LINKS PRINTING POINTS OUT
                                 foreach ($links as $link) {
                                     $content = file_get_contents($link);
@@ -793,7 +619,7 @@
                                             $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                             // Bind the search values to the prepared statement
-                                            $userValue = $userName;
+                                            $userValue = $owen;
                                             $raceValue = $race;
                                             $stmt->bindParam(':user_value', $userValue);
                                             $stmt->bindParam(':race_value', $raceValue);
@@ -836,7 +662,7 @@
                                                 }
 
                                                 // Print points
-                                                echo "<li class='prev-points " . makeClassName($userName) . "'>$points</li>";
+                                                echo "<li class='prev-points " . makeClassName($owen) . "'>$points</li>";
                                                 
                                             } else {
                                                 // Handle case when no rows are returned
