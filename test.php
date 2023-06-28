@@ -72,6 +72,7 @@
                                 $content = file_get_contents($link);
                                 $result = json_decode($content);
                                 $race = $result->MRData->RaceTable->Races;
+                                $raceResult = $result->MRData->RaceTable->Races[0]->Results;
 
                                 if ($race) {
                                     $race = $result->MRData->RaceTable->Races[0]->raceName;
@@ -105,9 +106,38 @@
                                             // Fetch the first row as an indexed array
                                             $row = $stmt->fetch(PDO::FETCH_NUM);
                                             $predictedTop10 = array_slice($row, 3);
-                                            $inWords = print_r($predictedTop10);
+                                            
+                                            // Get the actual race result and extract top 10 drivers
+                                            $actualTop10 = [];
+                                            foreach ($raceResult as $item) {
+                                                $driverSurname = $item->Driver->familyName;
+                                                $normalisation = normalizer_normalize($driverSurname, Normalizer::FORM_D);
+                                                $normalisation = preg_replace('/[\x{0300}-\x{036f}]/u', '', $normalisation);
+                                                $lowerCase = mb_strtolower($normalisation);
+                                                $actualTop10[] = $lowerCase;
+                                            }
+                                            $actualTop10 = array_slice($actualTop10, 0, -10);
 
-                                            echo "<li>$inWords $raceValue</li>";
+                                            // Points calculation
+                                            $points = 0;
+                                            if ($predictedTop10 === $actualTop10) {
+                                                $points += 10;
+                                            }
+                                            for ($i = 0; $i < count($predictedTop10); $i++) {
+                                                if ($predictedTop10[$i] === $actualTop10[$i]) {
+                                                    $points += 2;
+                                                }
+                                            }
+                                            for ($j = 0; $j < count($predictedTop10); $j++) {
+                                                for ($l = 0; $l < count($actualTop10); $l++) {
+                                                    if ($predictedTop10[$j] === $actualTop10[$l]) {
+                                                        $points += 1;
+                                                    }
+                                                }
+                                            }
+
+                                            // Print points
+                                            echo $points;
                                             
                                         } else {
                                             // Handle case when no rows are returned
