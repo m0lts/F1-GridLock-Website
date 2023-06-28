@@ -37,6 +37,7 @@
     </header>
     <!--end of header-->
     <ul>
+
     <?php
                             // LINKS OF ALL THE RACES
                             $links = [
@@ -137,7 +138,7 @@
                                             }
 
                                             // Print points
-                                            echo $points;
+                                            echo "<li>$points</li>";
                                             
                                         } else {
                                             // Handle case when no rows are returned
