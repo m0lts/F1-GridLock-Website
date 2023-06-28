@@ -107,7 +107,7 @@
                                             $predictedTop10 = array_slice($row, 3);
                                             $inWords = print_r($predictedTop10);
 
-                                            echo "<li>$inWords</li>";
+                                            echo "<li>$inWords $raceValue</li>";
                                             
                                         } else {
                                             // Handle case when no rows are returned
