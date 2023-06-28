@@ -147,7 +147,7 @@
                                                 }
 
                                                 // Print points
-                                                echo "<li class='prev-points'>$points</li>";
+                                                echo "<li class='prev-points ali-points'>$points</li>";
                                                 
                                             } else {
                                                 // Handle case when no rows are returned
