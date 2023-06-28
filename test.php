@@ -136,11 +136,11 @@
                                             }
 
                                             // Print points
-                                            echo "<li>$points</li>";
+                                            echo "<li class='prev-points'>$points</li>";
                                             
                                         } else {
                                             // Handle case when no rows are returned
-                                            echo "<li> </li>";
+                                            echo "<li class='prev-points'> </li>";
                                         }
 
                                     } catch (PDOException $e) {
@@ -151,7 +151,7 @@
 
                                     
                                 } else {
-                                    echo "<li> </li>";
+                                    echo "<li class='prev-points'> </li>";
                                 };
 
                             }
