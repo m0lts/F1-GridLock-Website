@@ -76,6 +76,14 @@
                                     "https://ergast.com/api/f1/current/22/results.json"
                                 ];
                                 
+                                $userName = "Ali";
+                                
+                                function makeClassName($name) {
+                                    $lc = mb_strtolower($name);
+                                    $class = "-points";
+                                    $concatenate = $lc . $class;
+                                    return $concatenate;
+                                };
 
                                 // LOOP OVER THE LINKS PRINTING POINTS OUT
                                 foreach ($links as $link) {
@@ -104,7 +112,7 @@
                                             $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                             // Bind the search values to the prepared statement
-                                            $userValue = "Ali";
+                                            $userValue = $userName;
                                             $raceValue = $race;
                                             $stmt->bindParam(':user_value', $userValue);
                                             $stmt->bindParam(':race_value', $raceValue);
@@ -147,7 +155,7 @@
                                                 }
 
                                                 // Print points
-                                                echo "<li class='prev-points ali-points'>$points</li>";
+                                                echo "<li class='prev-points " . makeClassName($userName) . "'>$points</li>";
                                                 
                                             } else {
                                                 // Handle case when no rows are returned
