@@ -65,36 +65,7 @@
                             ];
 
 
-                            // FUNCTION QUERYING THE DATABASE
-                            function databaseQuery($name, $raceName) {
-                                // Database details
-                                $host = "localhost";
-                                $dbname = "u128425984_predictions";
-                                $username = "u128425984_moltontom";
-                                $password = "Wilson2000";
-
-                                try {
-                                    // Create a new PDO instance
-                                    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                                    
-                                    // Set PDO error mode to exception
-                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                    
-                                    // Prepare and execute the SQL query
-                                    $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
-
-                                    // Bind the search values to the prepared statement and execute
-                                    $userValue = $name;
-                                    $raceValue = $raceName;
-                                    $stmt->bindParam(':user_value', $userValue);
-                                    $stmt->bindParam(':race_value', $raceValue);
-                                    $stmt->execute();
-                                } catch (PDOException $e) {
-                                    echo "Query failed: " . $e->getMessage();
-                                } catch (Exception $e) {
-                                    echo "Error: " . $e->getMessage();
-                                }
-                            };
+                            
 
                             // LOOP OVER THE LINKS PRINTING POINTS OUT
                             foreach ($links as $link) {
@@ -105,9 +76,50 @@
                                 if ($race) {
                                     $race = $result->MRData->RaceTable->Races[0]->raceName;
 
-                                    $testPrint = databaseQuery("Ali", $race);
+                                    // Database details
+                                    $host = "localhost";
+                                    $dbname = "u128425984_predictions";
+                                    $username = "u128425984_moltontom";
+                                    $password = "Wilson2000";
 
-                                    echo "<li>$testPrint</li>";
+                                    try {
+                                        // Create a new PDO instance
+                                        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                                        
+                                        // Set PDO error mode to exception
+                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                        
+                                        // Prepare and execute the SQL query
+                                        $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
+
+                                        // Bind the search values to the prepared statement
+                                        $userValue = "Ali";
+                                        $raceValue = $race;
+                                        $stmt->bindParam(':user_value', $userValue);
+                                        $stmt->bindParam(':race_value', $raceValue);
+
+                                        $stmt->execute();
+
+                                        // Check if there is at least one row
+                                        if ($stmt->rowCount() > 0) {
+                                            // Fetch the first row as an indexed array
+                                            $row = $stmt->fetch(PDO::FETCH_NUM);
+                                            $predictedTop10 = array_slice($row, 3);
+
+                                            echo "<li>$predictedTop10</li>";
+                                            
+                                        } else {
+                                            // Handle case when no rows are returned
+                                            echo " ";
+                                        }
+
+                                    } catch (PDOException $e) {
+                                        echo "Query failed: " . $e->getMessage();
+                                    } catch (Exception $e) {
+                                        echo "Error: " . $e->getMessage();
+                                    }
+
+                                    
                                 } else {
                                     echo "<li>No array found</li>";
                                 };
