@@ -25,7 +25,7 @@
             Menu +
         </button>
 
-        <!--hidden nav-screen. Background image to be yas marina circuit-->
+        <!--hidden nav-screen.-->
         <nav class="nav-screen">
             <ul class="nav-list">
                 <li class="nav-item"><a href="./index.php">Race</a></li>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/styles.css">
+        <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
+        <script src="https://kit.fontawesome.com/d7b281748b.js" crossorigin="anonymous"></script>
+        <script src="./functionality/app.js" type="module"></script>
+        <title>F1-GridLock</title>
+        <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
+    </head>
+<body>
+    <!--top header, inc. logo on left and responsive menu on right-->
+    <header class="header">
+        <!--logo container and logo nested-->
+        <figure class="logo-cont">
+            <a href="./index.php">
+                <img src="./images/common/F1 (1).png" alt="F1-GridLock logo">
+            </a>
+        </figure>
+        <!--menu button - common across all pages-->
+        <button class="btn menu-btn">
+            Menu +
+        </button>
+
+        <!--hidden nav-screen.-->
+        <nav class="nav-screen">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./index.php">Race</a></li>
+                <li class="nav-item"><a href="#">Standings</a></li>
+                <li class="nav-item"><a href="./points-system.html">Points System</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-alignment">
+        <h3>Sign-Up</h3>
+        <form action="process-signup.php" method="post" novalidate>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div>
+                <label for="password_confirmation">Confirm Password</label>
+                <input type="password" id="password_confirmation" name="password_confirmation">
+            </div>
+
+<button>Sign up</button>            
+        </form>
+    </main>
+</body>
+</html>
