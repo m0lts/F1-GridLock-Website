@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <button class="btn form-btn">Login</button>
             </form>
 
-            <p>Don't have an account?<a href="./signup.html">Create an account</a>.</p>
+            <p>Don't have an account? <a href="./signup.html">Create an account</a>.</p>
 
         </main>
     </body>
