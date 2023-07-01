@@ -142,6 +142,15 @@ img {
     color: var(--black);
     text-decoration: none;
 }
+.logged-in-text {
+    font-size: 0.5rem;
+}
+.logged-in-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /*HOMEPAGE (index.html)*/
