@@ -42,10 +42,7 @@
             </button>
             <button class="btn login-btn">
                 <?php if ($user): ?>
-                    <div class="logged-in-div">
-                        <p class="logged-in-text"><?= htmlspecialchars($user["name"]) ?></p>
-                        <a class="logged-in-text" href="logout.php">Log out</a>
-                    </div>
+                    <a class="logged-in-btn" href="logout.php">Log out</a>
                 <?php else: ?>    
                     <a href="./login.php">Login</a>
                 <?php endif; ?>
