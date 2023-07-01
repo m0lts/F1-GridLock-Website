@@ -637,10 +637,10 @@ img {
 }
 
 /* hide form and show time up message */
-/* .prediction-section.hide,
+.prediction-section.hide,
 .times-up-section.hide {
     display: none;
-} */
+}
 
 .times-up-section,
 .prediction-selection {

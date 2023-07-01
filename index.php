@@ -57,10 +57,6 @@
                 <li class="nav-item"><a href="./standings.php">Standings</a></li>
                 <!-- <li class="nav-item"><a href="./champ-predictions.html">Predictions</a></li> -->
                 <li class="nav-item"><a href="./points-system.html">Points System</a></li>
-
-                <li class="nav-item"><a href="./signup.html">Points System</a></li>
-
-
             </ul>
         </nav>
     </header>
@@ -156,7 +152,7 @@
                                 $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
-                                $userValue = "Ali";
+                                $userValue = "Ali Finlay";
                                 $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
@@ -369,7 +365,7 @@
                                 $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
-                                $userValue = "Ed";
+                                $userValue = "Ed Bascombe";
                                 $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
@@ -584,7 +580,7 @@
                                 $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
-                                $userValue = "Jack";
+                                $userValue = "Jack Bishop";
                                 $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
@@ -800,7 +796,7 @@
                                 $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
-                                $userValue = "Toby";
+                                $userValue = "Toby Gardner";
                                 $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
@@ -1014,7 +1010,7 @@
                                 $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
-                                $userValue = "Tom";
+                                $userValue = "Tom Molton";
                                 $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
@@ -1228,7 +1224,7 @@
                                 $stmt = $conn->prepare("SELECT * FROM predictions WHERE race = :race_value AND user = :user_value");
 
                                 //Bind the search values to the prepared statement
-                                $userValue = "Owen";
+                                $userValue = "Owen Jones";
                                 $raceValue = $nextRace;
                                 $stmt->bindParam(':user_value', $userValue);
                                 $stmt->bindParam(':race_value', $raceValue);
