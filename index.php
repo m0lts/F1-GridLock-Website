@@ -1,3 +1,11 @@
+<?php
+
+    session_start();
+
+    
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,9 +26,15 @@
             <img src="./images/common/F1 (1).png" alt="F1-GridLock logo">
         </figure>
         <!--menu button - common across all pages-->
-        <button class="btn menu-btn">
-            Menu +
-        </button>
+        <div>
+            <button class="btn menu-btn">
+                Menu +
+            </button>
+            <button class="btn login-btn">
+                <a href="./login.php">Login</a>
+            </button>
+            
+        </div>
 
         <!--hidden nav-screen. Background image to be yas marina circuit-->
         <nav class="nav-screen">

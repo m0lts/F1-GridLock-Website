@@ -132,9 +132,17 @@ img {
 .nav-item a:hover {
     font-weight: 700;
 }
-.menu-btn {
+.menu-btn, .login-btn {
     font-size: 1.1rem;
 }
+.login-btn {
+    font-style: normal;
+}
+.login-btn a {
+    color: var(--black);
+    text-decoration: none;
+}
+
 
 /*HOMEPAGE (index.html)*/
 /* top banner */
@@ -643,4 +651,55 @@ img {
 .form-submission-thanks {
     text-align: center;
     padding:10% 0;
+}
+
+/* LOGIN and SIGNUP pages */
+.form-pages {
+    margin:25px auto;
+    width:25%;
+    height:auto;
+    padding:25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:10%;
+    background-color: var(--light-grey);
+    border-radius: 15px;
+}
+.forms-h1 {
+    font-size: 2rem;
+}
+.forms {
+    margin-top: 15px;
+    height:45%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.signup-form {
+    height:65%;
+    justify-content: space-between;
+    gap:15px;
+}
+.form-div {
+    display: flex;
+    flex-direction: column;
+}
+.text-fields {
+    height:30px;
+    width:200px;
+}
+.form-btn:hover {
+    cursor: pointer;
+}
+.form-btn:active {
+    font-weight: bold;
+}
+.form-btn {
+    margin:10px;
+    font-size: 1.1rem;
+    font-style: normal;
 }

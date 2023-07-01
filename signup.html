@@ -34,31 +34,34 @@
             </ul>
         </nav>
     </header>
-    <main class="page-alignment">
-        <h3>Sign-Up</h3>
-        <form action="process-signup.php" method="post" novalidate>
-            <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
+    <main class="page-alignment form-pages">
+        <h1 class="forms-h1">Sign-Up</h1>
+
+        <form action="process-signup.php" method="post" novalidate class="forms signup-form">
+            <div class="form-div">
+                <label for="name">Name:</label>
+                <input class="text-fields" type="text" id="name" name="name">
             </div>
 
-            <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+            <div class="form-div">
+                <label for="email">Email:</label>
+                <input class="text-fields" type="email" id="email" name="email">
             </div>
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password">
+            <div class="form-div">
+                <label for="password">Password:</label>
+                <input class="text-fields" type="password" id="password" name="password">
             </div>
 
-            <div>
-                <label for="password_confirmation">Confirm Password</label>
-                <input type="password" id="password_confirmation" name="password_confirmation">
+            <div class="form-div">
+                <label for="password_confirmation">Confirm Password:</label>
+                <input class="text-fields" type="password" id="password_confirmation" name="password_confirmation">
             </div>
 
-            <button>Sign up</button>            
+            <button class="btn form-btn">Sign up</button>            
         </form>
+
+        <p>Already have an account? <a href="./login.php">Login</a>.</p>
     </main>
 </body>
 </html>
