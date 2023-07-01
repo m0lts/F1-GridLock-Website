@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($user) {
         if (password_verify($_POST["password"], $user["password_hash"])) {
             session_start();
+            session_regenerate_id();
             $_SESSION["user_id"] = $user["id"];
             header("Location: index.php");
             exit;
@@ -86,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <button class="btn form-btn">Login</button>
             </form>
 
-            <a href="./signup.html">Create an account</a>
+            <p>Don't have an account?<a href="./signup.html">Create an account</a>.</p>
 
         </main>
     </body>

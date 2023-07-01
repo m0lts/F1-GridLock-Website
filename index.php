@@ -2,7 +2,17 @@
 
     session_start();
 
-    
+    if (isset($_SESSION["user_id"])) {
+
+        $mysqli = require __DIR__ . "/database.php";
+
+        $sql = "SELECT * FROM accounts
+                WHERE id = {$_SESSION["user_id"]}";
+
+        $result = $mysqli->query($sql);
+        $user = $result->fetch_assoc();
+
+    }
 
 ?>
 
@@ -31,7 +41,12 @@
                 Menu +
             </button>
             <button class="btn login-btn">
-                <a href="./login.php">Login</a>
+                <?php if ($user): ?>
+                    <?= htmlspecialchars($user["name"]) ?>
+                    <a href="logout.php">Log out</a>
+                <?php else: ?>    
+                    <a href="./login.php">Login</a>
+                <?php endif; ?>
             </button>
             
         </div>
