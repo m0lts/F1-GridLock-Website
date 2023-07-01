@@ -43,9 +43,22 @@ $stmt->bind_param("sss",
                     $_POST["email"],
                     $password_hash);
 
-$stmt->execute();
+if ($stmt->execute()) {
+
+    header("Location: signup-success.html");
+    exit;
+    
+} else {
+
+    if ($mysqli->errno === 1062) {
+        die("Sorry, that email is already in use.");
+    }
+    die($mysqli->error . " " . $mysqli->errno);
+    
+}
 
 
-echo "Signup successful";
+
+
 
 ?>
