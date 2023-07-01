@@ -81,7 +81,13 @@
                 <h2 class="timer"></h2>
                 <!-- INSERT TIMER FUNCTION HERE -->
             </div>
-            <a class="make-prediction" href="./prediction-page.php">
+            <a class="make-prediction"
+            <?php if ($user): ?>
+                    href="./prediction-page.php"
+                <?php else: ?>    
+                    href="./login.php"
+                <?php endif; ?>
+             >
                 <h2 class="mp-text">Make Prediction <i class="fa-solid fa-arrow-right"></i></h2>
             </a>
 
