@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="./styles/styles.css">
         <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
         <script src="https://kit.fontawesome.com/d7b281748b.js" crossorigin="anonymous"></script>
-        <script src="./functionality/app.js" type="module"></script>
+        <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+        <script src="./functionality/validation.js" defer></script>
         <title>F1-GridLock</title>
         <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
     </head>
@@ -37,7 +38,7 @@
     <main class="page-alignment form-pages">
         <h1 class="forms-h1">Sign-Up</h1>
 
-        <form action="process-signup.php" method="post" novalidate class="forms signup-form">
+        <form action="process-signup.php" method="post" novalidate class="forms signup-form" id="signup">
             <div class="form-div">
                 <label for="name">Name:</label>
                 <input class="text-fields" type="text" id="name" name="name">
