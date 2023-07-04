@@ -13,4 +13,4 @@ $is_available = $result->rowCount() === 0;
 
 header("Content-Type: application/json");
 
-echo json_encode(["available => $is_available"]);
+echo json_encode(["available" => $is_available]);
