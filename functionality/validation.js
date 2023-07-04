@@ -14,14 +14,10 @@ validator
         rule: 'email'
     },
     {
-        validator: (value) => () => {
-            return fetch("validate-email.php?email=" + encodeURIComponent(value))
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(json) {
-                return json.available;
-            });
+        validator: async (value) => {
+            const response = await fetch("validate-email.php?email=" + encodeURIComponent(value));
+            const json = await response.json();
+            return json.available;
         },
         errorMessage: "Email address already taken."
     }
