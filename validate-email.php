@@ -1,7 +1,7 @@
 <?php
 // CHECK EMAIL ISNT ALREADY TAKEN IN DATABASE AND RETURN A BOOLEAN VALUE JSON OBJECT (is_available) 
 
-$mysqli = require __DIR__ . "./database.php";
+$mysqli = require __DIR__ . "/database.php";
 
 $sql = sprintf("SELECT * FROM accounts
                 WHERE email = '%s'",
