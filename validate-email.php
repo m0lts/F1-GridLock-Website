@@ -9,13 +9,7 @@ $sql = sprintf("SELECT * FROM accounts
 
 $result = $mysqli->query($sql);
 
-$is_available;
-
-if ($result->rowCount() === 0) {
-    $is_available = true;
-} else {
-    $is_available = false;
-};
+$is_available = $result->rowCount() === 0;
 
 header("Content-Type: application/json");
 
