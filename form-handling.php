@@ -86,6 +86,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST["p1-entry"] === "???") {
         die("Please select a driver for P1");
     }
+    if ($_POST["p2-entry"] === "???") {
+        die("Please select a driver for P2");
+    }
+    if ($_POST["p3-entry"] === "???") {
+        die("Please select a driver for P3");
+    }
+    if ($_POST["p4-entry"] === "???") {
+        die("Please select a driver for P4");
+    }
+    if ($_POST["p5-entry"] === "???") {
+        die("Please select a driver for P5");
+    }
+    if ($_POST["p6-entry"] === "???") {
+        die("Please select a driver for P6");
+    }
+    if ($_POST["p7-entry"] === "???") {
+        die("Please select a driver for P7");
+    }
+    if ($_POST["p8-entry"] === "???") {
+        die("Please select a driver for P8");
+    }
+    if ($_POST["p9-entry"] === "???") {
+        die("Please select a driver for P9");
+    }
+    if ($_POST["p10-entry"] === "???") {
+        die("Please select a driver for P10");
+    }
 
     // Database details
     $host = "localhost";
