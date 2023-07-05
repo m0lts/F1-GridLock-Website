@@ -82,6 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $p9 =  $_POST["p9-entry"];
     $p10 =  $_POST["p10-entry"];
 
+    // Check that all drivers have been selected
+    if ($_POST["p1-entry"] === "???") {
+        die("Please select a driver for P1");
+    }
+
     // Database details
     $host = "localhost";
     $dbname = "u128425984_predictions";
