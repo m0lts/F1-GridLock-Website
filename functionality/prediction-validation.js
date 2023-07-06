@@ -7,8 +7,8 @@ const validator = new JustValidate(document.querySelector("#predictions"));
         },
         {
             validator: (value, fields) => {
-              if (fields['#p1'].elem.value !== fields['#p2'].elem.value) {
-                return value;
+              if (value !== fields['#p2']) {
+                return true;
               }
             },
             errorMessage: 'Passwords should be the same',
