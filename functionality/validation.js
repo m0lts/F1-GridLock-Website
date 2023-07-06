@@ -47,7 +47,7 @@ validator
     document.getElementById("signup").submit();
   })
 
-  const validatorTwo = new JustValidate("#predictions");
+const validatorTwo = new JustValidate("#predictions");
 
   validatorTwo
     .addField("p1", [

@@ -24,6 +24,7 @@
     <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
     <script src="https://kit.fontawesome.com/d7b281748b.js" crossorigin="anonymous"></script>
     <script src="./functionality/app.js" type="module" defer></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
     <script src="./functionality/validation.js" defer></script>
     <title>F1-GridLock</title>
     <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
@@ -68,7 +69,7 @@
                 <!-- INSERT TIMER FUNCTION HERE -->
             </div>
             <section class="prediction-section">
-                <h2 class="prediction-title-h2">Make your prediction:*</h2>
+                <h2 class="prediction-title-h2">Make your prediction:</h2>
                 <div>
                     <?php if ($user): ?>
                         <form class="prediction-forms" action="form-handling.php" method="post" id="predictions">
