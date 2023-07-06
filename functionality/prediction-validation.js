@@ -4,12 +4,6 @@ const validator = new JustValidate("#predictions");
     .addField("#p1", [
         {
             rule: 'required',
-        },
-        {
-            validator: (value) => {
-                return value === "???";
-            },
-            errorMessage: "You must select a driver."
         }
     ])
     .addField("#p2", [
