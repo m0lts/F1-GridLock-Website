@@ -73,7 +73,7 @@
                 <div>
                     <?php if ($user): ?>
                         <form class="prediction-forms" action="form-handling.php" method="post" id="predictions" novalidate>
-                            <div>
+                            <div class="form-div">
                                 <label for="p1">1.</label>
                                 <select name="p1-entry" id="p1">
                                     <option value="">--SELECT--</option>
@@ -99,7 +99,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p2">2.</label>
                                 <select name="p2-entry" id="p2">
                                     <option value="">--SELECT--</option>
@@ -125,7 +125,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p3">3.</label>
                                 <select name="p3-entry" id="p3">
                                     <option value="">--SELECT--</option>
@@ -151,7 +151,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p4">4.</label>
                                 <select name="p4-entry" id="p4">
                                     <option value="">--SELECT--</option>
@@ -177,7 +177,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p5">5.</label>
                                 <select name="p5-entry" id="p5">
                                     <option value="">--SELECT--</option>
@@ -203,7 +203,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p6">6.</label>
                                 <select name="p6-entry" id="p6">
                                     <option value="">--SELECT--</option>
@@ -229,7 +229,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p7">7.</label>
                                 <select name="p7-entry" id="p7">
                                     <option value="">--SELECT--</option>
@@ -255,7 +255,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p8">8.</label>
                                 <select name="p8-entry" id="p8">
                                     <option value="">--SELECT--</option>
@@ -281,7 +281,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p9">9.</label>
                                 <select name="p9-entry" id="p9">
                                     <option value="">--SELECT--</option>
@@ -307,7 +307,7 @@
                                     <option value="ocon">ocon</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-div">
                                 <label for="p10">10.</label>
                                 <select name="p10-entry" id="p10">
                                     <option value="">--SELECT--</option>

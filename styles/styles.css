@@ -622,9 +622,10 @@ img {
     text-align: center;
     padding:25px;
 }
-.information {
-    text-align: center;
-    padding-bottom:25px;
+.form-div {
+    display: flex;
+    gap:15px;
+    margin-bottom:10px;
 }
 
 /* time-up section */
