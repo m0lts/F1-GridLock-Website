@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="icon" type="image/x-icon" href="./images/common/F1 (1).png">
     <script src="https://kit.fontawesome.com/d7b281748b.js" crossorigin="anonymous"></script>
-    <script src="./functionality/app.js" type="module"></script>
+    <script src="./functionality/app.js" type="module" defer></script>
+    <script src="./functionality/validation.js" defer></script>
     <title>F1-GridLock</title>
     <meta name="description" content="F1-GridLock is a fantasy F1 league where your predictions can win you cash rewards across the Formula 1 season.">
 </head>
@@ -68,20 +69,9 @@
             </div>
             <section class="prediction-section">
                 <h2 class="prediction-title-h2">Make your prediction:*</h2>
-                <p class="information">*please only submit once, check that your name is selected and don't submit the same driver twice.</p>
                 <div>
                     <?php if ($user): ?>
-                        <form class="prediction-forms" action="form-handling.php" method="post">
-                            <!-- <label for="user">User:</label>
-                            <select name="user" id="user">
-                                <option value="???">--Select yourself--</option>
-                                <option value="Ali">Ali</option>
-                                <option value="Ed">Ed</option>
-                                <option value="Jack">Jack</option>
-                                <option value="Toby">Toby</option>
-                                <option value="Tom">Tom</option>
-                                <option value="Owen">Owen</option>
-                            </select> -->
+                        <form class="prediction-forms" action="form-handling.php" method="post" id="predictions">
                             <label for="p1">1.</label>
                             <select name="p1-entry" id="p1">
                                 <option value="???">???</option>
