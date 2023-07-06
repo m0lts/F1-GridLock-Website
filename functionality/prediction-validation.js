@@ -6,13 +6,14 @@ const validator = new JustValidate(document.querySelector("#predictions"));
             rule: 'required',
         },
         {
-            rule: 'compare',
-            comparison: function () {
+            rule: 'custom',
+            handler: (value, rules, instance, field) => {
               const p1Value = document.querySelector("#p1").value;
-              const p2Value = document.querySelector("#p2").value;
-              return p1Value !== p2Value;
+              const p2Value = value;
+              if (p1Value === p2Value) {
+                return "You cannot select the same driver twice";
+              }
             },
-            message: "You cannot select the same driver twice"
           }
     ])
     .addField(document.querySelector("#p2"), [
