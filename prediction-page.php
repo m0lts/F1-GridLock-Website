@@ -72,7 +72,7 @@
                 <h2 class="prediction-title-h2">Make your prediction:</h2>
                 <div>
                     <?php if ($user): ?>
-                        <form class="prediction-forms" action="form-handling.php" method="post" id="predictions">
+                        <form class="prediction-forms" action="form-handling.php" method="post" id="predictions" novalidate>
                             <label for="p1">1.</label>
                             <select name="p1-entry" id="p1">
                                 <option value="???">???</option>

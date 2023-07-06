@@ -51,3 +51,6 @@ const validator = new JustValidate("#predictions");
             rule: 'required',
         }
     ])
+    .onSuccess((event) => {
+        document.getElementById("predictions").submit();
+      })
