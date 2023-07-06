@@ -6,8 +6,8 @@ const validator = new JustValidate(document.querySelector("#predictions"));
             rule: 'required',
         },
         {
-            validator: (value, fields) => {
-              if (value !== fields['#p2'].value) {
+            validator: (value) => {
+              if (value !== document.querySelector['#p2'].value) {
                 return true;
               }
             },
