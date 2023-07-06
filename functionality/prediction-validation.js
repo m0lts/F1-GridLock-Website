@@ -6,8 +6,12 @@ const validator = new JustValidate(document.querySelector("#predictions"));
             rule: 'required',
         },
         {
-          rule: 'minLength',
-          value: 5,
+            validator: (value, fields) => {
+                if (value === fields["#p2"].elem.value) {
+                    return value
+                }
+            },
+                errorMessage: "Passwords should match."
         }
     ])
     .addField(document.querySelector("#p2"), [
