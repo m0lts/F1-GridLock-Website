@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Get posted form data
     $race = $nextRace;
-    $loggedinuser = $user["name"];
+    $loggedInUser = $user["name"];
     $p1 =  $_POST["p1-entry"];
     $p2 =  $_POST["p2-entry"];
     $p3 =  $_POST["p3-entry"];
@@ -96,6 +96,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ) {
         die("Please select a driver for all positions");
     }
+    for ($i = 1; $i <= 10; $i++) {
+        for ($j = $i + 1; $j <= 10; $j++) {
+            if ($_POST["p{$i}-entry"] === $_POST["p{$j}-entry"]) {
+                die("You have selected the same driver more than once");
+            }
+        }
+    }
+    
 
     // Database details
     $host = "localhost";
@@ -109,8 +117,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Prepare and execute SQL statement
-        $stmt = $conn->prepare('INSERT INTO predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-        $stmt->execute([$race, $loggedinuser, $p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10]);
+        $checkstmt = $conn->prepare('SELECT * FROM predictions WHERE race = :race_value AND user = :user_value');
+        $checkstmt->bindParam(':user_value', $loggedInUser);
+        $checkstmt->bindParam(':race_value', $race);
+
+        $checkstmt->execute();
+
+        if ($checkstmt->rowCount() === 0) {
+            $stmt = $conn->prepare('INSERT INTO predictions (race, user, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+            $stmt->execute([$race, $loggedInUser, $p1, $p2, $p3, $p4, $p5, $p6, $p7, $p8, $p9, $p10]);
+        } else {
+            die("You have already submitted a prediction for the $race");
+        }
+
+
+
+        
 
     } catch(PDOException $e) {
         die('Connection failed: ' . $e->getMessage());
