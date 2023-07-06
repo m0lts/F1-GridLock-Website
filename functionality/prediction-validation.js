@@ -6,15 +6,13 @@ const validator = new JustValidate(document.querySelector("#predictions"));
             rule: 'required',
         },
         {
-            rule: 'custom',
-            handler: (value, rules, instance, field) => {
-              const p1Value = document.querySelector("#p1").value;
-              const p2Value = value;
-              if (p1Value === p2Value) {
-                return "You cannot select the same driver twice";
+            validator: (value, fields) => {
+              if (fields['#p1'].elem.value !== fields['#p2'].elem.value) {
+                return value;
               }
             },
-          }
+            errorMessage: 'Passwords should be the same',
+        }
     ])
     .addField(document.querySelector("#p2"), [
         {
