@@ -7,7 +7,7 @@ const validator = new JustValidate(document.querySelector("#predictions"));
         },
         {
             validator: (value, fields) => {
-              if (value !== fields['#p2']) {
+              if (value !== fields['#p2'].value) {
                 return true;
               }
             },
