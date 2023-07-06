@@ -7,7 +7,7 @@ const validator = new JustValidate(document.querySelector("#predictions"));
         },
         {
             validator: (value) => {
-              if (value !== document.querySelector['#p2'].value) {
+              if (value.selectedIndex !== document.querySelector['#p2'].selectedIndex) {
                 return true;
               }
             },
