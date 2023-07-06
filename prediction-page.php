@@ -74,8 +74,7 @@
                     <?php if ($user): ?>
                         <form class="prediction-forms" action="form-handling.php" method="post" id="predictions" novalidate>
                             <label for="p1">1.</label>
-                            <select name="p1-entry" id="p1">
-                                <option value="???">???</option>
+                            <select name="p1-entry" id="p1" placeholder="???">
                                 <option value="verstappen">verstappen</option>
                                 <option value="perez">perez</option>
                                 <option value="alonso">alonso</option>
