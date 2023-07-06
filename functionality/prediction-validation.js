@@ -4,14 +4,6 @@ const validator = new JustValidate(document.querySelector("#predictions"));
     .addField(document.querySelector("#p1"), [
         {
             rule: 'required',
-        },
-        {
-            validator: (value) => {
-              if (value.selectedIndex !== document.querySelector['#p2'].selectedIndex) {
-                return true;
-              }
-            },
-            errorMessage: 'Passwords should be the same',
         }
     ])
     .addField(document.querySelector("#p2"), [
