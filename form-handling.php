@@ -83,16 +83,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $p10 =  $_POST["p10-entry"];
 
     // Check that all drivers have been selected
-    if ($_POST["p1-entry"] === "???" || 
-        $_POST["p2-entry"] === "???" || 
-        $_POST["p3-entry"] === "???" || 
-        $_POST["p4-entry"] === "???" || 
-        $_POST["p5-entry"] === "???" ||
-        $_POST["p6-entry"] === "???" ||
-        $_POST["p7-entry"] === "???" ||
-        $_POST["p8-entry"] === "???" ||
-        $_POST["p9-entry"] === "???" ||
-        $_POST["p10-entry"] === "???"
+    if ($_POST["p1-entry"] === "" || 
+        $_POST["p2-entry"] === "" || 
+        $_POST["p3-entry"] === "" || 
+        $_POST["p4-entry"] === "" || 
+        $_POST["p5-entry"] === "" ||
+        $_POST["p6-entry"] === "" ||
+        $_POST["p7-entry"] === "" ||
+        $_POST["p8-entry"] === "" ||
+        $_POST["p9-entry"] === "" ||
+        $_POST["p10-entry"] === ""
         ) {
         die("Please select a driver for all positions");
     }
