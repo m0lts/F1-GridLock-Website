@@ -1,52 +1,56 @@
-const validator = new JustValidate("#predictions");
+const validator = new JustValidate(document.querySelector("#predictions"));
 
   validator
-    .addField("#p1", [
+    .addField(document.querySelector("#p1"), [
+        {
+            rule: 'required',
+        },
+        {
+          rule: 'minLength',
+          value: 5,
+        }
+    ])
+    .addField(document.querySelector("#p2"), [
         {
             rule: 'required',
         }
     ])
-    .addField("#p2", [
+    .addField(document.querySelector("#p3"), [
         {
             rule: 'required',
         }
     ])
-    .addField("#p3", [
+    .addField(document.querySelector("#p4"), [
         {
             rule: 'required',
         }
     ])
-    .addField("#p4", [
+    .addField(document.querySelector("#p5"), [
         {
             rule: 'required',
         }
     ])
-    .addField("#p5", [
+    .addField(document.querySelector("#p6"), [
         {
             rule: 'required',
         }
     ])
-    .addField("#p6", [
+    .addField(document.querySelector("#p7"), [
         {
             rule: 'required',
         }
     ])
-    .addField("#p7", [
+    .addField(document.querySelector("#p8"), [
         {
             rule: 'required',
         }
     ])
-    .addField("#p8", [
+    .addField(document.querySelector("#p9"), [
         {
             rule: 'required',
         }
     ])
-    .addField("#p9", [
-        {
-            rule: 'required',
-        }
-    ])
-    .addField("p#10", [
+    .addField(document.querySelector("#p10"), [
         {
             rule: 'required',
         }
