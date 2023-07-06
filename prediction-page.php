@@ -73,246 +73,266 @@
                 <div>
                     <?php if ($user): ?>
                         <form class="prediction-forms" action="form-handling.php" method="post" id="predictions" novalidate>
-                            <label for="p1">1.</label>
-                            <select name="p1-entry" id="p1">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p2">2.</label>
-                            <select name="p2-entry" id="p2">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p3">3.</label>
-                            <select name="p3-entry" id="p3">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p4">4.</label>
-                            <select name="p4-entry" id="p4">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p5">5.</label>
-                            <select name="p5-entry" id="p5">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p6">6.</label>
-                            <select name="p6-entry" id="p6">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p7">7.</label>
-                            <select name="p7-entry" id="p7">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p8">8.</label>
-                            <select name="p8-entry" id="p8">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p9">9.</label>
-                            <select name="p9-entry" id="p9">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
-                            <label for="p10">10.</label>
-                            <select name="p10-entry" id="p10">
-                                <option value="">--SELECT--</option>
-                                <option value="verstappen">verstappen</option>
-                                <option value="perez">perez</option>
-                                <option value="alonso">alonso</option>
-                                <option value="stroll">stroll</option>
-                                <option value="leclerc">leclerc</option>
-                                <option value="sainz">sainz</option>
-                                <option value="hamilton">hamilton</option>
-                                <option value="russell">russell</option>
-                                <option value="norris">norris</option>
-                                <option value="piastri">piastri</option>
-                                <option value="magnussen">magnussen</option>
-                                <option value="hulkenberg">hulkenberg</option>
-                                <option value="tsunoda">tsunoda</option>
-                                <option value="devries">de vries</option>
-                                <option value="bottas">bottas</option>
-                                <option value="zhou">zhou</option>
-                                <option value="albon">albon</option>
-                                <option value="sargeant">sargeant</option>
-                                <option value="gasly">gasly</option>
-                                <option value="ocon">ocon</option>
-                            </select>
+                            <div>
+                                <label for="p1">1.</label>
+                                <select name="p1-entry" id="p1">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p2">2.</label>
+                                <select name="p2-entry" id="p2">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p3">3.</label>
+                                <select name="p3-entry" id="p3">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p4">4.</label>
+                                <select name="p4-entry" id="p4">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p5">5.</label>
+                                <select name="p5-entry" id="p5">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p6">6.</label>
+                                <select name="p6-entry" id="p6">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p7">7.</label>
+                                <select name="p7-entry" id="p7">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p8">8.</label>
+                                <select name="p8-entry" id="p8">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p9">9.</label>
+                                <select name="p9-entry" id="p9">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="p10">10.</label>
+                                <select name="p10-entry" id="p10">
+                                    <option value="">--SELECT--</option>
+                                    <option value="verstappen">verstappen</option>
+                                    <option value="perez">perez</option>
+                                    <option value="alonso">alonso</option>
+                                    <option value="stroll">stroll</option>
+                                    <option value="leclerc">leclerc</option>
+                                    <option value="sainz">sainz</option>
+                                    <option value="hamilton">hamilton</option>
+                                    <option value="russell">russell</option>
+                                    <option value="norris">norris</option>
+                                    <option value="piastri">piastri</option>
+                                    <option value="magnussen">magnussen</option>
+                                    <option value="hulkenberg">hulkenberg</option>
+                                    <option value="tsunoda">tsunoda</option>
+                                    <option value="devries">de vries</option>
+                                    <option value="bottas">bottas</option>
+                                    <option value="zhou">zhou</option>
+                                    <option value="albon">albon</option>
+                                    <option value="sargeant">sargeant</option>
+                                    <option value="gasly">gasly</option>
+                                    <option value="ocon">ocon</option>
+                                </select>
+                            </div>
                             <button type="submit" class="submit-btn">Submit</button>
                         </form>
                     <?php else: ?>
