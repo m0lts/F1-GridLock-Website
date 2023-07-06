@@ -6,13 +6,14 @@ const validator = new JustValidate(document.querySelector("#predictions"));
             rule: 'required',
         },
         {
-            validator: (value, fields) => {
-                if (value === fields["#p2"].elem.value) {
-                    return value
-                }
+            rule: 'compare',
+            comparison: function () {
+              const p1Value = document.querySelector("#p1").value;
+              const p2Value = document.querySelector("#p2").value;
+              return p1Value !== p2Value;
             },
-                errorMessage: "Passwords should match."
-        }
+            message: "You cannot select the same driver twice"
+          }
     ])
     .addField(document.querySelector("#p2"), [
         {
