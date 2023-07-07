@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Get posted form data
     $race = $nextRace;
-    $loggedInUser = $user["name"];
+    $loggedInUser = $user["first_name"] . " " . $user["second_name"];
     $p1 =  $_POST["p1-entry"];
     $p2 =  $_POST["p2-entry"];
     $p3 =  $_POST["p3-entry"];
