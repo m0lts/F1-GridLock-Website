@@ -28,7 +28,7 @@ validator
         rule: 'required',
     }
     ])
-  .addField("#surname", [
+  .addField("#second_name", [
     {
       rule: 'required',
     }
