@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 ?>
-            <p class="form-submission-thanks">Thank you <?= htmlspecialchars($user["name"]) ?>, your submission has been recorded.</p>
+            <p class="form-submission-thanks">Thank you <?= htmlspecialchars($user["first_name"]) ?>, your submission has been recorded.</p>
 </main>
 </body>
 </html>
