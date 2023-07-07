@@ -7,7 +7,16 @@ const validator = new JustValidate(document.querySelector("#predictions"));
         },
         {
             validator: (value) => {
-                if (value === document.querySelector("#p2").value) {
+                if (value === document.querySelector("#p2").value ||
+                    value === document.querySelector("#p3").value ||
+                    value === document.querySelector("#p4").value ||
+                    value === document.querySelector("#p5").value ||
+                    value === document.querySelector("#p6").value ||
+                    value === document.querySelector("#p7").value ||
+                    value === document.querySelector("#p8").value ||
+                    value === document.querySelector("#p9").value ||
+                    value === document.querySelector("#p10").value
+                ) {
                     return false;
                 } else {
                     return true;
