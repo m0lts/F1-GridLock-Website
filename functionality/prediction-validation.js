@@ -4,6 +4,9 @@ const validator = new JustValidate(document.querySelector("#predictions"));
     .addField(document.querySelector("#p1"), [
         {
             rule: 'required',
+        },
+        {
+            validator: (value) => value === "verstappen" ? false : true,
         }
     ])
     .addField(document.querySelector("#p2"), [
