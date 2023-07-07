@@ -6,7 +6,14 @@ const validator = new JustValidate(document.querySelector("#predictions"));
             rule: 'required',
         },
         {
-            validator: (value) => value === "verstappen" ? false : true,
+            validator: (value) => {
+                if (value === "verstappen") {
+                    return true;
+                } else {
+                    return false;
+                }
+            },
+            errorMessage: "You can only select verstappen"
         }
     ])
     .addField(document.querySelector("#p2"), [
