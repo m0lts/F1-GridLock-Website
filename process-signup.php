@@ -8,7 +8,7 @@ if (empty($_POST["first_name"])) {
     die("Name is required");
 }
 
-if (empty($_POST["surname"])) {
+if (empty($_POST["second_name"])) {
     die("Name is required");
 }
 
@@ -37,7 +37,7 @@ $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/database.php";
 
-$sql = "INSERT INTO accounts (username, first_name, surname, email, password_hash)
+$sql = "INSERT INTO accounts (username, first_name, second_name, email, password_hash)
         VALUES (?, ?, ?, ?, ?)";
 
 $stmt = $mysqli->stmt_init();
@@ -49,7 +49,7 @@ if( ! $stmt->prepare($sql)) {
 $stmt->bind_param("sssss",
                     $_POST["username"],
                     $_POST["first_name"],
-                    $_POST["surname"],
+                    $_POST["second_name"],
                     $_POST["email"],
                     $password_hash);
 
