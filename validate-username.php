@@ -10,4 +10,4 @@ $result = $mysqli->query($sql);
 $is_available_username = $result->num_rows === 0;
 
 header("Content-Type: application/json");
-echo json_encode(["available-username" => $is_available_username]);
+echo json_encode(["available_username" => $is_available_username]);

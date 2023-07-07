@@ -13,10 +13,14 @@ validator
                         return response.json();
                     })
                     .then(function(json) {
-                        return json.available-username;
+                        return json.available_username;
                     });
         },
         errorMessage: "Username already taken."
+    },
+    {
+        rule: 'maxLength',
+        value: 25,
     }
     ])
     .addField("#first_name", [
