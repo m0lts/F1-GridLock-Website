@@ -1,7 +1,30 @@
 const validator = new JustValidate("#signup");
 
 validator
-  .addField("#name", [
+    .addField("#username", [
+    {
+        rule: 'required',
+    },
+    {
+        validator: (value) => () => {
+            return fetch("validate-username.php?username=" + 
+            encodeURIComponent(value))
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        return json.available-username;
+                    });
+        },
+        errorMessage: "Username already taken."
+    }
+    ])
+    .addField("#first_name", [
+    {
+        rule: 'required',
+    }
+    ])
+  .addField("#surname", [
     {
       rule: 'required',
     }

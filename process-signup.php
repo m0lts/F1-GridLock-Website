@@ -1,6 +1,14 @@
 <?php
 
-if (empty($_POST["name"])) {
+if (empty($_POST["username"])) {
+    die("Name is required");
+}
+
+if (empty($_POST["first_name"])) {
+    die("Name is required");
+}
+
+if (empty($_POST["surname"])) {
     die("Name is required");
 }
 
@@ -29,8 +37,8 @@ $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/database.php";
 
-$sql = "INSERT INTO accounts (name, email, password_hash)
-        VALUES (?, ?, ?)";
+$sql = "INSERT INTO accounts (username, first_name, surname, email, password_hash)
+        VALUES (?, ?, ?, ?, ?)";
 
 $stmt = $mysqli->stmt_init();
 
@@ -38,8 +46,10 @@ if( ! $stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
-$stmt->bind_param("sss",
-                    $_POST["name"],
+$stmt->bind_param("sssss",
+                    $_POST["username"],
+                    $_POST["first_name"],
+                    $_POST["surname"],
                     $_POST["email"],
                     $password_hash);
 
@@ -51,7 +61,7 @@ if ($stmt->execute()) {
 } else {
 
     if ($mysqli->errno === 1062) {
-        die("Sorry, that email is already in use.");
+        die("Sorry, that email or username is already in use.");
     }
     die($mysqli->error . " " . $mysqli->errno);
     
