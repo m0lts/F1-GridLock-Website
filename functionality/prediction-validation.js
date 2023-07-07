@@ -7,13 +7,13 @@ const validator = new JustValidate(document.querySelector("#predictions"));
         },
         {
             validator: (value) => {
-                if (value === "verstappen") {
-                    return true;
-                } else {
+                if (value === document.querySelector("#p2").value) {
                     return false;
+                } else {
+                    return true;
                 }
             },
-            errorMessage: "You can only select verstappen"
+            errorMessage: "You cannot select the same driver twice."
         }
     ])
     .addField(document.querySelector("#p2"), [
